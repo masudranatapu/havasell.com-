@@ -166,7 +166,7 @@ body {
 }
 
 .home_header {
-    background: #2E2929;
+    background: #dddddd;
     padding: 0px 15px;
 }
 
@@ -175,10 +175,21 @@ body {
     font-size: 22px;
 }
 
-.home_header a {
-    color: rgb(255, 255, 255);
-    font-weight: 400;
+.navbar-toggler {
+    border: 1px solid #b6b6b6;
+    opacity: 1;
+    background: #fff;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.home_header .nav-link {
+    color: rgb(0, 0, 0);
     font-family: 'Rubik', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    vertical-align: middle;
+    padding: 0px 12px !important;
 }
 
 .heading-child {
@@ -383,9 +394,10 @@ body {
 .main_body {
     background: #ffffff;
     padding: 12px 12px 10px 12px;
-    height: 826px;
+    max-height: 826px;
     overflow: hidden;
     overflow-y: auto;
+    position: relative;
 }
 
 .main_body::-webkit-scrollbar {
@@ -1150,9 +1162,24 @@ body {
     color: #888;
 }
 
+.login_form .form-label {
+    font-size: 14px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+}
+
+.login_form {
+    background: #ffffff;
+    padding: 37px 23px;
+    border-radius: 3px;
+    box-shadow: rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 6%) 0px 1px 2px 0px;
+    border: 1px solid #DDD;
+}
+
 .login_form .form-control {
-    border: 1px solid #cac9c9;
-    background: #dddd;
+    background: #ffffff;
+    height: 48px;
+    border: 1px solid #ddd;
 }
 
 .login_form .btn-light {
@@ -1163,6 +1190,12 @@ body {
     font-weight: 500;
     background: #d4d4d4;
     border: none !important;
+}
+
+.form-label {
+    font-size: 14px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
 }
 
 .accordion-button {
@@ -1271,46 +1304,6 @@ body {
 
 
 
-.language_dropdown button {
-    background: transparent !important;
-    border: none !important;
-    color: #fff;
-    font-size: 14px;
-    font-family: 'Rubik', sans-serif;
-    font-weight: 400;
-}
-
-.language_dropdown.dropdown-toggle:hover .dropdown-menu {
-    display: block !important;
-}
-
-.language_dropdown .dropdown-menu {
-    border: none !important;
-    padding: 0;
-    border-radius: 0px;
-    width: 175px;
-    background: #2e2929;
-    top: 100%;
-    display: none;
-    right: -15px;
-}
-
-.language_dropdown .dropdown-menu .dropdown-item {
-    font-size: 14px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    padding: 8px 15px;
-}
-
-.language_dropdown .dropdown-menu .dropdown-item:hover {
-    background: #dd8b23;
-    color: #fff;
-}
-
-.language_dropdown:hover .dropdown-menu {
-    display: block !important;
-}
-
 
 .mobile_body {
     background: #333;
@@ -1338,17 +1331,69 @@ body {
 
 
 
+.language_dropdown .dropdown-menu {
+    border: none !important;
+    padding: 0;
+    border-radius: 0px;
+    width: 175px;
+    background: #2e2929;
+    top: 100%;
+    right: -15px;
+}
+
+.language_dropdown .dropdown-menu .dropdown-item {
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    padding: 8px 15px;
+    color: #fff !important;
+}
+
+.language_dropdown button {
+    background: transparent !important;
+    border: none !important;
+    color: #2e2828;
+    font-size: 14px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+}
+
+.page_heading h3 {
+    font-size: 18px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 600;
+    margin: 0;
+}
+
+.page_content p {
+    margin: 0;
+    font-size: 15px;
+    color: #777;
+    line-height: 29px;
+    margin-bottom: 23px;
+}
+
+
+.contact_form .form-control {
+    border: 1px solid #CCC;
+}
+
+.btn-primary {
+    border: none;
+    padding: 8px 24px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    background: #2e2929;
+    outline: none !important;
+    box-shadow: none !important;
+}
 
 
 
+.btn-primary:hover {
+    background-color: #d18524 !important;
 
-
-
-
-
-
-
-
+}
 
 
 
