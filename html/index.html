@@ -13,8 +13,12 @@
     <meta property="og:image" content="">
     <link rel="icon" href="assets/images/favicon.png">
     <!-- font -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <!-- css -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet"
@@ -25,13 +29,46 @@
 </head>
 
 <body>
-    <div class="template_wrap mt-1 d-none d-md-block">
+    <div class="template_wrap d-none d-lg-block">
         <div class="container">
             <div class="row g-0">
-                <div class="col-md-3">
+                <div class="home_header">
+                    <div class="row align-items-center">
+                        <div class="col-6">
+                            <div class="py-3">
+                                <h5><a href="index.html">havasell.com</a></h5>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="float-end">
+                                <div class="btn-group language_dropdown">
+
+                                    <button type="button" class="dropdown-toggle" data-bs-toggle="dropdown"
+                                        data-bs-display="static" aria-expanded="false">
+                                        English
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-lg-end">
+                                        <li><a class="dropdown-item" href="#">English</a></li>
+                                        <li><a class="dropdown-item" href="#">Hindi</a></li>
+                                        <li><a class="dropdown-item" href="#">Latvian</a></li>
+                                        <li><a class="dropdown-item" href="#">Polish</a></li>
+                                        <li><a class="dropdown-item" href="#">Tamil</a></li>
+                                        <li><a class="dropdown-item" href="#">Danish</a></li>
+                                        <li><a class="dropdown-item" href="#">Albanian</a></li>
+                                        <li><a class="dropdown-item" href="#">Luganda</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
                     <div class="sidebar_left overflow-hidden">
-                        <div class="heading1 text-center p-3">
-                            <h5><a href="index.html"><img src="assets/images/logo.jpg" width="124" alt="logo"></a>
+                        <div class="heading1 text-center p-2">
+                            <h5>
+                                <a href="index.html">
+                                    <img src="assets/images/logo.png" width="150" alt="logo">
+                                </a>
                             </h5>
                             <ul class="list-group pt-3">
                                 <li class="custom-list-style mb-2">
@@ -47,416 +84,403 @@
                                         <input type="text" name="search" id="search" class="form-control"
                                             placeholder="Search..." required>
                                         <button type="submit" class="text-input-group"><i
-                                                class="fa fa-search"></i></button>
+                                                class="la la-search"></i></button>
                                     </div>
                                 </form>
                             </div>
-                            <div class="custom-calender mb-3">
-                                <h5><a href="#">event calendar</a></h5>
-                            </div>
-                            <div class="calender-style">
-                                <table class="table-condensed table-bordered table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>S</th>
-                                            <th>M</th>
-                                            <th>T</th>
-                                            <th>W</th>
-                                            <th>T</th>
-                                            <th>F</th>
-                                            <th>S</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="muted">29</td>
-                                            <td class="muted">30</td>
-                                            <td class="muted">31</td>
-                                            <td>1</td>
-                                            <td>2</td>
-                                            <td>3</td>
-                                            <td>4</td>
-                                        </tr>
-                                        <tr>
-                                            <td>5</td>
-                                            <td>6</td>
-                                            <td>7</td>
-                                            <td>8</td>
-                                            <td>9</td>
-                                            <td>10</td>
-                                            <td>11</td>
-                                        </tr>
-                                        <tr>
-                                            <td>12</td>
-                                            <td>13</td>
-                                            <td>14</td>
-                                            <td>15</td>
-                                            <td>16</td>
-                                            <td>17</td>
-                                            <td>18</td>
-                                        </tr>
-                                        <tr>
-                                            <td>19</td>
-                                            <td class="btn-primary"><strong>20</strong></td>
-                                            <td>21</td>
-                                            <td>22</td>
-                                            <td>23</td>
-                                            <td>24</td>
-                                            <td>25</td>
-                                        </tr>
-                                        <tr>
-                                            <td>26</td>
-                                            <td>27</td>
-                                            <td>28</td>
-                                            <td>29</td>
-                                            <td class="muted">1</td>
-                                            <td class="muted">2</td>
-                                            <td class="muted">3</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="mt-5 list-style1 mb-3">
-                                <ul class="list-group">
-                                    <li class="list-item custom-list-style1">
-                                        <a href="shop.html">hjælp. faq, misbrug, juridisk</a>
+                            <div class="mt-5 latest_post mb-3">
+                                <div class="mb-3">
+                                    <h3>Latest Post</h3>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="shop.html">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a>
                                     </li>
-                                    <li class="custom-list-style1">
-                                        <a href="shop.html">undgå svindel og bedrag </a>
+                                    <li>
+                                        <a href="shop.html">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a>
                                     </li>
-                                    <li class="custom-list-style1">
-                                        <a href="shop.html">personlige sikkerhedsråd </a>
+                                    <li>
+                                        <a href="shop.html">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a>
                                     </li>
-                                    <li class="custom-list-style1">
-                                        <a href="shop.html">anvendelsesvilkår </a>
+                                    <li>
+                                        <a href="shop.html">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a>
                                     </li>
-                                    <li class="custom-list-style1">
-                                        <a href="shop.html">datapolitik</a>
+                                    <li>
+                                        <a href="shop.html">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a>
                                     </li>
-                                    <li class="custom-list-style1">
-                                        <a href="shop.html">systemstatus </a>
+                                    <li>
+                                        <a href="shop.html">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a>
                                     </li>
-                                </ul>
-                            </div>
-                            <div class="list-style1">
-                                <ul class="list-group ">
-                                    <li class="list-item custom-list-style1">
-                                        <a href="shop.html">om craigslist </a>
+                                    <li>
+                                        <a href="shop.html">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a>
                                     </li>
-                                    <li class="custom-list-style1">
-                                        <a href="shop.html">craigslist åben kilde </a>
+                                    <li>
+                                        <a href="shop.html">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a>
                                     </li>
-                                    <li class="custom-list-style1">
-                                        <a href="shop.html">craigslist blog </a>
-                                    </li>
-                                    <li class="custom-list-style1">
-                                        <a href="shop.html">bedste-fra-craigslist </a>
-                                    </li>
-                                    <li class="custom-list-style1">
-                                        <a href="shop.html">"craigslist joe" </a>
-                                    </li>
-                                    <li class="custom-list-style1">
-                                        <a href="shop.html">craig newmark philanthropies </a>
-                                    </li>
+
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-md-7">
-                    <div class="heading2 text-center py-3">
-                        <h5><a href="index.html">havasell.com</a></h5>
-                    </div>
+                <div class="col-lg-9">
                     <div class="main_body">
                         <div class="row g-2">
-                            <div class="col-md-6 col-lg-4">
-                                <div class="category_heading text-center">
-                                    <h5>community</h5>
-                                </div>
-                                <div class="row g-1">
-                                    <div class="col-md-6 col-lg-6">
-                                        <div class="mt-2">
-                                            <ul class="list-group category_list">
-                                                <li><a href="shop.html">An item</a></li>
-                                                <li><a href="shop.html">A second</a>
-                                                </li>
-                                                <li><a href="shop.html">A third</a>
-                                                </li>
-                                                <li><a href="shop.html">A fourth</a>
-                                                </li>
-                                                <li><a href="shop.html">And a fifth</a>
-                                                </li>
-                                                <li><a href="shop.html">A third</a>
-                                                </li>
-                                                <li><a href="shop.html">A fourth</a>
-                                                </li>
-                                                <li><a href="shop.html">And a fifth</a>
-                                                </li>
-                                            </ul>
+                            <div class="col-lg-6 col-xl-4">
+                                <div class="category_wrapper">
+                                    <div class="category_wrap text-center">
+                                        <div class="category_heading">
+                                            <h5>Electronics</h5>
+                                            <span>(2321)</span>
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-lg-6">
-                                        <div class="mt-2">
-                                            <ul class="list-group category_list">
-                                                <li><a href="shop.html">An item</a></li>
-                                                <li><a href="shop.html">A second </a>
-                                                </li>
-                                                <li><a href="shop.html">A third </a>
-                                                </li>
-                                                <li><a href="shop.html">A fourth </a>
-                                                </li>
-                                                <li><a href="shop.html">And a fifth</a>
-                                                </li>
-                                                <li><a href="shop.html">A third </a>
-                                                </li>
-                                                <li><a href="shop.html">A fourth</a>
-                                                </li>
-                                                <li><a href="shop.html">And a fifth</a>
-                                                </li>
-                                            </ul>
-                                        </div>
+                                    <div class="category_list">
+                                        <ul class="list-group">
+                                            <li><a href="shop.html">Television <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Generetor <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Washing Machine <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Air Condition <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Iron <span>(34)</span></a></li>
+                                        </ul>
                                     </div>
                                 </div>
-                                <div class="category_heading text-center mt-2">
-                                    <h5>community</h5>
-                                </div>
-                                <div class="row g-1">
-                                    <div class="col-md-6 col-lg-6">
-                                        <div class="mt-2">
-                                            <ul class="list-group category_list">
-                                                <li><a href="shop.html">An item</a></li>
-                                                <li><a href="shop.html">A second </a>
-                                                </li>
-                                                <li><a href="shop.html">A third </a>
-                                                </li>
-                                                <li><a href="shop.html">A fourth </a>
-                                                </li>
-                                                <li><a href="shop.html">And a fifth</a>
-                                                </li>
-                                                <li><a href="shop.html">A third </a>
-                                                </li>
-                                                <li><a href="shop.html">A fourth </a>
-                                                </li>
-                                                <li><a href="shop.html">And a fifth</a>
-                                                </li>
-                                            </ul>
+                            </div>
+                            <div class="col-lg-6 col-xl-4">
+                                <div class="category_wrapper">
+                                    <div class="category_wrap text-center">
+                                        <div class="category_heading">
+                                            <h5>Gadgets</h5>
+                                            <span>(2321)</span>
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-lg-6">
-                                        <div class="mt-2">
-                                            <ul class="list-group category_list">
-                                                <li><a href="shop.html">An item</a></li>
-                                                <li><a href="shop.html">A second</a>
-                                                </li>
-                                                <li><a href="shop.html">A third </a>
-                                                </li>
-                                                <li><a href="shop.html">A fourth </a>
-                                                </li>
-                                                <li><a href="shop.html">And a fifth</a>
-                                                </li>
-                                                <li><a href="shop.html">A third </a>
-                                                </li>
-                                                <li><a href="shop.html">A fourth </a>
-                                                </li>
-                                                <li><a href="shop.html">And a fifth</a>
-                                                </li>
-                                            </ul>
-                                        </div>
+                                    <div class="category_list">
+                                        <ul class="list-group">
+                                            <li><a href="shop.html">Computer <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Mobile <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Camera <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Air Phone <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Dron <span>(34)</span></a></li>
+                                        </ul>
                                     </div>
                                 </div>
-                                <div class="category_heading text-center mt-2">
-                                    <h5>community</h5>
-                                </div>
-                                <div class="row g-1">
-                                    <div class="col-md-6 col-lg-6">
-                                        <div class="mt-2">
-                                            <ul class="list-group category_list">
-                                                <li><a href="shop.html">An item</a></li>
-                                                <li><a href="shop.html">A second </a></li>
-                                                <li><a href="shop.html">A third </a></li>
-                                                <li><a href="shop.html">A fourth </a></li>
-                                                <li><a href="shop.html">fifth</a></li>
-                                                <li><a href="shop.html">A third </a></li>
-                                                <li><a href="shop.html">A fourth </a></li>
-                                                <li><a href="shop.html">fifth</a></li>
-                                            </ul>
+                            </div>
+                            <div class="col-lg-6 col-xl-4">
+                                <div class="category_wrapper">
+                                    <div class="category_wrap text-center">
+                                        <div class="category_heading">
+                                            <h5>Furniture</h5>
+                                            <span>(2321)</span>
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-lg-6">
-                                        <div class="mt-2">
-                                            <ul class="list-group category_list">
-                                                <li><a href="shop.html">An item</a></li>
-                                                <li><a href="shop.html">A second </a></li>
-                                                <li><a href="shop.html">A third </a></li>
-                                                <li><a href="shop.html">A fourth </a></li>
-                                                <li><a href="shop.html">fifth</a></li>
-                                                <li><a href="shop.html">A third </a></li>
-                                                <li><a href="shop.html">A fourth </a></li>
-                                                <li><a href="shop.html">A fourth </a></li>
+                                    <div class="category_list">
+                                        <ul class="list-group">
+                                            <li><a href="shop.html">Dyning Table <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Chair <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Sofa <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Tea Table <span>(34)</span></a>
+                                            </li>
+                                            <li><a href="shop.html">Dressing Table <span>(34)</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-xl-4">
+                                <div class="category_wrapper">
+                                    <div class="category_wrap text-center">
+                                        <div class="category_heading">
+                                            <h5>Fashions</h5>
+                                            <span>(2321)</span>
+                                        </div>
+                                    </div>
+                                    <div class="row g-1">
+                                        <div class="category_list">
+                                            <ul class="list-group">
+                                                <li><a href="shop.html">Jeans <span>(34)</span></a></li>
+                                                <li><a href="shop.html">Underware <span>(34)</span></a></li>
+                                                <li><a href="shop.html">Shirt <span>(34)</span></a></li>
+                                                <li><a href="shop.html">Jacket <span>(34)</span></a>
+                                                </li>
+                                                <li><a href="shop.html">Shorts <span>(34)</span></a></li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-lg-4">
-                                <div class="category_heading text-center">
-                                    <h5>community</h5>
+                            <div class="col-lg-6 col-xl-4">
+                                <div class="category_wrapper">
+                                    <div class="category_wrap text-center">
+                                        <div class="category_heading">
+                                            <h5>Electronics</h5>
+                                            <span>(2321)</span>
+                                        </div>
+                                    </div>
+                                    <div class="category_list">
+                                        <ul class="list-group">
+                                            <li><a href="shop.html">Television <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Generetor <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Washing Machine <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Air Condition <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Iron <span>(34)</span></a></li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div class="mt-2">
-                                    <ul class="list-group category_list">
-                                        <li><a href="shop.html">An item</a></li>
-                                        <li><a href="shop.html">A second </a></li>
-                                        <li><a href="shop.html">A third </a></li>
-                                        <li><a href="shop.html">A fourth </a></li>
-                                        <li><a href="shop.html">fifth</a></li>
-                                        <li><a href="shop.html">A third </a></li>
-                                        <li><a href="shop.html">A fourth </a></li>
-                                        <li><a href="shop.html">fifth</a></li>
-                                        <li><a href="shop.html">fifth</a></li>
-                                        <li><a href="shop.html">A third </a></li>
-                                        <li><a href="shop.html">A fourth </a></li>
-                                        <li><a href="shop.html">fifth</a></li>
-                                    </ul>
+                            </div>
+                            <div class="col-lg-6 col-xl-4">
+                                <div class="category_wrapper">
+                                    <div class="category_wrap text-center">
+                                        <div class="category_heading">
+                                            <h5>Gadgets</h5>
+                                            <span>(2321)</span>
+                                        </div>
+                                    </div>
+                                    <div class="category_list">
+                                        <ul class="list-group">
+                                            <li><a href="shop.html">Computer <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Mobile <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Camera <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Air Phone <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Dron <span>(34)</span></a></li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div class="category_heading text-center mt-2">
-                                    <h5>community</h5>
+                            </div>
+                            <div class="col-lg-6 col-xl-4">
+                                <div class="category_wrapper">
+                                    <div class="category_wrap text-center">
+                                        <div class="category_heading">
+                                            <h5>Furniture</h5>
+                                            <span>(2321)</span>
+                                        </div>
+                                    </div>
+                                    <div class="category_list">
+                                        <ul class="list-group">
+                                            <li><a href="shop.html">Dyning Table <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Chair <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Sofa <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Tea Table <span>(34)</span></a>
+                                            </li>
+                                            <li><a href="shop.html">Dressing Table <span>(34)</span></a></li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div class="row g-1">
-                                    <div class="col-md-6 col-lg-6">
-                                        <div class="mt-2">
-                                            <ul class="list-group category_list">
-                                                <li><a href="shop.html">An item</a></li>
-                                                <li><a href="shop.html">A second </a></li>
-                                                <li><a href="shop.html">A third </a></li>
-                                                <li><a href="shop.html">A fourth </a></li>
-                                                <li><a href="shop.html">And a fifth</a></li>
-                                                <li><a href="shop.html">A third </a></li>
-                                                <li><a href="shop.html">A fourth </a></li>
-                                                <li><a href="shop.html">And a fifth</a></li>
-                                                <li><a href="shop.html">And a fifth</a></li>
-                                                <li><a href="shop.html">A third </a></li>
-                                                <li><a href="shop.html">A fourth </a></li>
-                                                <li><a href="shop.html">And a fifth</a></li>
-                                                <li><a href="shop.html">An item</a></li>
-                                                <li><a href="shop.html">A second </a></li>
-                                                <li><a href="shop.html">A third </a></li>
-                                                <li><a href="shop.html">A fourth </a></li>
-                                                <li><a href="shop.html">And a fifth</a></li>
-                                                <li><a href="shop.html">A third</a></li>
+                            </div>
+                            <div class="col-lg-6 col-xl-4">
+                                <div class="category_wrapper">
+                                    <div class="category_wrap text-center">
+                                        <div class="category_heading">
+                                            <h5>Gadgets</h5>
+                                            <span>(2321)</span>
+                                        </div>
+                                    </div>
+                                    <div class="category_list">
+                                        <ul class="list-group">
+                                            <li><a href="shop.html">Computer <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Mobile <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Camera <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Air Phone <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Dron <span>(34)</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-xl-4">
+                                <div class="category_wrapper">
+                                    <div class="category_wrap text-center">
+                                        <div class="category_heading">
+                                            <h5>Fashions</h5>
+                                            <span>(2321)</span>
+                                        </div>
+                                    </div>
+                                    <div class="row g-1">
+                                        <div class="category_list">
+                                            <ul class="list-group">
+                                                <li><a href="shop.html">Jeans <span>(34)</span></a></li>
+                                                <li><a href="shop.html">Underware <span>(34)</span></a></li>
+                                                <li><a href="shop.html">Shirt <span>(34)</span></a></li>
+                                                <li><a href="shop.html">Jacket <span>(34)</span></a>
+                                                </li>
+                                                <li><a href="shop.html">Shorts <span>(34)</span></a></li>
                                             </ul>
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-lg-6">
-                                        <div class="mt-2">
-                                            <ul class="list-group category_list">
-                                                <li><a href="shop.html">An item</a></li>
-                                                <li><a href="shop.html">A second </a></li>
-                                                <li><a href="shop.html">A third </a></li>
-                                                <li><a href="shop.html">A fourth </a></li>
-                                                <li><a href="shop.html">And a fifth</a></li>
-                                                <li><a href="shop.html">A third </a></li>
-                                                <li><a href="shop.html">A fourth </a></li>
-                                                <li><a href="shop.html">And a fifth</a></li>
-                                                <li><a href="shop.html">And a fifth</a></li>
-                                                <li><a href="shop.html">A third</a></li>
-                                                <li><a href="shop.html">A fourth</a></li>
-                                                <li><a href="shop.html">And a fifth</a></li>
-                                                <li><a href="shop.html">An item</a></li>
-                                                <li><a href="shop.html">A second</a></li>
-                                                <li><a href="shop.html">A third</a></li>
-                                                <li><a href="shop.html">A fourth</a></li>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-xl-4">
+                                <div class="category_wrapper">
+                                    <div class="category_wrap text-center">
+                                        <div class="category_heading">
+                                            <h5>Electronics</h5>
+                                            <span>(2321)</span>
+                                        </div>
+                                    </div>
+                                    <div class="category_list">
+                                        <ul class="list-group">
+                                            <li><a href="shop.html">Television <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Generetor <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Washing Machine <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Air Condition <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Iron <span>(34)</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-xl-4">
+                                <div class="category_wrapper">
+                                    <div class="category_wrap text-center">
+                                        <div class="category_heading">
+                                            <h5>Gadgets</h5>
+                                            <span>(2321)</span>
+                                        </div>
+                                    </div>
+                                    <div class="category_list">
+                                        <ul class="list-group">
+                                            <li><a href="shop.html">Computer <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Mobile <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Camera <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Air Phone <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Dron <span>(34)</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-xl-4">
+                                <div class="category_wrapper">
+                                    <div class="category_wrap text-center">
+                                        <div class="category_heading">
+                                            <h5>Furniture</h5>
+                                            <span>(2321)</span>
+                                        </div>
+                                    </div>
+                                    <div class="category_list">
+                                        <ul class="list-group">
+                                            <li><a href="shop.html">Dyning Table <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Chair <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Sofa <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Tea Table <span>(34)</span></a>
+                                            </li>
+                                            <li><a href="shop.html">Dressing Table <span>(34)</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-xl-4">
+                                <div class="category_wrapper">
+                                    <div class="category_wrap text-center">
+                                        <div class="category_heading">
+                                            <h5>Furniture</h5>
+                                            <span>(2321)</span>
+                                        </div>
+                                    </div>
+                                    <div class="category_list">
+                                        <ul class="list-group">
+                                            <li><a href="shop.html">Dyning Table <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Chair <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Sofa <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Tea Table <span>(34)</span></a>
+                                            </li>
+                                            <li><a href="shop.html">Dressing Table <span>(34)</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-xl-4">
+                                <div class="category_wrapper">
+                                    <div class="category_wrap text-center">
+                                        <div class="category_heading">
+                                            <h5>Gadgets</h5>
+                                            <span>(2321)</span>
+                                        </div>
+                                    </div>
+                                    <div class="category_list">
+                                        <ul class="list-group">
+                                            <li><a href="shop.html">Computer <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Mobile <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Camera <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Air Phone <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Dron <span>(34)</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-xl-4">
+                                <div class="category_wrapper">
+                                    <div class="category_wrap text-center">
+                                        <div class="category_heading">
+                                            <h5>Fashions</h5>
+                                            <span>(2321)</span>
+                                        </div>
+                                    </div>
+                                    <div class="row g-1">
+                                        <div class="category_list">
+                                            <ul class="list-group">
+                                                <li><a href="shop.html">Jeans <span>(34)</span></a></li>
+                                                <li><a href="shop.html">Underware <span>(34)</span></a></li>
+                                                <li><a href="shop.html">Shirt <span>(34)</span></a></li>
+                                                <li><a href="shop.html">Jacket <span>(34)</span></a>
+                                                </li>
+                                                <li><a href="shop.html">Shorts <span>(34)</span></a></li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
-                            <div class="col-md-6 col-lg-4">
-                                <div class="category_heading text-center">
-                                    <h5>community</h5>
-                                </div>
-                                <div class="mt-2">
-                                    <ul class="list-group category_list">
-                                        <li><a href="shop.html">An item</a></li>
-                                        <li><a href="shop.html">A second </a></li>
-                                        <li><a href="shop.html">A third </a></li>
-                                        <li><a href="shop.html">A fourth </a></li>
-                                        <li><a href="shop.html">And a fifth</a></li>
-                                        <li><a href="shop.html">A third </a></li>
-                                        <li><a href="shop.html">A fourth </a></li>
-                                        <li><a href="shop.html">And a fifth</a></li>
-                                        <li><a href="shop.html">And a fifth</a></li>
-                                        <li><a href="shop.html">A third </a></li>
-                                        <li><a href="shop.html">A fourth </a></li>
-                                        <li><a href="shop.html">And a fifth</a></li>
-                                        <li><a href="shop.html">An item</a></li>
-                                        <li><a href="shop.html">A second </a></li>
-                                        <li><a href="shop.html">A third </a></li>
-                                        <li><a href="shop.html">A fourth </a></li>
-                                        <li><a href="shop.html">And a fifth</a></li>
-                                        <li><a href="shop.html">A third </a></li>
-                                        <li><a href="shop.html">A fourth </a></li>
-                                        <li><a href="shop.html">And a fifth</a></li>
-                                        <li><a href="shop.html">And a fifth</a></li>
-                                        <li><a href="shop.html">A third </a></li>
-                                        <li><a href="shop.html">A fourth </a></li>
-                                        <li><a href="shop.html">And a fifth</a></li>
-                                        <li><a href="shop.html">An item</a></li>
-                                        <li><a href="shop.html">A second </a></li>
-                                        <li><a href="shop.html">A third </a></li>
-                                        <li><a href="shop.html">A fourth </a></li>
-                                        <li><a href="shop.html">And a fifth</a></li>
-                                        <li><a href="shop.html">And a fifth</a></li>
-                                        <li><a href="shop.html">A third </a></li>
-                                        <li><a href="shop.html">A fourth </a></li>
-                                        <li><a href="shop.html">And a fifth</a></li>
-                                        <li><a href="shop.html">An item</a></li>
-
-                                    </ul>
+                            <div class="col-lg-6 col-xl-4">
+                                <div class="category_wrapper">
+                                    <div class="category_wrap text-center">
+                                        <div class="category_heading">
+                                            <h5>Electronics</h5>
+                                            <span>(2321)</span>
+                                        </div>
+                                    </div>
+                                    <div class="category_list">
+                                        <ul class="list-group">
+                                            <li><a href="shop.html">Television <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Generetor <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Washing Machine <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Air Condition <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Iron <span>(34)</span></a></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-2">
-                    <div class="sidebar_right">
-                        <div class="heading3 text-center">
-                            <select name="language" id="language"
-                                class="form-control form-select language_dropdown mb-3">
-                                <option value="">English</option>
-                                <option value="">Hindi</option>
-                                <option value="">Latvian</option>
-                                <option value="">Polish</option>
-                                <option value="">Tamil</option>
-                                <option value="">Danish</option>
-                                <option value="">Albanian</option>
-                                <option value="">Luganda</option>
-                            </select>
-                            <ul class="list-group mb-3">
-                                <li>
-                                    <a href="shop.html">English </a>
-                                </li>
-                                <li>
-                                    <a href="shop.html">mellemφsten</a>
-                                </li>
-                            </ul>
-                            <div class="mt-2 list-syle-hover">
-                                <ul class="list-group ">
-                                    <li><a href="shop.html">An item</a></li>
-                                    <li> <a href="shop.html">A second</a></li>
-                                    <li> <a href="shop.html">A second</a></li>
-                                    <li> <a href="shop.html">A second</a></li>
-                                </ul>
+                            <div class="col-lg-6 col-xl-4">
+                                <div class="category_wrapper">
+                                    <div class="category_wrap text-center">
+                                        <div class="category_heading">
+                                            <h5>Gadgets</h5>
+                                            <span>(2321)</span>
+                                        </div>
+                                    </div>
+                                    <div class="category_list">
+                                        <ul class="list-group">
+                                            <li><a href="shop.html">Computer <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Mobile <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Camera <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Air Phone <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Dron <span>(34)</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="mt-2 list-syle-hover">
-                                <ul class="list-group ">
-                                    <li><a href="shop.html">An item</a></li>
-                                    <li> <a href="shop.html">A second</a></li>
-                                    <li> <a href="shop.html">A second</a></li>
-                                    <li> <a href="shop.html">A second</a></li>
-                                </ul>
+                            <div class="col-lg-6 col-xl-4">
+                                <div class="category_wrapper">
+                                    <div class="category_wrap text-center">
+                                        <div class="category_heading">
+                                            <h5>Furniture</h5>
+                                            <span>(2321)</span>
+                                        </div>
+                                    </div>
+                                    <div class="category_list">
+                                        <ul class="list-group">
+                                            <li><a href="shop.html">Dyning Table <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Chair <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Sofa <span>(34)</span></a></li>
+                                            <li><a href="shop.html">Tea Table <span>(34)</span></a>
+                                            </li>
+                                            <li><a href="shop.html">Dressing Table <span>(34)</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -468,37 +492,29 @@
                     <div class="p-3">
                         <ul>
                             <li class="list-item text-white">
-                                © 2023 craigslist
+                                © 2023 havasell
                             </li>
-                            <li> <a href="shop.html">hjælp |</a></li>
-                            <li><a href="shop.html">sikkerhed |</a></li>
-                            <li><a href="shop.html">privatliv |</a></li>
-                            <li><a href="shop.html"> feedback |</a></li>
-                            <li><a href="shop.html">vilkår |</a></li>
-                            <li><a href="shop.html">vedr |</a></li>
-                            <li><a href="shop.html">vedr |</a></li>
-                            <li><a href="shop.html">vedr |</a></li>
+                            <li> <a href="#">About Us |</a></li>
+                            <li> <a href="#">Privacy Policy |</a></li>
+                            <li> <a href="#">Terms & conditons</a></li>
                         </ul>
                     </div>
                 </div>
             </footer>
-
         </div>
     </div>
 
 
-
-
     <!-- ------------------ Mobile View Desing Start ------------------ -->
-    <div class="mobile-view d-block d-md-none">
+    <div class="mobile-view d-block d-lg-none">
         <div class="mobile_header">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-5">
                         <div class="mobile_heade_left">
                             <div class="site_logo">
-                                <a class="header_logo" name="logoLink" href="index.html">CL</a>
-                                <a href="index.html">Jerusalem</a>
+                                <a class="header_logo" name="logoLink" href="index.html">H</a>
+                                <a href="index.html">Havasell</a>
                             </div>
                         </div>
                     </div>
@@ -516,8 +532,8 @@
 
         <div class="container">
             <div class="mobile_body">
-                <form action="#" method="post" class="mb-3 mt-3 p-2">
-                    <div class="input-group">
+                <form action="#" method="post" class="mb-3 p-2">
+                    <div class="input-group search-style">
                         <input type="text" name="search" id="search" class="form-control" placeholder="Search..."
                             required>
                         <button type="submit" class="text-input-group"><i class="la la-search"></i></button>
@@ -680,16 +696,11 @@
                 <div class="p-2">
                     <ul>
                         <li class="list-item text-white">
-                            © 2023 craigslist
+                            © 2023 havasell
                         </li>
-                        <li> <a href="#">hjælp |</a></li>
-                        <li><a href="#">sikkerhed |</a></li>
-                        <li><a href="#">privatliv |</a></li>
-                        <li><a href="#"> feedback |</a></li>
-                        <li><a href="#">vilkår |</a></li>
-                        <li><a href="#">vedr |</a></li>
-                        <li><a href="#">vedr |</a></li>
-                        <li><a href="#">vedr |</a></li>
+                        <li> <a href="#">About Us |</a></li>
+                        <li> <a href="#">Privacy Policy |</a></li>
+                        <li> <a href="#">Terms & conditons</a></li>
                     </ul>
                 </div>
             </div>
