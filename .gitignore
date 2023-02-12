@@ -7,7 +7,10 @@
 .env
 .env.backup
 .phpunit.result.cache
-/resources/lang
+/resources/lang/*.json
+!/resources/lang/default.json
+!/resources/lang/en.json
+!/resources/lang/bn.json
 Homestead.json
 Homestead.yaml
 npm-debug.log

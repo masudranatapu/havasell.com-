@@ -109,14 +109,14 @@ ul {
 body {
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
-    background: #f0f0f0;
+    background: #fafafa;
     overflow-x: hidden;
 }
 
 /* =======================   ========================= */
 .sidebar_left {
     background: #e4e4e4;
-    border: 1px solid #cbcbcb;
+    border: 1px solid #d8d8d8;
     min-height: 100%;
 }
 
@@ -129,12 +129,18 @@ body {
 } */
 
 .custom-list-style a {
-    background-color: #2196f3cf;
+    background-color: #002566;
     padding: 6px 14px;
     display: inline-block;
     font-size: 14px;
-    color: #ffffff;
+    color: #ffffff !important;
     border-radius: 6px;
+}
+
+.heading1 ul li a {
+    color: #002566;
+    font-weight: 500;
+    font-size: 13px;
 }
 
 .input-style {
@@ -150,9 +156,11 @@ body {
 }
 
 .custom-calender h5 a {
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
     margin-top: 5px;
+    color: #0000EE;
+    font-weight: 600;
 }
 
 .heading2 {
@@ -175,9 +183,6 @@ body {
     padding: 1px 1px;
     padding-top: 2px !important;
     border: 2px solid #EEEEEE;
-
-
-
 }
 
 .heading-child h5 {
@@ -187,8 +192,8 @@ body {
 .sidebar_right ul li a {
     display: block;
     padding: 4px 0px;
-    font-size: 13px;
-    color: #0779d3;
+    font-size: 12px;
+    color: #0000EE;
 }
 
 .sidebar_right ul li a:hover {
@@ -197,9 +202,12 @@ body {
 }
 
 .language_dropdown.form-control {
-    border-radius: 0px;
     font-weight: 500;
-    text-align: center;
+    width: 159px;
+    margin: 0 auto;
+    margin-top: 9px;
+    height: 35px;
+    border-radius: 4px;
 }
 
 .list-style {
@@ -218,7 +226,7 @@ body {
 
 .sidebar_right {
     background: #e4e4e4;
-    border: 1px solid #cbcbcb;
+    border: 1px solid #d8d8d8;
     min-height: 100%;
 }
 
@@ -303,7 +311,11 @@ body {
 }
 
 .list-style1 ul li a {
+    display: block;
+    padding: 4px 0px;
     font-size: 12px;
+    color: #0000EE;
+    font-weight: 500;
 }
 
 .footer_menu {
@@ -365,7 +377,7 @@ body {
     display: block;
     padding: 4px 0px;
     font-size: 13px;
-    color: #0779d3;
+    color: #0000EE;
 }
 
 .list-style1 ul li a:hover {
@@ -429,14 +441,15 @@ body {
 }
 
 
-.category_heading h5 {
-    color: #212121;
-    font-size: 12px;
+.category_heading h5 a {
+    font-size: 13px;
     font-weight: 600;
-    background: #e1e1e1;
+    background: #e2e2e2;
     margin: 0;
     padding: 7px 0px;
-    border: 1px solid #EEE;
+    display: block;
+    border: 1px solid #BBB;
+    color: #0000EE !important;
 }
 
 .category_list li a:hover {
@@ -992,8 +1005,12 @@ body {
     font-weight: 400;
 }
 
+.ad_post_form h6 span {
+    font-weight: 600;
+}
+
 .ad_post_form .form-check-label {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
@@ -1004,30 +1021,40 @@ body {
 }
 
 .ad_post_form .form-check {
-    margin-bottom: 13px;
+    margin-bottom: 6px;
+    font-size: 15px;
 }
 
 .ad_post_form .btn-light {
-    padding: 6px 16px;
+    padding: 6px 23px;
     border-radius: 4px;
-    font-size: 15px;
+    font-size: 16px;
     font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    background: #d4d4d4;
-    border: none !important;
+    background: #f2f2f2;
+    color: #212121;
+    border: 1px solid #212121;
+    font-weight: 600;
 }
 
+.ad_post_form .btn-light a {
+    color: #212121;
+}
 
 .ad_post_form .form-control {
-    border: 1px solid #cac9c9;
-    background: #dddd;
+    border: 1px solid #d8d8d8;
+    box-shadow: rgb(99 99 99 / 3%) 0px 2px 8px 0px !important;
+    height: 35px;
+    border-radius: 2px;
 }
 
-.contact_details {
-    border: 1px solid #ddd;
-    padding: 15px 13px;
-    border-radius: 4px;
+.form_wrapper {
+    border: 1px solid #c8c8c8;
+    padding: 0px 12px 10px 12px;
+    border-radius: 1px;
+    background: #F7F7F7;
+    position: relative;
 }
+
 
 .contact_details h6 {
     font-size: 13px;
@@ -1052,6 +1079,127 @@ body {
     background: #d4d4d4;
     border: none !important;
 }
+
+.accordion-button {
+    color: #0000EE !important;
+    font-weight: 600;
+}
+
+.accordion-button::after {
+    display: none;
+}
+
+.accordion-item {
+    border: none !important;
+    border-radius: 0px !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.accordion-button {
+    outline: none !important;
+    box-shadow: none !important;
+    background: #e4e4e4 !important;
+    border-radius: 0px !important;
+    font-size: 12px;
+    padding: 8px 7px !important;
+    text-align: center;
+    display: block;
+    border-top: 1px solid #d7d7d7 !important;
+    border-bottom: 1px solid #d7d7d7 !important;
+}
+
+.accordion-body {
+    padding: 0;
+    background: #e4e4e4;
+}
+
+.content p {
+    font-size: 13px;
+    line-height: 28px;
+    text-align: justify;
+    color: #666;
+    margin: 0;
+    margin-bottom: 30px;
+}
+
+.page_content p {
+    font-size: 14px;
+    line-height: 28px;
+    text-align: justify;
+    color: #666;
+    margin: 0;
+    margin-bottom: 18px;
+}
+
+.form_wrapper .title h6 {
+    position: absolute;
+    top: -8px;
+    left: 9px;
+    background: #f7f7f7;
+    padding: 0px 10px 0px 10px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.inline_checkbox .form-check {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.notice p {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.ad_post_form .form-label {
+    font-size: 13px;
+    color: #333;
+}
+
+.text-success {
+    color: #008800 !important;
+    font-weight: 500;
+}
+
+
+.availability_check .form-check {
+    display: inline-block;
+    padding-bottom: 7px;
+}
+
+
+.form-check-input:checked[type=checkbox] {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+
+.form-control[readonly] {
+    background-color: #dedede !important;
+    opacity: .7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

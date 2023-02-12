@@ -70,9 +70,9 @@ class AdminController extends Controller
             ->get();
 
         $months = Transaction::select(
-            \DB::raw('MIN(created_at) AS created_at'),
-            \DB::raw('sum(amount) as `amount`'),
-            \DB::raw("DATE_FORMAT(created_at,'%M') as month")
+            DB::raw('MIN(created_at) AS created_at'),
+            DB::raw('sum(amount) as `amount`'),
+            DB::raw("DATE_FORMAT(created_at,'%M') as month")
         )
             ->where("created_at", ">", \Carbon\Carbon::now()->startOfYear())
             ->orderBy('created_at')

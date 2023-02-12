@@ -14,11 +14,11 @@
                 <ul class="mb-0">
                     <li class="">
                         Applicaion current version <strong>{{ env('APP_VERSION') }}</strong>
-                        <a target="_blank" href="">Check here to see latest version</a>
+                        <a target="_blank" href="https://templatecookie.com/docs/adlisting/others/changealog">Check here to see latest version</a>
                     </li>
                     <li class="">
                         Get the most recent product zip file by visiting this page
-                        <a target="_blank" href="">Check Here</a>
+                        <a target="_blank" href="https://codecanyon.net/downloads">Check Here</a>
                     </li>
                     <li class="">Extract downloaded zip file and find app.zip file</li>
                     <li class="">Put that app.zip file in the server's application root directory.</li>
