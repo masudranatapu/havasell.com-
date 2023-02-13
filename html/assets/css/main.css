@@ -394,7 +394,7 @@ body {
 .main_body {
     background: #ffffff;
     padding: 12px 12px 10px 12px;
-    max-height: 826px;
+    min-height: 810px;
     overflow: hidden;
     overflow-y: auto;
     position: relative;
@@ -1388,11 +1388,15 @@ body {
     box-shadow: none !important;
 }
 
-
-
 .btn-primary:hover {
     background-color: #d18524 !important;
+}
 
+.bottom_text p {
+    margin: 0;
+    font-size: 13px;
+    font-family: 'Rubik', sans-serif;
+    color: #777;
 }
 
 
