@@ -33,7 +33,7 @@
     <div class="template_wrap">
         <div class="container">
             <div class="row g-0">
-                <div class="home_header">
+                <div class="home_header sticky-top">
                     <nav class="navbar navbar-expand-lg p-0">
                         <div class="container-fluid">
                             <a class="navbar-brand" href="index.html">
@@ -85,29 +85,27 @@
                             <h3>Create an Account</h3>
                         </div>
                         <div class="row d-flex justify-content-center mt-5 mb-5">
-                            <div class="col-md-9 col-lg-6">
+                            <div class="col-md-9 col-lg-5">
                                 <form action="#" method="post" class="login_form">
                                     <div class="mb-3">
-                                        <label for="username" class="form-label">Username</label>
-                                        <input type="text" name="username" id="username" class="form-control" required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="email" class="form-label">Email</label>
+                                        <label for="email" class="form-label">Email <span
+                                                class="text-danger">*</span></label>
                                         <input type="email" name="email" id="email" class="form-control" required>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="password" class="form-label">Password</label>
+                                        <label for="password" class="form-label">Password <span
+                                                class="text-danger">*</span></label>
                                         <input type="password" name="password" id="password" class="form-control"
                                             required>
                                     </div>
-                                    <div class="mb-3">
-                                        <label for="confirm_password" class="form-label">Confirm Password</label>
-                                        <input type="password" name="confirm_password" id="confirm_password"
-                                            class="form-control" required>
-                                    </div>
                                     <div class="mb-3 text-center">
-                                        <button type="submit" class="btn btn-light">Create Account</button>
+                                        <button type="submit" class="btn btn-light">Login</button>
                                     </div>
+
+                                    <div class="bottom_text text-center mt-4">
+                                        <p>Don't have an Account? <a href="register.html">Register</a></p>
+                                    </div>
+
                                 </form>
                             </div>
                         </div>
