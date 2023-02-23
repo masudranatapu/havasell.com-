@@ -1,39 +1,73 @@
-@media (min-width: 1400px) {
+@media screen and (min-width:992px) {
+    .language_dropdown .dropdown-menu {
+        display: none;
+    }
 
-    .container,
-    .container-lg,
-    .container-md,
-    .container-sm,
-    .container-xl,
-    .container-xxl {
-        max-width: 1120px;
+    .language_dropdown:hover .dropdown-menu {
+        display: block !important;
+    }
+
+    .language_dropdown button {
+        background: transparent !important;
+        border: none !important;
+        color: #2e2828;
+        font-size: 14px;
+        font-family: 'Rubik', sans-serif;
+        font-weight: 400;
+    }
+
+    .language_dropdown.dropdown-toggle:hover .dropdown-menu {
+        display: block !important;
+    }
+
+    .language_dropdown .dropdown-menu {
+        border: none !important;
+        padding: 0;
+        border-radius: 0px;
+        width: 175px;
+        background: #2e2929;
+        top: 100%;
+        right: -15px;
+    }
+
+    .language_dropdown .dropdown-menu .dropdown-item {
+        font-size: 14px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+        padding: 8px 15px;
+        color: #fff !important;
+    }
+
+
+    .language_dropdown .dropdown-menu .dropdown-item:hover {
+        background: #dd8b23;
+        color: #fff;
+    }
+
+    .about_img img {
+        float: left;
+        margin-right: 26px;
+        margin-bottom: 20px;
     }
 }
 
-@media (max-width: 767px) {
-    .single_product .swiper-button-next {
-        right: 6px;
+@media screen and (max-width:991px) {
+    .footer_menu {
+        padding: 9px 0px !important;
     }
 
-    .single_product .swiper-button-prev::after,
-    .single_product .swiper-button-next::after {
-        font-size: 24px;
+    .home_header .nav-link {
+        padding: 9px 9px !important;
     }
 
-    .single_product .swiper-button-prev {
-        left: 6px;
+    .home_header {
+        padding: 0px 15px 15px 15px;
     }
-}
 
-@media screen and (max-width:500px) {
-    .user_dashboard ul li a {
-        padding: 8px 18px;
+    .navbar-nav .dropdown-menu {
+        position: absolute;
     }
-}
 
-@media screen and (max-width:400px) {
-    .user_dashboard ul li a {
-        padding: 6px 10px;
-        font-size: 13px;
-    }
+
+
 }

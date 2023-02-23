@@ -17,16 +17,22 @@
 </head>
 
 <body>
-    {{-- header --}}
-    @if ($nav != 'no')
-    <header class="header sticky-top">
-        @include('frontend.layouts.header')
-    </header>
-    @endif
-    {{-- main content --}}
-    @yield('content')
-    {{-- footer script --}}
-    @include('frontend.layouts.footer_script')
+
+    <div class="template_wrap {{ Request::routeIs('frontend.index') ? 'd-none d-lg-block' : '' }}">
+        <div class="container">
+            {{-- header --}}
+            @include('frontend.layouts.header')
+
+            {{-- main content --}}
+            @yield('content')
+
+            {{-- footer --}}
+            @include('frontend.layouts.footer')
+            @include('frontend.layouts.footer_script')
+        </div>
+    </div>
+
+    {{-- script --}}
     <script>
         function AddWishlist2(item, user) {
 

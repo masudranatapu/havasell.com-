@@ -15,36 +15,17 @@
 @section('title')
 {{ __('Privacy Policy') }}
 @endsection
-@section('breadcrumb')
-    <ul>
-        <li>{{ __('privacy_policy') }}</li>
-    </ul>
-@endsection
+
 
 @section('content')
-<div class="breadcrumb_sec mt-5">
-        <div class="container">
-            <div class="breadcrumb_nav text-center">
-                <h2>Privacy Policy</h2>
-            </div>
-        </div>
+<div class="main_body">
+    <div class="page_heading text-center mb-3">
+        <h3>Privacy Policy</h3>
     </div>
-    <div class="main_template">
-        <div class="container">
-            <div class="single_product mt-5 mb-5">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-lg-9">
-                        <div class="page_content">
-                            <div class="content">
-                                <p>{!! $cms->privacy_body !!}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-   @include('frontend.layouts.footer')
- </div>
+    <div class="page_content">
+        <p>{!! $cms->privacy_body !!}</p>
+    </div>
+</div>
 @endsection
 
 @push('script')

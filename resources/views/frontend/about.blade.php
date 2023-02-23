@@ -1,5 +1,4 @@
-@extends('frontend.layouts.app', ['nav' => 'yes'])
-
+@extends('frontend.layouts.app')
 @section('meta')
 <meta property="title" content="{{ $meta_title }}" />
 <meta property="description" content="{{ $meta_description }}" />
@@ -9,48 +8,24 @@
 <meta property="og:keywords" content="{{ $meta_keywords }}" />
 <meta property="og:image" content="{{ asset($meta_image) }}" />
 @endsection
-
-@push('style')
-@endpush
 @section('title')
 {{ __('about') }}
 @endsection
-@section('breadcrumb')
-    <ul>
-        <li>{{ __('about') }}</li>
-    </ul>
-@endsection
-
 @section('content')
-<div class="breadcrumb_sec mt-5">
-        <div class="container">
-            <div class="breadcrumb_nav text-center">
-                <h2>About Us</h2>
+<div class="row g-0">
+    <div class="col-12">
+        <div class="main_body">
+            <div class="page_heading text-center mb-3">
+                <h3>About Us</h3>
             </div>
-        </div>
-    </div>
-    <div class="main_template">
-        <div class="container">
-            <div class="single_product mt-5 mb-5">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-lg-9">
-                        <div class="about_content">
-                            <div class="mb-4 text-center">
-                                <img src="{{ asset($cms->about_background) }}" class="w-100 rounded border shadow-sm"
-                                    alt="">
-                            </div>
-                            <div class="content">
-                                <p>{!! $cms->about_body !!}</p>
-                            </div>
-                        </div>
-                    </div>
+            <div class="page_content">
+                <div class="about_img text-center mb-3">
+                    <img src="{{ asset($cms->about_background) }}" class="rounded border shadow-sm" alt="">
                 </div>
+                <p>{!! $cms->about_body !!}</p>
+
             </div>
         </div>
-           @include('frontend.layouts.footer')
-
     </div>
+</div>
 @endsection
-
-@push('script')
-@endpush

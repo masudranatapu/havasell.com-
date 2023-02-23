@@ -15,37 +15,17 @@
 @section('title')
 {{ __('Terms & Conditon') }}
 @endsection
-@section('breadcrumb')
-    <ul>
-        <li>{{ __('terms & conditions') }}</li>
-    </ul>
-@endsection
 
 @section('content')
-<div class="breadcrumb_sec mt-5">
-        <div class="container">
-            <div class="breadcrumb_nav text-center">
-                <h2>Terms & Condition</h2>
-            </div>
-        </div>
+
+<div class="main_body">
+    <div class="page_heading text-center mb-3">
+        <h3>Terms & Conditions</h3>
     </div>
-    <div class="main_template">
-        <div class="container">
-            <div class="single_product mt-5 mb-5">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-lg-9">
-                        <div class="page_content">
-                            <div class="content">
-                                <p>{!! $cms->terms_body !!}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="page_content">
+        <p>{!! $cms->terms_body !!}</p>
     </div>
-    <!-- footer -->
-          @include('frontend.layouts.footer')
+</div>
 
 @endsection
 
