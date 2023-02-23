@@ -85,7 +85,7 @@ class Admin extends Authenticatable
         if ($image) {
             return asset($image);
         } else {
-            return '/backend/image/default-user.png';
+            return '/uploads/default-user.png';
         }
     }
 

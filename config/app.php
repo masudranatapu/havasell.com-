@@ -236,4 +236,16 @@ return [
         'Image' => Intervention\Image\Facades\Image::class,
     ],
 
+
+    'ad_type_group' => [
+        1 => 'community',
+        2 => 'housing',
+        3 => 'jobs',
+        4 => 'services',
+        5 => 'for sale',
+        6 => 'disscussion forums',
+        7 => 'temp jobs',
+        8 => 'cvs'
+    ],
+
 ];

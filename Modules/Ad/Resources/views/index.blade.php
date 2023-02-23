@@ -13,13 +13,13 @@
                         <h3 class="card-title">
                             {{ __('ad_list') }}
                         </h3>
-                        @if (userCan('ad.create'))
+                        {{-- @if (userCan('ad.create'))
                             <a href="{{ route('module.ad.create') }}"
                                 class="btn bg-primary d-inline-flex align-items-center justify-content-center">
                                 <i class="fas fa-plus mr-2"></i>
                                 <span>{{ __('add_ad') }}</span>
                             </a>
-                        @endif
+                        @endif --}}
                     </div>
 
                     <div class="card-body table-responsive">

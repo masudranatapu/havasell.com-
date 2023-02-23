@@ -51,7 +51,7 @@ class ForgotPasswordController extends Controller
                 'thanks' => 'Thank you and stay with ' . ' ' . config('app.name'),
                 'actionText' => 'Change Password',
                 'actionURL' => route('user.password.reset', $remembertoken),
-                'site_url' => route('index'),
+                'site_url' => route('frontend.index'),
                 'site_name' => config('app.name'),
                 'copyright' => ' © ' . ' ' . Carbon::now()->format('Y') . config('app.name') . ' ' . 'All rights reserved.',
             ];

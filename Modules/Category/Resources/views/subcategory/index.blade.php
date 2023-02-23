@@ -39,6 +39,9 @@ $user = auth()->user();
                                                     colspan="1"
                                                     aria-label="Rendering engine: activate to sort column ascending"
                                                     aria-sort="descending" width="30%">{{ __('category_name') }}</th>
+
+                                                    <th  width="30%">{{ __('Add Type') }}</th>
+
                                                 <th class="sorting_desc" tabindex="0" aria-controls="example1" rowspan="1"
                                                     colspan="1"
                                                     aria-label="Rendering engine: activate to sort column ascending"
@@ -64,6 +67,7 @@ $user = auth()->user();
                                                         <a
                                                             href="{{ route('module.category.show', $subcategory->category->slug) }}">{{ $subcategory->category->name }}</a>
                                                     </td>
+                                                    <td>{{ $subcategory->addType->name ?? '' }}</td>
                                                     <td class="text-center">
                                                         <div>
                                                             <label class="switch ">

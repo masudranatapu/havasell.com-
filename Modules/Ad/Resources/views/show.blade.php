@@ -48,8 +48,8 @@
                                         </tr>
                                     @endif
                                     <tr class="mb-5">
-                                        <th width="20%">{{ __('brand') }}</th>
-                                        <td width="80%">{{ $ad->brand->name }}</td>
+                                        <th width="20%">{{ __('Adtype') }}</th>
+                                        <td width="80%">{{ $ad->ad_type->name }}</td>
                                     </tr>
                                     <tr class="mb-5">
                                         <th width="20%">{{ __('location') }}</th>
@@ -67,7 +67,7 @@
                                     <tr class="mb-5">
                                         <th width="20%">{{ __('ad_link') }}</th>
                                         <td width="80%"><a target="_blank"
-                                                href="{{ route('frontend.addetails', $ad->slug) }}">{{ __('go_to_link') }}</a>
+                                                href="{{ route('frontend.details', $ad->slug) }}">{{ __('go_to_link') }}</a>
                                         </td>
                                     </tr>
                                     <tr class="mb-5">

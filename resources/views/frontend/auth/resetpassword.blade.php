@@ -42,7 +42,9 @@
         }
     </style>
 @endpush
-
+@section('title')
+    {{ __('Password Reset') }}
+@endsection
 @section('breadcrumb')
     <ul>
         <li>Jerusalem > </li>

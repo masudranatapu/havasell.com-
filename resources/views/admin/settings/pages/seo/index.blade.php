@@ -59,7 +59,8 @@
                         <th width="50">#</th>
                         <th style="max-width: 300px;"> {{ __('page_name') }} </th>
                         <th style="max-width: 300px;"> {{ __('meta_title') }} </th>
-                        <th style="max-width: 500px;"> 
+                        <th style="max-width: 300px;"> {{ __('Meta Keyword') }} </th>
+                        <th style="max-width: 500px;">
                             {{ __('meta_description') }}
                             ({{ request('lang_query') ?? __('en') }})
                         </th>
@@ -70,6 +71,7 @@
                 <tbody>
                     @if ($seos->count() > 0)
                         @foreach ($seos as $seo)
+
                             <tr class="text-center">
                                 <td>{{ $loop->index + 1 }}</td>
                                 <td>
@@ -78,20 +80,23 @@
                                     </div>
                                 </td>
                                 <td style="max-width: 300px; white-space: normal">
-                                    @foreach ($seo->contents as $content)
-                                        {{ $content->title }}
-                                    @endforeach
+                                    {{ $seo->contents->title ?? '' }}
+                                </td>
+                                <td style="max-width: 300px; white-space: normal">
+
+                                        {{ $seo->contents->keywords ?? '' }}
+
                                 </td>
                                 <td style="max-width: 500px; white-space: normal">
-                                    @foreach ($seo->contents as $content)
-                                        {{ $content->description }}
-                                    @endforeach
+
+                                    {{ $seo->contents->description  ?? '' }}
+
                                 </td>
                                 <td>
-                                    @foreach ($seo->contents as $content)
-                                        <img style="height: auto; width: 200px; object-fit: contain"
-                                            src="{{ asset($content->image) }}" alt="">
-                                    @endforeach
+
+                                <img style="height: auto; width: 200px; object-fit: contain"
+                                            src="{{ asset($seo->contents->image ?? '') }}" alt="">
+
                                 </td>
                                 <td>
                                     <a href="{{ route('settings.seo.edit', [$seo->id, 'lang_query' => request('lang_query') ?? 'en']) }}"

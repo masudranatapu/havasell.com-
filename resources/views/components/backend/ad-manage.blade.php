@@ -4,6 +4,7 @@
             <th width="5%">{{ __('thumbnail') }}</th>
             <th width="30%">{{ __('name') }}</th>
             <th>{{ __('price') }}</th>
+            <th>{{ __('Ad Type') }}</th>
             @if ($showCategory)
                 <th>{{ __('category') }}</th>
             @endif
@@ -34,6 +35,9 @@
                 <td class="text-center">
                     {{ changeCurrency($ad->price) }}
                 </td>
+                <td class="text-center">
+                    {{ $ad->ad_type->name }}
+                </td>
                 @if ($showCategory)
                     <td class="text-center">
                         <a href="{{ route('module.category.show', $ad->category->slug) }}">{{ $ad->category->name }}</a>
@@ -41,8 +45,8 @@
                 @endif
                 @if ($showCity)
                     <td class="text-center">
-                        <a href="{{ route('module.ad.index', ['country' => $ad->country]) }}">
-                            {{ $ad->country }}
+                        <a href="javascript:void(0)">
+                            {{ $ad->countries->name ?? '-' }}
                         </a>
                     </td>
                 @endif
@@ -94,10 +98,10 @@
                     </button>
                     <ul class="dropdown-menu" x-placement="bottom-start"
                         style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
-                        <li><a class="dropdown-item" href="{{ route('module.ad.show', $ad->slug) }}">
+                        <li><a class="dropdown-item" href="{{ route('frontend.details', $ad->slug) }}" target="_blank">
                                 <i class="fas fa-eye text-info"></i> {{ __('view_details') }}
                             </a></li>
-                        <li><a class="dropdown-item" href="{{ route('frontend.addetails', $ad->slug) }}">
+                        {{-- <li><a class="dropdown-item" href="{{ route('frontend.details', $ad->slug) }}">
                                 <i class="fas fa-link text-secondary"></i> {{ __('website_link') }}
                             </a>
                         </li>
@@ -118,7 +122,7 @@
                                 href="{{ route('module.ad.custom.field.value.sorting', $ad->id) }}">
                                 <i class="fas fa-arrows-alt text-warning"></i> {{ __('sorting_custom_fields') }}
                             </a>
-                        </li>
+                        </li> --}}
                         <li>
                             <form action="{{ route('module.ad.destroy', $ad->id) }}" method="POST" class="d-inline">
                                 @method('DELETE')

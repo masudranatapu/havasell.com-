@@ -3,6 +3,8 @@
 namespace Modules\Ad\Entities;
 
 use App\Models\User;
+use App\Models\AdType;
+use App\Models\Country;
 use Modules\Brand\Entities\Brand;
 use Modules\Ad\Entities\AdFeature;
 use Illuminate\Database\Eloquent\Model;
@@ -12,9 +14,9 @@ use Modules\Category\Entities\SubCategory;
 use Modules\Ad\Database\factories\AdFactory;
 use Modules\CustomField\Entities\CustomField;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Modules\CustomField\Entities\ProductCustomField;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Modules\CustomField\Entities\ProductCustomField;
 
 class Ad extends Model
 {
@@ -22,7 +24,7 @@ class Ad extends Model
 
     protected $guarded = [];
     protected $appends = ['image_url'];
-    protected $casts = ['wishlisted' => 'boolean', 'show_phone' => 'boolean'];
+    protected $casts = ['wishlisted' => 'boolean', 'show_phone' => 'boolean', 'services' => 'array', 'availability' => 'array'];
 
     protected static function newFactory()
     {
@@ -58,6 +60,10 @@ class Ad extends Model
     public function scopeActive($query)
     {
         return $query->where('status', 'active');
+    }
+    public function scopePending($query)
+    {
+        return $query->where('status', 'pending');
     }
 
     /**
@@ -102,6 +108,14 @@ class Ad extends Model
     {
         return $this->belongsTo(Category::class);
     }
+    /**
+     *  BelongTo
+     * @return BelongsTo|Collection|Country[]
+     */
+    function countries(): BelongsTo
+    {
+        return $this->belongsTo(Country::class, 'country', 'iso');
+    }
 
     /**
      *  BelongTo
@@ -110,6 +124,16 @@ class Ad extends Model
     function subcategory(): BelongsTo
     {
         return $this->belongsTo(SubCategory::class);
+    }
+
+    /**
+     * ad_type
+     *
+     * @return void
+     */
+    public function ad_type(): BelongsTo
+    {
+        return $this->belongsTo(AdType::class, 'ad_type_id');
     }
 
     /**
@@ -129,6 +153,8 @@ class Ad extends Model
     {
         return $this->hasMany(AdGallery::class);
     }
+
+
 
 
     /**

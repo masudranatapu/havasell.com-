@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\AdType;
 use App\Models\Cms;
+use App\Models\Country;
 use App\Models\Setting;
 use App\Models\ModuleSetting;
 use Illuminate\Pagination\Paginator;
@@ -59,6 +61,8 @@ class AppServiceProvider extends ServiceProvider
            view()->share('categories', Category::active()->with('subcategories', function ($q) {
              $q->where('status', 1);
            })->get());
+           view()->share('countries', Country::all());
+           view()->share('ad_types', AdType::all());
            view()->share('settings', Setting::first());
            view()->share('cms', Cms::first());
            view()->share('languages', Language::all(['id', 'name', 'code', 'icon']));

@@ -38,6 +38,25 @@
                                         @enderror
                                     </div>
                                 </div>
+
+                                <div class="form-group row mb-15">
+                                    <x-forms.label name="Adtype Name" required="true" class="col-sm-3" />
+                                    <div class="col-sm-9">
+                                        <select name="ad_type_id"
+                                            class="select2bs4 @error('ad_type_id') is-invalid @enderror"
+                                            style="width: 100%;">
+                                            <option value="">{{ __('Select Adtype') }}</option>
+                                             @foreach($ad_types as $value)
+                                                <option value="{{ $value->id }}" {{ $subcategory->ad_type_id == $value->id? "selected" : "" }}>{{ $value->name }}</option>
+                                            @endforeach
+                                        </select>
+                                        @error('ad_type_id')
+                                            <span class="invalid-feedback"
+                                                role="alert"><strong>{{ $message }}</strong></span>
+                                        @enderror
+                                    </div>
+                                </div>
+
                                 <div class="form-group row">
                                     <x-forms.label name="subcategory_name" required="true" class="col-sm-3" />
                                     <div class="col-sm-9">

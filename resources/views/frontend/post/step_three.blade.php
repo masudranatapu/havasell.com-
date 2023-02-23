@@ -1,14 +1,16 @@
 @extends('frontend.layouts.app', ['nav' => 'yes'])
+@section('meta')
 
+@endsection
 @push('style')
-
 @endpush
-
+@section('title')
+{{ __('Sub Category') }}
+@endsection
 @section('breadcrumb')
     <ul>
-        <li>Jerusalem ></li>
-        <li>case ></li>
-        <li>offices and activities trade</li>
+        <li>{{ __($ad_type->slug) }} ></li>
+        <li>{{ __($category->slug) }}</li>
     </ul>
 @endsection
 
@@ -16,79 +18,24 @@
     <div class="main_template mt-5">
         <div class="container">
             <div class="ad_post_form">
-                <form action="#" method="post">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="ad_title" class="form-label">Ad title</label>
-                                <input type="text" name="ad_title" id="ad_title" class="form-control"
-                                    placeholder="enter your ad title" required>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="price" class="form-label">Price</label>
-                                <input type="number" name="price" id="price" class="form-control"
-                                    placeholder="ad price" required>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="city" class="form-label">City</label>
-                                <input type="text" name="city" id="city" class="form-control"
-                                    placeholder="your city" required>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="postal" class="form-label">Postal code</label>
-                                <input type="text" name="postal" id="postal" class="form-control"
-                                    placeholder="postal code" required>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="mb-3">
-                                <label for="description" class="form-label">Description</label>
-                                <textarea name="description" id="description" cols="30" rows="5" class="form-control"
-                                    placeholder="description" style="height: 150px;"></textarea>
-                            </div>
-                        </div>
-
-                        <div class="col-12 mb-3">
-                            <div class="contact_details">
-                                <div class="mb-3">
-                                    <h6>Contact Details:</h6>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label for="email" class="form-label">Email</label>
-                                            <input type="text" name="email" id="email" class="form-control"
-                                                placeholder="your email address" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label for="phone" class="form-label">Phone</label>
-                                            <input type="number" name="phone" id="phone" class="form-control"
-                                                placeholder="phone" required>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="term_condition" required>
-                                <label class="form-check-label" for="term_condition" style="font-size: 14px;">
-                                    you agree to others contacting you for services, products or business
-                                    interests
-                                </label>
-                            </div>
-                        </div>
+                <div class="mb-4">
+                    <h6><span>choose a Sub Category:</span> (see <a href="#">ban</a> list before posting.)
+                    </h6>
+                </div>
+                <form action="{{ route('frontend.post.create') }}" method="get" id="create-post-frm">
+                    <input type="hidden" value="{{ $ad_type->slug }}" name="ad_type" />
+                    <input type="hidden" value="{{ $category->slug }}" name="category" />
+                    @foreach($subCategory as $key => $value)
+                    <div class="form-check">
+            <input class="form-check-input" type="radio" value="{{ $value->slug}}" name="sub_category" id="category_{{ $value->id }}"
+                            required>
+                        <label class="form-check-label" for="category_{{ $value->id }}">
+                            {{ __($value->slug) }}
+                        </label>
                     </div>
-                    <div class="my-5 text-center">
-                        <button type="submit" class="btn btn-light">Continue</button>
+                    @endforeach
+                    <div class="mt-5">
+                           <button type="button" class="btn btn-light">Continue</button>
                     </div>
                 </form>
             </div>
@@ -97,4 +44,19 @@
 @endsection
 
 @push('script')
+<script>
+    $("input[name='sub_category']").click(function(){
+
+    var ad_type = $('input[name="ad_type"]').val();
+    var category = $('input[name="category"]').val();
+    var sub_category = $('input[name="sub_category"]:checked').val();
+    var action = $('#create-post-frm').attr('action');
+    var url = action + '/'+ad_type+'/'+category+'/'+sub_category;
+    window.location.href = url;
+
+
+    })
+
+</script>
+
 @endpush

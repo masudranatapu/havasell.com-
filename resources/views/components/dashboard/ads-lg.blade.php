@@ -1,6 +1,6 @@
 <div class="body-item body-item--lg">
     <div class="card-edit">
-        <a href="{{ route('frontend.addetails', $ad->slug) }}" class="card-edit__item product-name">
+        <a href="{{ route('frontend.details', $ad->slug) }}" class="card-edit__item product-name">
             <div class="img">
                 @if ($ad->thumbnail)
                     <img src="{{ asset($ad->thumbnail) }}" alt="product" />

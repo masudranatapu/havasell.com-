@@ -20,6 +20,7 @@
                                 method="POST" enctype="multipart/form-data">
                                 @method('PUT')
                                 @csrf
+                        
                                 <div class="form-group row">
                                     <x-forms.label name="category_name" required="true" class="col-sm-3" />
                                     <div class="col-sm-9">
@@ -80,9 +81,35 @@
     <link rel="stylesheet"
         href="{{ asset('backend') }}/plugins/bootstrap-iconpicker/dist/css/bootstrap-iconpicker.min.css" />
     <link rel="stylesheet" href="{{ asset('backend') }}/css/dropify.min.css">
+    <link rel="stylesheet" href="{{ asset('backend') }}/plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="{{ asset('backend') }}/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+    <style>
+        .select2-results__option[aria-selected=true] {
+            display: none;
+        }
+
+        .select2-container--bootstrap4 .select2-selection--multiple .select2-selection__choice {
+            color: #fff;
+            border: 1px solid #fff;
+            background: #007bff;
+            border-radius: 30px;
+        }
+
+        .select2-container--bootstrap4 .select2-selection--multiple .select2-selection__choice__remove {
+            color: #fff;
+        }
+
+    </style>
 @endsection
 
 @section('script')
+<script src="{{ asset('backend') }}/plugins/select2/js/select2.full.min.js"></script>
+    <script>
+        //Initialize Select2 Elements
+        $('.select2bs4').select2({
+            theme: 'bootstrap4'
+        })
+    </script>
     <script type="text/javascript"
         src="{{ asset('backend') }}/plugins/bootstrap-iconpicker/dist/js/bootstrap-iconpicker.bundle.min.js"></script>
     <script type="text/javascript"

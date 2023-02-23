@@ -7,15 +7,16 @@ use Stripe\Product;
 use Modules\Ad\Entities\Ad;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\DB;
 use Modules\Category\Entities\Category;
 use Illuminate\Contracts\Support\Response;
 use Modules\Category\Entities\SubCategory;
 use Modules\Category\Actions\UpdateCategory;
 use Modules\Category\Actions\SortingCategory;
+use Modules\CustomField\Entities\CustomField;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Modules\Category\Http\Requests\CategoryFormRequest;
 use Modules\Category\Repositories\CategoryRepositories;
-use Modules\CustomField\Entities\CustomField;
 
 class CategoryController extends Controller
 {
@@ -49,6 +50,7 @@ class CategoryController extends Controller
         if (!userCan('category.create')) {
             return abort(403);
         }
+
         return view('category::category.create');
     }
 
@@ -85,6 +87,7 @@ class CategoryController extends Controller
         if (!userCan('category.update')) {
             return abort(403);
         }
+
         return view('category::category.edit', compact('category'));
     }
 

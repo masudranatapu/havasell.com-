@@ -1,10 +1,16 @@
-<div class="p-3">
-    <ul>
-        <li class="list-item text-white">
-            © 2023 craigslist |
-        </li>
-        <li><a href="{{ route('about') }}">About</a></li>
-        <li><a href="{{ route('terms.condition') }}">Terms</a></li>
-        <li><a href="{{ route('privacy.policy') }}">Privacy</a></li>
-    </ul>
-</div>
+<footer class="text-center footer_menu">
+    <div class="container">
+        <div class="p-3">
+            <ul>
+                <li class="list-item text-white"> © {{ date('Y') }} ffuts |</li>
+                <li><a href="{{ route('frontend.faq') }}">{{ __('faq') }} |</a></li>
+                <li><a href="{{ route('frontend.search') }}">{{ __('Ads') }} |</a></li>
+                <li><a href="{{ route('frontend.privacy.policy') }}">{{ __('privacy') }} |</a></li>
+                <li><a href="{{ route('frontend.terms.condition') }}">{{ __('terms & conditions') }} |</a>
+                </li>
+                <li><a href="{{ route('frontend.about') }}">{{ __('about') }} |</a></li>
+                <li><a href="{{ route('frontend.contact') }}">{{ __('contact') }} </a></li>
+            </ul>
+        </div>
+    </div>
+</footer>

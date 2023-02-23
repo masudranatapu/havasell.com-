@@ -2,6 +2,7 @@
 
 namespace Modules\Category\Http\Controllers;
 
+use App\Models\AdType;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\Category\Entities\Category;
@@ -46,8 +47,8 @@ class SubCategoryController extends Controller
             flashWarning("You don't have any active category. Please create or active category first.");
             return redirect()->route('module.category.create');
         }
-
-        return view('category::subcategory.create', compact('categories'));
+        $ad_types = AdType::orderBy('id','desc')->get();
+        return view('category::subcategory.create', compact('categories','ad_types'));
     }
 
     /**
@@ -82,7 +83,8 @@ class SubCategoryController extends Controller
             abort(403);
         }
         $categories = Category::all();
-        return view('category::subcategory.edit', compact('subcategory', 'categories'));
+        $ad_types = AdType::orderBy('id','desc')->get();
+        return view('category::subcategory.edit', compact('subcategory', 'categories','ad_types'));
     }
 
     /**

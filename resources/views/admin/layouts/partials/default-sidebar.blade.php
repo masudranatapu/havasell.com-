@@ -17,8 +17,8 @@
                             {{ __('dashboard') }}
                         </x-admin.sidebar-list>
                     @endif
-                    <li class="nav-header">{{ __('order') }}</li>
-                    @if (userCan('order.view'))
+                    <li class="nav-header">{{ __('customer') }}</li>
+                    {{-- @if (userCan('order.view'))
                         <li class="nav-item">
                             <a href="{{ route('order.index') }}"
                                 class="nav-link {{ Route::is('order.*') ? ' active' : '' }}">
@@ -26,7 +26,7 @@
                                 <p>{{ __('order') }}</p>
                             </a>
                         </li>
-                    @endif
+                    @endif --}}
                     @if (Module::collections()->has('Customer') && userCan('customer.view'))
                         <li class="nav-item">
                             <a href="{{ route('module.customer.index') }}"
@@ -51,17 +51,25 @@
                             {{ __('all_listings') }}
                         </x-sidebar-list>
                     @endif
+                        <x-sidebar-list :linkActive="Route::is('adtypes.*') ? true : false" route="adtypes.index" icon="fa fa-bars">
+                            {{ __('Ad Types') }}
+                        </x-sidebar-list>
+
+                        <x-sidebar-list :linkActive="Route::is('city.*') ? true : false" route="city.index" icon="fa fa-plus-square">
+                            {{ __('City') }}
+                        </x-sidebar-list>
+
                     @if (Module::collections()->has('Category') && (userCan('category.view') || userCan('subcategory.view')))
                         <x-admin.sidebar-list :linkActive="Route::is('module.category.*') || Route::is('module.subcategory.*') ? true : false" route="module.category.index" icon="fas fa-th">
                             {{ __('category') }}
                         </x-admin.sidebar-list>
                     @endif
-                    @if (Module::collections()->has('CustomField') && userCan('custom-field.view'))
+                    {{-- @if (Module::collections()->has('CustomField') && userCan('custom-field.view'))
                         <x-admin.sidebar-list :linkActive="Route::is('module.custom.field.*') ? true : false" route="module.custom.field.index" icon="fas fa-edit">
                             {{ __('custom_field') }}
                         </x-admin.sidebar-list>
-                    @endif
-                    @if (Module::collections()->has('Location'))
+                    @endif --}}
+                    {{-- @if (Module::collections()->has('Location'))
                         @if (userCan('city.view') || userCan('town.view'))
                             <x-sidebar-dropdown :linkActive="Route::is('module.city.*') || Route::is('module.town.*') ? true : false" :subLinkActive="Route::is('module.city.*') || Route::is('module.town.*') ? true : false" icon="fas fa-location-arrow">
                                 @slot('title')
@@ -87,12 +95,12 @@
 
                             </x-sidebar-dropdown>
                         @endif
-                    @endif
-                    @if (Module::collections()->has('Brand') && userCan('brand.view'))
+                    @endif --}}
+                    {{-- @if (Module::collections()->has('Brand') && userCan('brand.view'))
                         <x-admin.sidebar-list :linkActive="Route::is('module.brand.*') ? true : false" route="module.brand.index" icon="fas fa-award">
                             {{ __('brand') }}
                         </x-admin.sidebar-list>
-                    @endif
+                    @endif --}}
 
                     {{-- @if (Module::collections()->has('Map') && userCan('map.view'))
                         <x-admin.sidebar-list :linkActive="Route::is('module.map.*') ? true : false" route="module.map.index" icon="fas fa-map-marker-alt">
@@ -136,23 +144,24 @@
                     @endif
 
                     <!-- Blog and Tag -->
-                    @if (Module::collections()->has('Blog') && userCan('post.view') && $blog_enable)
+                    {{-- @if (Module::collections()->has('Blog') && userCan('post.view') && $blog_enable)
                         <x-admin.sidebar-list :linkActive="Route::is('module.post.*') || Route::is('module.postcategory.*')  ? true : false" route="module.post.index" icon="fas fa-blog">
                             {{ __('blog') }}
                         </x-admin.sidebar-list>
-                    @endif
+                    @endif --}}
                     <!-- Blog and Tag End -->
 
-                    @if (Module::collections()->has('Testimonial') && userCan('testimonial.view') && $testimonial_enable)
+                    {{-- @if (Module::collections()->has('Testimonial') && userCan('testimonial.view') && $testimonial_enable)
                         <x-admin.sidebar-list :linkActive="Route::is('module.testimonial.*') ? true : false" route="module.testimonial.index" icon="fas fa-comment">
                             {{ __('testimonial') }}
                         </x-admin.sidebar-list>
-                    @endif
-                    @if (userCan('faq.view') && $faq_enable)
-                        <x-admin.sidebar-list :linkActive="Route::is('module.faq.*') ? true : false" route="module.faq.index" icon="fas fa-question">
+                    @endif --}}
+                        <x-admin.sidebar-list :linkActive="Route::is('faq.*') ? true : false" route="faq.index" icon="fas fa-question">
                             {{ __('faq') }}
                         </x-admin.sidebar-list>
-                    @endif
+                        <x-admin.sidebar-list :linkActive="Route::is('contact.*') ? true : false" route="contact.index" icon="fa fa-phone-square">
+                            {{ __('User Contact') }}
+                        </x-admin.sidebar-list>
                     @if ($settings->ads_admin_approval)
                         <form action="{{ route('module.ad.index') }}" method="GET" id="pending_ads_form">
                             <input name="filter_by" type="text" value="pending" hidden>

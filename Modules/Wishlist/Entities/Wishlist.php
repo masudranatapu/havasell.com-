@@ -29,6 +29,6 @@ class Wishlist extends Model
 
     public function ad()
     {
-        return $this->belongsTo(Ad::class, 'ad_id')->with('category');
+        return $this->belongsTo(Ad::class, 'ad_id');
     }
 }

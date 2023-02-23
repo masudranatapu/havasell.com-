@@ -24,3 +24,16 @@
         left: 6px;
     }
 }
+
+@media screen and (max-width:500px) {
+    .user_dashboard ul li a {
+        padding: 8px 18px;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .user_dashboard ul li a {
+        padding: 6px 10px;
+        font-size: 13px;
+    }
+}

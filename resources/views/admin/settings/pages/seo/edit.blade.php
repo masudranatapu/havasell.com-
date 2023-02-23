@@ -71,6 +71,16 @@
                                         @enderror
                                     </div>
                                 </div>
+                                 <div class="form-group row">
+                                    <x-forms.label name="Keywords" class="col-sm-2" />
+                                    <div class="col-sm-10">
+                                        <textarea class="form-control @error('keywords') is-invalid @enderror" cols="4" rows="2"
+                                            name="keywords" id="keywords" placeholder="{{ __('Keywords') }}">{{ $content->keywords }}</textarea>
+                                        @error('keywords')
+                                            <span class="invalid-feedback" role="alert">{{ __($message) }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
                                 <div class="form-group row">
                                     <x-forms.label name="description" class="col-sm-2" for="inputExperience">
                                         <small class="d-block">

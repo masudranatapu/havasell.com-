@@ -50,7 +50,7 @@ class AdWishlistNotification extends Notification implements ShouldQueue
         return (new MailMessage)
             ->subject('Add to Wishlist')
             ->line("@{$this->user->username} user add your ad to their wishlist.")
-            ->action('View Add', route('frontend.addetails', $this->ad_slug))
+            ->action('View Add', route('frontend.details', $this->ad_slug))
             ->line('Thank you for using our application!');
     }
 

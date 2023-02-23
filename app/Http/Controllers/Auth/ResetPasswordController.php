@@ -67,7 +67,7 @@ class ResetPasswordController extends Controller
                     'password' => 'Your password is : '.$request->password,
                     'thanks' => 'Thank you and stay with'.' '.config('app.name'),
                     'actionText' => 'Visit Website',
-                    'site_url' => route('index'),
+                    'site_url' => route('frontend.index'),
                     'site_name' => config('app.name'),
                     'copyright' => '©'.' '.Carbon::now()->format('Y').' '.config('app.name').' '.'All rights reserved.',
                 ];

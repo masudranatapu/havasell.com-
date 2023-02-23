@@ -1,13 +1,16 @@
 <?php
 
 
-use App\Models\Setting;
+
 use App\Models\User;
+use App\Models\Country;
+use App\Models\Setting;
 use App\Models\UserPlan;
 use App\Models\ModuleSetting;
 use App\Models\PaymentSetting;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\ViewErrorBag;
 use Illuminate\Support\Facades\Artisan;
@@ -47,10 +50,22 @@ function setting($fields = null, $append = false)
  * @param integer $adId
  * @return boolean
  */
+function userWishlist()
+{
+    if (auth()->guard('user')->check()) {
+        $data = Wishlist::where('user_id', Auth::user()->id)->count();
+        return $data;
+    }
+
+    return false;
+}
 function isWishlisted($adId)
 {
-    if (auth()->guard('user')->check() && session()->has('wishlists') && in_array($adId, session('wishlists'))) {
-        return true;
+    if (auth()->guard('user')->check()) {
+        $data = Wishlist::where('user_id', Auth::user()->id)->pluck('ad_id')->toArray();
+        if (count($data) > 0 && in_array($adId, $data)) {
+            return true;
+        }
     }
 
     return false;
@@ -207,6 +222,35 @@ function langDirection()
 
     return $lang_direction;
 }
+
+function getCountryCode()
+{
+
+    if (session()->get('local_country')) {
+        return session()->get('local_country');
+    } else {
+
+        $local_country = 'bd';
+        $country = Country::where('is_default', 1)->first();
+
+        if ($country) {
+            $local_country = strtolower($country->iso);
+        }
+        session()->put('local_country', $local_country);
+
+        return session()->get('local_country');
+    }
+}
+
+
+function getCountryId()
+{
+
+    $code = session()->get('local_country');
+    $country = DB::table('country')->where('iso',$code)->first();
+    return $country->id;
+}
+
 
 function error($name)
 {

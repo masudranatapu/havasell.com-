@@ -369,7 +369,7 @@ body {
 }
 
 .main_body {
-    background: #f6f6f6;
+    background: #fff;
     padding: 11px 18px;
 }
 
@@ -516,7 +516,7 @@ body {
 
 .header_logo {
     background: #fff;
-    width: 30px;
+    width: 40px;
     height: 30px;
     display: inline-block;
     border-radius: 50px;
@@ -646,7 +646,7 @@ body {
     outline: none !important;
     box-shadow: none !important;
     border-radius: 3px;
-    min-width: 200px;
+    width: 200px;
 }
 
 
@@ -824,6 +824,7 @@ body {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
 }
+
 
 
 
@@ -1179,27 +1180,25 @@ body {
     opacity: .7;
 }
 
+.user_dashboard ul li a {
+    padding: 8px 28px;
+    display: inline-block;
+    font-size: 14px;
+    color: #212121;
+}
 
+.user_dashboard ul li button {
+    padding: 0px;
+}
 
+.user_dashboard .nav-tabs {
+    border-color: #e2e2e2;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.user_dashboard .nav-tabs .nav-item.show .nav-link,
+.user_dashboard .nav-tabs .nav-link.active a {
+    background: #ebebeb;
+}
 
 
 

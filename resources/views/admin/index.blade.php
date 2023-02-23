@@ -193,7 +193,7 @@
                             @forelse ($latestAds as $ad)
                                 <tr>
                                     <td>
-                                        <a href="{{ route('frontend.addetails', $ad->slug) }}" class="ms-1"
+                                        <a href="#" class="ms-1"
                                             aria-label="Open website">{{ $ad->title }}</a>
                                     </td>
                                     <td class="text-muted">${{ number_format($ad->price, 2, '.', ',') }}</td>

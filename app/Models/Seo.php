@@ -20,10 +20,10 @@ class Seo extends Model
 
     /**
      * One to Many relationship with page content model to get page contents
-     * 
+     *
      */
     public function contents()
     {
-        return $this->hasMany(SeoPageContent::class, 'page_id', 'id');
+        return $this->hasOne(SeoPageContent::class, 'page_id', 'id');
     }
 }

@@ -308,10 +308,12 @@ class SettingsController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
+            'keywords' => 'required',
         ]);
 
         $content->update([
             'title' => $request->title,
+            'keywords' => $request->keywords,
             'description' => $request->description,
         ]);
 

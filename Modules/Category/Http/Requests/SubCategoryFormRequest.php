@@ -17,6 +17,7 @@ class SubCategoryFormRequest extends FormRequest
             return [
                 'category_id' => "required",
                 'name' => "required|unique:sub_categories,name",
+                'ad_type_id' => "required",
             ];
         } else {
             return [

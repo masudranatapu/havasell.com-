@@ -2,11 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ThemeController;
+use App\Http\Controllers\AdTypesController;
+use App\Http\Controllers\Admin\FaqController;
+use App\Http\Controllers\Admin\CityController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\RolesController;
 use App\Http\Controllers\Admin\ReportController;
+use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\PaymentController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\SettingsController;
@@ -195,5 +199,42 @@ Route::prefix('admin')->group(function () {
             Route::put('/errorpages', 'updateErrorPages')->name('admin.errorpages.update');
             Route::put('/footer-text', 'footerText')->name('admin.footer.text.update');
         });
+
+        //====================Website CMS Setting==============================
+        Route::prefix('ad-types')->group(function(){
+            Route::get('/',[AdTypesController::class,'index'])->name('adtypes.index');
+            Route::get('/create',[AdTypesController::class,'create'])->name('adtypes.create');
+            Route::post('/store',[AdTypesController::class,'store'])->name('adtypes.store');
+            Route::get('/edit/{slug}',[AdTypesController::class,'edit'])->name('adtypes.edit');
+            Route::post('/update/{slug}',[AdTypesController::class,'update'])->name('adtypes.update');
+            Route::delete('/delete/{id}',[AdTypesController::class,'delete'])->name('adtypes.delete');
+        });
+
+        Route::prefix('city')->group(function(){
+            Route::get('/',[CityController::class,'index'])->name('city.index');
+            Route::get('/create',[CityController::class,'create'])->name('city.create');
+            Route::post('/store',[CityController::class,'store'])->name('city.store');
+            Route::get('/edit/{id}',[CityController::class,'edit'])->name('city.edit');
+            Route::post('/update/{id}',[CityController::class,'update'])->name('city.update');
+            Route::delete('/delete/{id}',[CityController::class,'delete'])->name('city.delete');
+        });
+
+        //FAQ 
+        Route::prefix('faq')->group(function(){
+            Route::get('/', [FaqController::class, 'index'])->name('faq.index');
+            Route::get('/create', [FaqController::class, 'create'])->name('faq.create');
+            Route::post('/store', [FaqController::class, 'store'])->name('faq.store');
+            Route::get('/edit/{id}', [FaqController::class, 'edit'])->name('faq.edit');
+            Route::post('/update/{id}', [FaqController::class, 'update'])->name('faq.update');
+            Route::delete('/delete/{id}', [FaqController::class, 'delete'])->name('faq.delete');
+        });
+
+        //Contact
+        Route::prefix('user-contact')->group(function(){
+            Route::get('/',[ContactController::class,'index'])->name('contact.index');
+            Route::get('/view/{id}',[ContactController::class,'view'])->name('contact.view');
+            Route::delete('/delete/{id}',[ContactController::class,'delete'])->name('contact.delete');
+        });
+
     });
 });

@@ -26,7 +26,7 @@ class RedirectIfAuthenticated
                 }
                 break;
             default:
-                if (Auth::guard($guard)->check()) {
+                if (Auth::check()) {
                     return redirect('/');
                 }
                 break;

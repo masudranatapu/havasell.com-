@@ -44,7 +44,7 @@ class AdDetailsResource extends JsonResource
             'ad_features' => AdFeaturesResource::collection($this->whenLoaded('adFeatures')),
             'galleries' => AdGalleriesResource::collection($this->whenLoaded('galleries')),
 
-            'share_url' => route('frontend.addetails', $this->slug),
+            'share_url' => route('frontend.details', $this->slug),
             'badges' => [
                 'featured' => $this->featured ? true : false,
             ]

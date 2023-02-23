@@ -2,6 +2,7 @@
 
 namespace Modules\Category\Entities;
 
+use App\Models\AdType;
 use Illuminate\Support\Str;
 use Modules\Ad\Entities\Ad;
 use Illuminate\Database\Eloquent\Model;
@@ -16,6 +17,7 @@ class SubCategory extends Model
         'category_id',
         'name',
         'slug',
+        'ad_type_id',
     ];
 
     /**
@@ -31,6 +33,12 @@ class SubCategory extends Model
     {
         return $this->belongsTo(Category::class, 'category_id');
     }
+
+    public function addType()
+    {
+        return $this->belongsTo(AdType::class, 'ad_type_id');
+    }
+
 
     protected static function newFactory()
     {
@@ -54,4 +62,5 @@ class SubCategory extends Model
     {
         return $this->hasMany(Ad::class, 'subcategory_id');
     }
+
 }

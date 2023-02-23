@@ -45,7 +45,6 @@ $user = auth()->user();
                         <table class="table table-hover text-nowrap table-bordered">
                             <thead>
                                 <tr class="text-center">
-                                    <th width="10%">{{ __('image') }}</th>
                                     <th>{{ __('name') }} ({{ __('ads_count') }})</th>
                                     <th>{{ __('icon') }}</th>
                                     <th>{{ __('custom_field') }}</th>
@@ -58,10 +57,7 @@ $user = auth()->user();
                             <tbody id="sortable">
                                 @forelse ($categories as $category)
                                     <tr data-id="{{ $category->id }}">
-                                        <td class="text-center">
-                                            <img width="50px" height="50px" src="{{ $category->image_url }}"
-                                                alt="category image">
-                                        </td>
+
                                         <td class="text-center">
                                             <a href="{{ route('module.category.show', $category->slug) }}">
                                                 {{ $category->name }} ({{ $category->ads_count }})
