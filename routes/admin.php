@@ -5,6 +5,7 @@ use App\Http\Controllers\ThemeController;
 use App\Http\Controllers\AdTypesController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\CityController;
+use App\Http\Controllers\Admin\PromotionController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\OrderController;
@@ -145,6 +146,16 @@ Route::prefix('admin')->group(function () {
             Route::post('settings/social-login/status', 'updateStatus')->name('settings.social.login.status.update');
         });
 
+
+        Route::controller(PromotionController::class)->group(function () {
+            Route::get('promotion', 'index')->name('promotion');
+            Route::get('promotion/create', 'create')->name('promotion.create');
+            Route::get('promotion/edit/{id}', 'edit')->name('promotion.edit');
+            Route::post('promotion/update/{id}', 'update')->name('promotion.update');
+            Route::post('promotion/delete/{id}', 'delete')->name('promotion.delete');
+            Route::post('promotion/store', 'store')->name('promotion.store');
+        });
+
         Route::controller(PaymentController::class)->prefix('settings/payment')->name('settings.')->group(function () {
             Route::get('/', 'index')->name('payment');
             Route::put('/', 'update')->name('payment.update');
@@ -219,7 +230,7 @@ Route::prefix('admin')->group(function () {
             Route::delete('/delete/{id}',[CityController::class,'delete'])->name('city.delete');
         });
 
-        //FAQ 
+        //FAQ
         Route::prefix('faq')->group(function(){
             Route::get('/', [FaqController::class, 'index'])->name('faq.index');
             Route::get('/create', [FaqController::class, 'create'])->name('faq.create');

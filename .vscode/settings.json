@@ -11,5 +11,6 @@
         "blade": {
             "parser": "plain"
         }
-    }
+    },
+    "nuxt.isNuxtApp": false
 }

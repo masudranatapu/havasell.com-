@@ -59,11 +59,23 @@
                             {{ __('City') }}
                         </x-sidebar-list>
 
+
                     @if (Module::collections()->has('Category') && (userCan('category.view') || userCan('subcategory.view')))
                         <x-admin.sidebar-list :linkActive="Route::is('module.category.*') || Route::is('module.subcategory.*') ? true : false" route="module.category.index" icon="fas fa-th">
                             {{ __('category') }}
                         </x-admin.sidebar-list>
                     @endif
+
+                    <li class="nav-item">
+                        <a href="{{ route('promotion') }}" class="nav-link @yield('promotion')">
+                            <i class="nav-icon fas fa-th"></i>
+                            <p>{{ __('Promotion') }}</p>
+                        </a>
+                    </li>
+
+
+
+
                     {{-- @if (Module::collections()->has('CustomField') && userCan('custom-field.view'))
                         <x-admin.sidebar-list :linkActive="Route::is('module.custom.field.*') ? true : false" route="module.custom.field.index" icon="fas fa-edit">
                             {{ __('custom_field') }}
