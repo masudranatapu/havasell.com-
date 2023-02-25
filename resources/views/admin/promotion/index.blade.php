@@ -51,7 +51,7 @@
                                             <a href="{{ route('promotion.edit', $row->id) }}" class="btn bg-primary mr-1">
                                                 <i class="fas fa-pen"></i>
                                             </a>
-                                            {{-- <a href="{{ route('promotion.delete', $row->id) }}" class="btn bg-primary mr-1" onclick="if (confirm('Are you sure delete this item?')){return true;}else{event.stopPropagation(); event.preventDefault();};" >
+                                            {{-- <a href="{{ route('promotion.delete', $row->id) }}" class="btn bg-danger mr-1" onclick="if (confirm('Are you sure delete this item?')){return true;}else{event.stopPropagation(); event.preventDefault();};" >
                                                 <i class="fas fa-trash"></i>
                                             </a> --}}
                                         </td>

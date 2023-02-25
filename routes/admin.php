@@ -152,7 +152,7 @@ Route::prefix('admin')->group(function () {
             Route::get('promotion/create', 'create')->name('promotion.create');
             Route::get('promotion/edit/{id}', 'edit')->name('promotion.edit');
             Route::post('promotion/update/{id}', 'update')->name('promotion.update');
-            Route::post('promotion/delete/{id}', 'delete')->name('promotion.delete');
+            Route::get('promotion/delete/{id}', 'delete')->name('promotion.delete');
             Route::post('promotion/store', 'store')->name('promotion.store');
         });
 
