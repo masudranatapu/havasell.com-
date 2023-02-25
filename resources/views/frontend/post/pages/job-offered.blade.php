@@ -173,24 +173,54 @@
     </div>
 </div>
 
-<div class="col-lg-7">
-    <div class="featured_product">
-        <div class="input-group d-flex">
+<div class="col-lg-7 mt-3">
+    <div class="featured_item">
+        <label class="osp-chk" for="featured_id">
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" name="featured" value="1" id="featured_id">
-                <label class="form-check-label" for="featured_id"></label>
             </div>
-            <div class="featured_info">
-                <h3>Mark as Premium <span>$5.00</span></h3>
-                <p>Make your listing unique on home and search page</p>
+        </label>
+        <div class="osp-text">
+            <div class="osp-pb-name">Mark as Featured
+                <strong class="finprice_201">$7.00</strong>
             </div>
-            <div class="select_price">
-                <select name="price" id="price" class="form-control">
-                    <option value="1 week">1 week for $5.00</option>
-                    <option value="1 month">1 month for $55.00</option>
-                    <option value="3 months">3 months for $99.00</option>
-                </select>
-            </div>
+            <div class="osp-pb-desc">Make your listing unique on home and search page!</div>
+        </div>
+
+        <div class="osp-select">
+            <select id="price" name="price" class="form-control">
+                <option value="1">1 week for $7.00</option>
+                <option value="2">1 month for $21.00</option>
+                <option value="3">3 months for $60.00</option>
+            </select>
         </div>
     </div>
+
+    {{-- <div class="featured_product">
+        <div class="align-items-center">
+            <div class="row">
+                <div class="col-sm-1">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="featured" value="1" id="featured_id">
+                        <label class="form-check-label" for="featured_id"></label>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="featured_info">
+                        <h3>Mark as Premium <span>$5.00</span></h3>
+                        <p>Make your listing unique on home and search page</p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="select_price">
+                        <select name="price" id="price" class="form-control">
+                            <option value="1 week">1 week for $5.00</option>
+                            <option value="1 month">1 month for $55.00</option>
+                            <option value="3 months">3 months for $99.00</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> --}}
 </div>

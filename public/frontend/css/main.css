@@ -1445,26 +1445,92 @@ form {
 }
 
 
-.featured_product {
-    border: 1px solid #EEE;
-    padding: 13px 15px;
+.featured_item {
+    background: #fff;
+    display: inline-block;
+    width: 100%;
+    padding: 0;
+    font-size: 13px;
+    text-align: left;
+    float: none;
+    position: relative;
+    border-radius: 3px;
+    margin: 0 0 8px;
+    box-shadow: 1px 1px 4px rgb(0 0 0 / 6%), 0 0 0 1px rgb(0 0 0 / 15%) inset;
 }
 
-.featured_info h3 {
-    font-size: 14px;
+.featured_item.pt201 .osp-chk {
+    background: #f0f3bd;
+}
+
+.featured_item label.osp-chk {
+    padding: 10px;
+    position: absolute;
+    left: -1px;
+    top: 0;
+    margin: 0 !important;
+    height: 100%;
+    width: 50px;
+    background: rgb(212 212 212);
+    border: none !important;
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.featured_item label {
+    display: inline-block;
+    width: auto;
+    position: relative;
+    cursor: pointer;
+}
+
+.featured_item .osp-text {
+    float: left;
+    width: 60%;
+    padding: 10px 10px 10px 60px;
+    clear: none;
+}
+
+.featured_item .osp-select {
+    float: left;
+    width: 40%;
+    padding: 13px 10px 10px;
+    clear: none;
+}
+
+.featured_item .form-check .form-check-input {
+    width: 18px;
+    height: 18px;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.featured_item .form-check {
+    margin-bottom: 6px;
+    font-size: 15px;
+    margin-left: 5px;
+    margin-top: 4px;
+}
+
+.featured_item .osp-pb-name {
+    font-size: 13px;
     font-family: 'Rubik', sans-serif;
-    font-weight: 400;
-    color: #212121;
+    font-weight: 500;
 }
 
-.featured_info h3 span {
-    font-weight: 600;
-    background: #DDD;
-    padding: 2px 8px;
-    border-radius: 4px;
+.featured_item .osp-pb-desc {
+    font-size: 13px;
+    color: #777;
 }
 
 
+.featured_item .form-control {
+    border: 1px solid #d8d8d8;
+    box-shadow: rgb(99 99 99 / 3%) 0px 2px 8px 0px !important;
+    height: 36px;
+    border-radius: 50px;
+}
 
 
 

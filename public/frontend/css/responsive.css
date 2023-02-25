@@ -67,7 +67,17 @@
     .navbar-nav .dropdown-menu {
         position: absolute;
     }
+}
 
+@media screen and (max-width:575px) {
+    .featured_item .osp-text {
+        width: 100%;
+    }
 
-
+    .featured_item .osp-select {
+        width: 100% !important;
+        padding-left: 60px;
+        padding-top: 0;
+        clear: both;
+    }
 }
