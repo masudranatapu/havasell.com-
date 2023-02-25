@@ -22,7 +22,7 @@
 @endsection
 
 @section('content')
-<div class="main_template mt-5">
+<div class="main_body pt-5 pb-5">
     <div class="container-fluid">
 
 
@@ -76,8 +76,4 @@
         </div>
     </div>
 </div>
-   @include('frontend.layouts.footer')
-
 @endsection
-
-

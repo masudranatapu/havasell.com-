@@ -23,7 +23,7 @@
 @endsection
 
 @section('content')
-<div class="main_template mt-5">
+<div class="main_body pt-5 pb-5">
     <div class="container-fluid">
 
 
@@ -71,23 +71,27 @@
                         <tr>
                             <td>{{ $wishlist->firstItem() + $key }}</td>
                             <td>
-                                <a href="{{route('frontend.details',$item->ad->slug?? "")}}"> {{$item->ad->title?? ""}}</a>
+                                <a href="{{route('frontend.details',$item->ad->slug?? "")}}"> {{$item->ad->title??
+                                    ""}}</a>
                             </td>
                             <td>
-                               {{ $item->ad->ad_type->name?? "" }}
+                                {{ $item->ad->ad_type->name?? "" }}
                             </td>
                             <td>
-                               {{ $item->ad->category->name?? "" }}
+                                {{ $item->ad->category->name?? "" }}
                             </td>
                             <td>
-                               {{ $item->ad->subcategory->name?? "" }}
+                                {{ $item->ad->subcategory->name?? "" }}
                             </td>
                             <td>
                                 {{ $item->created_at->diffForHumans() }}
                             </td>
                             <td>
-                                <a href="{{route('frontend.details', $item->ad->slug?? "")}}" class="btn btn-sm btn-secondary">View</a>
-                                <a href="{{ route('user.favourite.delete', $item->id) }}" onclick="return confirm('Are you sure to remove from favourite?')" class="btn btn-sm btn-danger">Remove</a>
+                                <a href="{{route('frontend.details', $item->ad->slug?? "")}}"
+                                    class="btn btn-sm btn-secondary">View</a>
+                                <a href="{{ route('user.favourite.delete', $item->id) }}"
+                                    onclick="return confirm('Are you sure to remove from favourite?')"
+                                    class="btn btn-sm btn-danger">Remove</a>
                             </td>
                         </tr>
                         @empty
@@ -107,7 +111,6 @@
         </div>
     </div>
 </div>
-   @include('frontend.layouts.footer')
 
 @endsection
 

@@ -23,7 +23,7 @@
 @endsection
 
 @section('content')
-<div class="main_template mt-5">
+<div class="main_body pt-5 pb-5">
     <div class="container-fluid">
 
 
@@ -68,42 +68,49 @@
                     </thead>
                     <tbody>
                         @forelse($ads as $key=> $ad)
-                            <tr>
-                                <td>{{ $ads->firstItem() + $key }}</td>
-                                <td>
-                                    <a href="{{route('frontend.details', $ad->slug)}}"> {{$ad->title}}</a>
-                                </td>
-                                <td>
-                                    {{$ad->ad_type->name}}
-                                </td>
-                                <td>
-                                    {{$ad->category->name}}
-                                </td>
-                                <td>
-                                    {{$ad->subCategory->name}}
-                                </td>
-                                <td>
-                                    {{$ad->city}} {{ isset($ad->countries->name) ? ', ' .ucfirst(strtolower($ad->countries->name)) : ''}}
-                                </td>
-                                <td>
-                                    <a href="{{ route('user.post.statusUpdate', [$ad->id, 'pending']) }}" onclick="return confirm('Are you sure to unpubliushed?')" class="btn btn-sm btn-success">Published</a>
-                                </td>
-                                <td>
-                                   <a href="{{route('frontend.details', $ad->slug)}}" class="btn btn-sm btn-success">View</a>
-                                    <a href="{{ route('user.post.edit',$ad->slug) }}" class="btn btn-sm btn-secondary">Edit</a>
-                                    <a href="{{ route('user.post.delete', $ad->id) }}" onclick="return confirm('Are you sure to delete?')" class="btn btn-sm btn-danger">Delete</a>
-                                </td>
-                            </tr>
-                            @empty
-                            <tr>
-                                <td colspan="7" class="text-center">Not Found</td>
-                            </tr>
+                        <tr>
+                            <td>{{ $ads->firstItem() + $key }}</td>
+                            <td>
+                                <a href="{{route('frontend.details', $ad->slug)}}"> {{$ad->title}}</a>
+                            </td>
+                            <td>
+                                {{$ad->ad_type->name}}
+                            </td>
+                            <td>
+                                {{$ad->category->name}}
+                            </td>
+                            <td>
+                                {{$ad->subCategory->name}}
+                            </td>
+                            <td>
+                                {{$ad->city}} {{ isset($ad->countries->name) ? ', '
+                                .ucfirst(strtolower($ad->countries->name)) : ''}}
+                            </td>
+                            <td>
+                                <a href="{{ route('user.post.statusUpdate', [$ad->id, 'pending']) }}"
+                                    onclick="return confirm('Are you sure to unpubliushed?')"
+                                    class="btn btn-sm btn-success">Published</a>
+                            </td>
+                            <td>
+                                <a href="{{route('frontend.details', $ad->slug)}}"
+                                    class="btn btn-sm btn-success">View</a>
+                                <a href="{{ route('user.post.edit',$ad->slug) }}"
+                                    class="btn btn-sm btn-secondary">Edit</a>
+                                <a href="{{ route('user.post.delete', $ad->id) }}"
+                                    onclick="return confirm('Are you sure to delete?')"
+                                    class="btn btn-sm btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                        @empty
+                        <tr>
+                            <td colspan="7" class="text-center">Not Found</td>
+                        </tr>
 
-                            @endforelse
+                        @endforelse
                     </tbody>
                 </table>
             </div>
-             <div class="card-footer mb-5">
+            <div class="card-footer mb-5">
                 <div class="d-flex justify-content-center">
                     {{ $ads->links() }}
                 </div>
@@ -111,8 +118,5 @@
         </div>
     </div>
 </div>
-<!-- footer -->
-       @include('frontend.layouts.footer')
 
 @endsection
-

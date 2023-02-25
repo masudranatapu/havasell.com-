@@ -96,7 +96,7 @@
                         <a class="nav-link" href="{{ route('frontend.search') }}">{{ __('Ads') }}</a>
                     </li>
                 </ul>
-                <ul class="navbar-nav ms-auto align-items-center mt-3">
+                <ul class="navbar-nav ms-lg-auto align-items-lg-center mt-3">
                     <div class="btn-group language_dropdown">
                         <form action="{{ route('frontend.localization') }}" method="post">
                             @csrf

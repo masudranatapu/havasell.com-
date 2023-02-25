@@ -762,10 +762,23 @@ body {
     -moz-transition: all 0.2s ease;
     -ms-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
+    overflow: hidden;
 }
 
 .prodouct_wrap:hover {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.featured_tag {
+    background: #2dbe6c;
+    position: absolute;
+    content: "";
+    top: 16px;
+    left: -42px;
+    color: #fff;
+    padding: 2px 41px;
+    font-family: 'Rubik', sans-serif;
+    transform: rotate(-45deg);
 }
 
 .product_content {
@@ -1432,6 +1445,24 @@ form {
 }
 
 
+.featured_product {
+    border: 1px solid #EEE;
+    padding: 13px 15px;
+}
+
+.featured_info h3 {
+    font-size: 14px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    color: #212121;
+}
+
+.featured_info h3 span {
+    font-weight: 600;
+    background: #DDD;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
 
 
 
