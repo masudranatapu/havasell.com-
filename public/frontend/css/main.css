@@ -582,7 +582,7 @@ body {
     color: #0d6efd;
 }
 
-.accordion-button:not(.collapsed) {
+.mobile_body .accordion-button:not(.collapsed) {
     font-weight: bold;
     color: #333 !important;
     background: white !important;
@@ -1211,7 +1211,7 @@ body {
     font-weight: 500;
 }
 
-.accordion-button {
+.mobile_body .accordion-button {
     outline: none !important;
     box-shadow: none !important;
     background: #2e2929 !important;
@@ -1223,28 +1223,28 @@ body {
     font-size: 12px;
 }
 
-.accordion-button::after {
+.mobile_body .accordion-button::after {
     display: none;
 }
 
-.accordion-item {
+.mobile_body .accordion-item {
     border: none !important;
     border-radius: 0px !important;
     outline: none !important;
     box-shadow: none !important;
 }
 
-.accordion-button {
+.mobile_body .accordion-button {
     color: #fff;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
 }
 
-.accordion-item {
+.mobile_body .accordion-item {
     background: transparent !important;
 }
 
-.accordion-body {
+.mobile_body .accordion-body {
     padding: 0;
     background: #e4e4e4;
 }
@@ -1530,6 +1530,56 @@ form {
     box-shadow: rgb(99 99 99 / 3%) 0px 2px 8px 0px !important;
     height: 36px;
     border-radius: 50px;
+}
+
+
+.faq_question .accordion-button {
+    outline: none !important;
+    box-shadow: none !important;
+    background: #2e2929 !important;
+    padding: 14px 7px !important;
+    text-align: center;
+    display: block;
+    margin-bottom: 7px;
+    border-radius: 10px !important;
+    font-size: 12px;
+}
+
+.faq_question .accordion-button::after {
+    display: none;
+}
+
+.faq_question .accordion-item {
+    border: none !important;
+    border-radius: 0px !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.faq_question .accordion-button {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.faq_question .accordion-item {
+    background: transparent !important;
+}
+
+.faq_question .accordion-body {
+    padding: 0;
+    background: #e4e4e4;
+}
+
+.faq_question .accordion-body {
+    padding: 20px !important;
+    margin-bottom: 20px !important;
+    border-radius: 6px;
+}
+
+.faq_question .accordion-body p {
+    color: #111;
+    line-height: 32px;
 }
 
 
