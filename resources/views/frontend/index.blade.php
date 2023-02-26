@@ -26,20 +26,6 @@ $country = getCountryCode();
     <div class="col-lg-3">
         <div class="sidebar_left overflow-hidden">
             <div class="heading1 text-center p-2">
-                <ul class="list-group pt-3">
-                    <li class="custom-list-style mb-2">
-                        <a href="{{ route('frontend.post.create') }}">Create a posting</a>
-                    </li>
-                    @if (auth('user')->check())
-                    <li class="mt-1 mb-3">
-                        <a href="{{ route('user.profile') }}">My Account</a>
-                    </li>
-                    @else
-                    <li class="mt-1 mb-3">
-                        <a href="{{ route('signin') }}">My Account</a>
-                    </li>
-                    @endif
-                </ul>
                 <div class="search-style mb-4">
                     <form action="{{ route('frontend.search') }}" method="get">
                         <div class="input-group">
