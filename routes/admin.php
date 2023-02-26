@@ -21,6 +21,7 @@ use App\Http\Controllers\Admin\ManualPaymentController;
 use App\Http\Controllers\Admin\Auth\ResetPasswordController;
 use App\Http\Controllers\Admin\Auth\ForgotPasswordController;
 use App\Http\Controllers\Admin\Setting\GeneralSettingController;
+use App\Http\Controllers\Auth\SocialLoginController;
 
 Route::prefix('admin')->group(function () {
     Route::middleware(['guest:admin'])->group(function () {
@@ -49,26 +50,19 @@ Route::prefix('admin')->group(function () {
             Route::get('/profile', 'profile')->name('profile');
             Route::put('/profile', 'profile_update')->name('profile.update');
         });
-
         //Roles Route
         Route::resource('role', RolesController::class);
-
         //Users Route
         Route::resource('user', UserController::class);
-
         // Report
         Route::get('/report', [ReportController::class, 'index'])->name('report.index');
-
         // Order Route
         Route::controller(OrderController::class)->group(function () {
             Route::get('/orders', 'index')->name('order.index');
             Route::get('/orders/{transaction}', 'show')->name('order.show');
             Route::post('/admin/download/transaction/invoice/{transaction}', 'downloadTransactionInvoice')->name('admin.transaction.invoice.download');
         });
-
-        // ========================================================
         // ====================Setting=============================
-        // ========================================================
         Route::controller(GeneralSettingController::class)->prefix('settings/general')->name('settings.')->group(function () {
             // brand Update
             Route::get('/brand', 'general')->name('general');
@@ -89,7 +83,7 @@ Route::prefix('admin')->group(function () {
             Route::get('/recaptcha', 'recaptcha')->name('general.recaptcha');
             Route::put('recaptcha/update', 'recaptchaUpdate')->name('general.recaptcha.update');
         });
-
+        // setting
         Route::controller(SettingsController::class)->prefix('settings')->name('settings.')->group(function () {
             Route::get('layout', 'layout')->name('layout');
             Route::put('layout', 'layoutUpdate')->name('layout.update');
@@ -101,45 +95,36 @@ Route::prefix('admin')->group(function () {
             Route::get('email', 'email')->name('email');
             Route::put('email', 'emailUpdate')->name('email.update');
             Route::post('test-email', 'testEmailSent')->name('email.test');
-
             // sytem update
             Route::get('system', 'system')->name('system');
             Route::put('system/update', 'systemUpdate')->name('system.update');
             Route::put('allowLangChanging', 'allowLaguageChanage')->name('allow.langChange');
             Route::put('change/timezone', 'timezone')->name('change.timezone');
-
             // cookies routes
             Route::get('cookies', 'cookies')->name('cookies');
             Route::put('cookies/update', 'cookiesUpdate')->name('cookies.update');
-
             // seo
             Route::get('seo/index', 'seoIndex')->name('seo.index');
             Route::get('seo/edit/{page}', 'seoEdit')->name('seo.edit');
             Route::post('seo/content/create', 'seoContentCreate')->name('seo.content.create');
             Route::put('seo/content/{content}', 'seoContentUpdate')->name('seo.content.update');
             Route::delete('seo/content/delete/{content}', 'seoContentDelete')->name('seo.content.delete');
-
             // module routes
             Route::get('modules', 'module')->name('module');
             Route::put('module/update', 'moduleUpdate')->name('module.update');
-
             // website configuration
             Route::put('website/configuration/update', 'websiteConfigurationUpdate')->name('website.configuration.update');
-
             // pusher configuration
             Route::put('pusher/configuration/update', 'pusherConfigurationUpdate')->name('pusher.configuration.update');
-
             // website watermark update
             Route::put('website/watermark/update', 'websiteWatermarkUpdate')->name('website.watermark.update');
-
             // sitemap
             Route::get('generate/sitemap', 'generateSitemap')->name('generateSitemap');
-
             // upgrade application
             Route::get('upgrade', 'upgrade')->name('upgrade');
             Route::post('upgrade/apply', 'upgradeApply')->name('upgrade.apply');
         });
-
+        // Social Login
         Route::controller(SocialiteController::class)->group(function () {
             Route::get('settings/social-login', 'index')->name('settings.social.login');
             Route::put('settings/social-login', 'update')->name('settings.social.login.update');

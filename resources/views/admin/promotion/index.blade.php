@@ -3,7 +3,9 @@
 @section('title')
     {{ __('Promotions') }}
 @endsection
+
 @section('promotion', 'active')
+
 @section('content')
     <div class="">
         <div class="row">
@@ -12,11 +14,11 @@
                     <div class="card-header">
                         <div class="d-flex justify-content-between">
                             <h3 class="card-title line-height-36">{{ __('Promotions') }}</h3>
-                                <div>
-                                    <a href="{{ route('promotion.create') }}" class="btn bg-info"><i class="fas fa-plug"></i>
-                                        &nbsp;{{ __('create') }}
-                                    </a>
-                                </div>
+                            {{-- <div>
+                                <a href="{{ route('promotion.create') }}" class="btn bg-info"><i class="fas fa-plug"></i>
+                                    &nbsp; {{ __('create') }}
+                                </a>
+                            </div> --}}
                         </div>
                     </div>
                     <div class="card-body text-center table-responsive p-0">
@@ -33,14 +35,14 @@
                                 @forelse ($data as $key=>$row)
                                     <tr>
                                         <td>
-                                            #{{ $key+1 }}
+                                            #{{ $key + 1 }}
                                         </td>
 
                                         <td>
                                             {{ $row->title }}
                                         </td>
                                         <td class="text-capitalize">
-                                            {{ number_format($row->price,2) }}
+                                            {{ number_format($row->price, 2) }}
                                         </td>
 
                                         {{-- <td class="text-muted">
@@ -76,7 +78,11 @@
         </div>
     </div>
 @endsection
+
 @section('script')
+
 @endsection
+
 @section('style')
+
 @endsection

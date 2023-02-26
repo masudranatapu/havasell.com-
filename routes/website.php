@@ -19,24 +19,14 @@ Route::group(['as' => 'frontend.'], function () {
     Route::get('price-plan', [FrontendController::class, 'pricePlan'])->name('price.plan');
     Route::get('contact', [FrontendController::class, 'contact'])->name('contact');
     Route::post('contact/submit', [FrontendController::class, 'contactSub'])->name('contact.submit');
-
-
-
     //Localization
     Route::post('lange', [LocalizationController::class, 'setLang'])->name('localization');
     Route::get('/country', [LocalizationController::class, 'country'])->name('country');
-
-
     Route::post('country', [FrontendController::class, 'setCountry'])->name('setCountry');
-
-
-
-
+    // adposting
     // Route::get('create-post/post-type', [AdPostController::class, 'postType'])->name('create-post.step_one');
     // Route::get('create-post/post-type/category', [AdPostController::class, 'postStepTwo'])->name('create-post.step_two');
     // Route::get('create-post/post-type/sub-category', [AdPostController::class, 'postSubCategory'])->name('create-post.step_three');
-
-
     Route::get('create-post/{type?}/{subcategory?}', [AdPostController::class, 'create'])->name('post.create');
     Route::post('store-post', [AdPostController::class, 'store'])->name('post.store');
 });
@@ -56,8 +46,3 @@ Route::group(['as' => 'user.'], function () {
         Route::post('user-logout', [UserDashboardController::class, 'userLogOut'])->name('logout');
     });
 });
-
-
-
-
-
