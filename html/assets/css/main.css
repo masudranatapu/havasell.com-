@@ -132,11 +132,11 @@ body {
 
 .custom-list-style a {
     background-color: #2e2929;
-    padding: 6px 14px;
+    padding: 9px 14px;
     display: inline-block;
     font-size: 14px;
     color: #ffffff !important;
-    border-radius: 6px;
+    border-radius: 3px;
 }
 
 .heading1 ul li a {
