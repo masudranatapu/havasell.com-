@@ -13,6 +13,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Models\Promotion;
+use App\Models\Transaction;
+use App\Models\User;
 use Modules\Category\Entities\Category;
 use Modules\Wishlist\Entities\Wishlist;
 use Google\Service\Dfareporting\Country;
@@ -291,4 +294,21 @@ class FrontendController extends Controller
         flashSuccess('Your Request is Submitted!.');
         return redirect()->route('frontend.contact')->with('message', 'Your Request is Submitted!');
     }
+
+    public function postPayment($id, $promotion)
+    {
+        $ad = Ad::find($id);
+        $promotions = Promotion::where('id', $promotion)->latest()->first();
+        return view('frontend.post.payment', compact('ad', 'promotions'));
+    }
+
+    public function paymentInvoice($id)
+    {
+        $transaction = Transaction::find($id);
+        $promotion = Promotion::find($transaction->promotion_id);
+        $ad = Ad::find($transaction->ad_id);
+        $user = User::find($transaction->user_id);
+        return view('frontend.post.payment-invoice',compact('transaction', 'transaction', 'promotion', 'ad', 'user'));
+    }
+
 }

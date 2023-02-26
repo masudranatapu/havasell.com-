@@ -47,6 +47,11 @@ class Transaction extends Model
         return $this->belongsTo(Plan::class);
     }
 
+    public function promotion(): BelongsTo
+    {
+        return $this->belongsTo(Promotion::class);
+    }
+
      /**
      * Manual payment
      *

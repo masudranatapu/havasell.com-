@@ -10,7 +10,9 @@ use Illuminate\Http\Request;
 use Modules\Plan\Entities\Plan;
 use App\Http\Traits\PaymentTrait;
 use App\Http\Controllers\Controller;
+use App\Models\Promotion;
 use App\Notifications\MembershipUpgradeNotification;
+use Modules\Ad\Entities\Ad;
 
 class StripeController extends Controller
 {
@@ -23,8 +25,13 @@ class StripeController extends Controller
      */
     public function stripePost(Request $request)
     {
-        $plan = session('plan');
-        $converted_amount = currencyConversion($plan->price);
+        // dd($request->all());
+        $ad = Ad::find($request->ad_id);
+        $promotion = Promotion::find($request->promotions_id);
+        session()->put('ad_id', $ad->id);
+        session()->put('promotion_id', $promotion->id);
+        $amount = $promotion->price * 100 ;
+        $converted_amount = currencyConversion($promotion->price);
 
         session(['order_payment' => [
             'payment_provider' => 'stripe',
@@ -34,19 +41,23 @@ class StripeController extends Controller
         ]]);
 
         try {
+
             Stripe::setApiKey(config('zakirsoft.stripe_secret'));
 
             $charge = Charge::create([
-                "amount" => session('stripe_amount'),
+                "amount" => $amount,
                 "currency" => 'USD',
                 "source" => $request->stripeToken,
-                "description" => "Payment for " . $plan->label . " plan" . " in " . config('app.name'),
+                "description" => "Payment for " . $ad->title . " plan" . " in " . config('app.name'),
             ]);
 
             session(['transaction_id' => $charge->id ?? null]);
+
             $this->orderPlacing();
+
         } catch (\Exception $ex) {
             return $ex->getMessage();
         }
+
     }
 }

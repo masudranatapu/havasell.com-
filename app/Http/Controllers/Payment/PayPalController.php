@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Modules\Plan\Entities\Plan;
 use App\Http\Traits\PaymentTrait;
 use App\Http\Controllers\Controller;
+use App\Models\Promotion;
 use App\Notifications\MembershipUpgradeNotification;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
 
@@ -20,9 +21,14 @@ class PayPalController extends Controller
      */
     public function processTransaction(Request $request)
     {
-        return $request;
-        $plan = session('plan');
-        $converted_amount = currencyConversion($plan->price);
+        // dd($request->all());
+
+        $promotion = Promotion::find($request->promotions_id);
+        $ad_id = $request->ad_id;
+        session()->put('ad_id', $ad_id);
+        session()->put('promotion_id', $promotion->id);
+        $converted_amount = currencyConversion($promotion->price);
+
         session(['order_payment' => [
             'payment_provider' => 'paypal',
             'amount' =>  $converted_amount,
@@ -38,7 +44,7 @@ class PayPalController extends Controller
             "intent" => "CAPTURE",
             "application_context" => [
                 "return_url" => route('paypal.successTransaction', [
-                    'plan_id' => $plan->id,
+                    'plan_id' => $ad_id,
                     'amount' => $converted_amount
                 ]),
                 "cancel_url" => route('paypal.cancelTransaction'),

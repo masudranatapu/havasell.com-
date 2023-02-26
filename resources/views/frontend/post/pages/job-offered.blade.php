@@ -177,7 +177,7 @@
     <div class="featured_item">
         <label class="osp-chk" for="featured_id">
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="featured" value="1" id="featured_id">
+                <input class="form-check-input" type="checkbox" name="featured" value="1" {{ old('featured') ? 'checked': '' }} id="featured_id">
             </div>
         </label>
         <div class="osp-text">
@@ -186,41 +186,12 @@
             </div>
             <div class="osp-pb-desc">Make your listing unique on home and search page!</div>
         </div>
-
         <div class="osp-select">
-            <select id="price" name="price" class="form-control">
-                <option value="1">1 week for $7.00</option>
-                <option value="2">1 month for $21.00</option>
-                <option value="3">3 months for $60.00</option>
+            <select id="price" name="promotion" class="form-control">
+                @foreach ($promotions as $promotion)
+                    <option value="{{ $promotion->id }}">{{ $promotion->title.' '.'for'.' '.'$'.number_format($promotion->price, 2) }}</option>
+                @endforeach
             </select>
         </div>
     </div>
-
-    {{-- <div class="featured_product">
-        <div class="align-items-center">
-            <div class="row">
-                <div class="col-sm-1">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="featured" value="1" id="featured_id">
-                        <label class="form-check-label" for="featured_id"></label>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="featured_info">
-                        <h3>Mark as Premium <span>$5.00</span></h3>
-                        <p>Make your listing unique on home and search page</p>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="select_price">
-                        <select name="price" id="price" class="form-control">
-                            <option value="1 week">1 week for $5.00</option>
-                            <option value="1 month">1 month for $55.00</option>
-                            <option value="3 months">3 months for $99.00</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
 </div>

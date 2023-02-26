@@ -30,12 +30,13 @@ Route::prefix('admin')->group(function () {
             Route::post('password/email', 'sendResetLinkEmail')->name('admin.password.email');
             Route::get('password/reset', 'showLinkRequestForm')->name('admin.password.request');
         });
+        // password
         Route::controller(ResetPasswordController::class)->group(function () {
             Route::post('password/reset', 'reset')->name('admin.password.update');
             Route::get('password/reset/{token}', 'showResetForm')->name('admin.password.reset');
         });
     });
-
+    // admin
     Route::middleware(['auth:admin'])->group(function () {
         //Dashboard Route
         Route::controller(AdminController::class)->group(function () {
@@ -43,7 +44,6 @@ Route::prefix('admin')->group(function () {
             Route::get('/dashboard', 'dashboard')->name('admin.dashboard');
             Route::post('/admin/search', 'search')->name('admin.search');
         });
-
         //Profile Route
         Route::controller(ProfileController::class)->group(function () {
             Route::get('/profile/settings', 'setting')->name('profile.setting');
@@ -62,23 +62,20 @@ Route::prefix('admin')->group(function () {
             Route::get('/orders/{transaction}', 'show')->name('order.show');
             Route::post('/admin/download/transaction/invoice/{transaction}', 'downloadTransactionInvoice')->name('admin.transaction.invoice.download');
         });
-        // ====================Setting=============================
+        // Setting
         Route::controller(GeneralSettingController::class)->prefix('settings/general')->name('settings.')->group(function () {
             // brand Update
             Route::get('/brand', 'general')->name('general');
             Route::put('/brand', 'generalUpdate')->name('general.update');
-
+            // app
             Route::get('/app', 'appConfig')->name('general.app.config');
             Route::put('/app', 'appConfigUpdate')->name('general.app.config.update');
-
             // website watermark update
             Route::get('/watermark', 'watermark')->name('general.watermark');
             Route::put('/watermark', 'watermarkUpdate')->name('general.watermark.update');
-
             // broadcasting update
             Route::get('/broadcast', 'broadcasting')->name('general.broadcasting');
             Route::put('/broadcast', 'broadcastingUpdate')->name('general.broadcasting.update');
-
             // recaptcha Update
             Route::get('/recaptcha', 'recaptcha')->name('general.recaptcha');
             Route::put('recaptcha/update', 'recaptchaUpdate')->name('general.recaptcha.update');
@@ -130,22 +127,20 @@ Route::prefix('admin')->group(function () {
             Route::put('settings/social-login', 'update')->name('settings.social.login.update');
             Route::post('settings/social-login/status', 'updateStatus')->name('settings.social.login.status.update');
         });
-
-
+        // promotion
         Route::controller(PromotionController::class)->group(function () {
             Route::get('promotion', 'index')->name('promotion');
-            Route::get('promotion/create', 'create')->name('promotion.create');
+            // Route::get('promotion/create', 'create')->name('promotion.create');
             Route::get('promotion/edit/{id}', 'edit')->name('promotion.edit');
             Route::post('promotion/update/{id}', 'update')->name('promotion.update');
-            Route::get('promotion/delete/{id}', 'delete')->name('promotion.delete');
+            // Route::get('promotion/delete/{id}', 'delete')->name('promotion.delete');
             Route::post('promotion/store', 'store')->name('promotion.store');
         });
-
+        // Payment
         Route::controller(PaymentController::class)->prefix('settings/payment')->name('settings.')->group(function () {
             Route::get('/', 'index')->name('payment');
             Route::put('/', 'update')->name('payment.update');
             Route::post('/status', 'updateStatus')->name('payment.status.update');
-
             // Manual Payment
             Route::get('/manual', 'manualPayment')->name('payment.manual');
             Route::post('/manual/store', 'manualPaymentStore')->name('payment.manual.store');
@@ -154,25 +149,21 @@ Route::prefix('admin')->group(function () {
             Route::delete('/manual/{manual_payment}/delete', 'manualPaymentDelete')->name('payment.manual.delete');
             Route::get('/manual/status/change', 'manualPaymentStatus')->name('payment.manual.status');
         });
-
-        // ==================== Skin System =====================
+        //  Skin System
         Route::controller(ThemeController::class)->group(function () {
             Route::get('/skins', 'index')->name('module.themes.index');
             Route::put('/skins', 'update')->name('module.themes');
         });
-
-        //====================Website Page Setting==============================
+        // Website Page Setting
         Route::controller(SettingsController::class)->group(function () {
             Route::put('/posting-rules', 'postingRulesUpdate')->name('admin.posting.rules.upadte');
             Route::put('/about', 'updateAbout')->name('admin.about.upadte');
             Route::put('/terms', 'updateTerms')->name('admin.terms.upadte');
             Route::put('/privacy', 'updatePrivacy')->name('admin.privacy.upadte');
         });
-
-        //====================Website SEO Setting==============================
+        // Website SEO Setting
         Route::put('/seo', [SettingsController::class, 'updateSeo'])->name('admin.seo.update');
-
-        //====================Website CMS Setting==============================
+        // Website CMS Setting
         Route::controller(CmsSettingController::class)->prefix('settings')->group(function () {
             Route::get('/cms', 'index')->name('settings.cms');
             Route::put('/home', 'updateHome')->name('admin.home.update');
@@ -195,8 +186,7 @@ Route::prefix('admin')->group(function () {
             Route::put('/errorpages', 'updateErrorPages')->name('admin.errorpages.update');
             Route::put('/footer-text', 'footerText')->name('admin.footer.text.update');
         });
-
-        //====================Website CMS Setting==============================
+        // Website CMS Setting
         Route::prefix('ad-types')->group(function(){
             Route::get('/',[AdTypesController::class,'index'])->name('adtypes.index');
             Route::get('/create',[AdTypesController::class,'create'])->name('adtypes.create');
@@ -205,7 +195,7 @@ Route::prefix('admin')->group(function () {
             Route::post('/update/{slug}',[AdTypesController::class,'update'])->name('adtypes.update');
             Route::delete('/delete/{id}',[AdTypesController::class,'delete'])->name('adtypes.delete');
         });
-
+        // City
         Route::prefix('city')->group(function(){
             Route::get('/',[CityController::class,'index'])->name('city.index');
             Route::get('/create',[CityController::class,'create'])->name('city.create');
@@ -214,7 +204,6 @@ Route::prefix('admin')->group(function () {
             Route::post('/update/{id}',[CityController::class,'update'])->name('city.update');
             Route::delete('/delete/{id}',[CityController::class,'delete'])->name('city.delete');
         });
-
         //FAQ
         Route::prefix('faq')->group(function(){
             Route::get('/', [FaqController::class, 'index'])->name('faq.index');
@@ -224,13 +213,11 @@ Route::prefix('admin')->group(function () {
             Route::post('/update/{id}', [FaqController::class, 'update'])->name('faq.update');
             Route::delete('/delete/{id}', [FaqController::class, 'delete'])->name('faq.delete');
         });
-
         //Contact
         Route::prefix('user-contact')->group(function(){
             Route::get('/',[ContactController::class,'index'])->name('contact.index');
             Route::get('/view/{id}',[ContactController::class,'view'])->name('contact.view');
             Route::delete('/delete/{id}',[ContactController::class,'delete'])->name('contact.delete');
         });
-
     });
 });

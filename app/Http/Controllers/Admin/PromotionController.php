@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-use DB;
-use Auth;
+
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
 class PromotionController extends Controller
 {
     public function index()
@@ -67,6 +69,7 @@ class PromotionController extends Controller
             'order_id' => 'required',
 
         ]);
+
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
@@ -79,6 +82,7 @@ class PromotionController extends Controller
             'created_at' => date('Y-m-d H:i:s'),
             'created_by' => Auth::user()->id
         ]);
+
         return redirect()->route('promotion')->with('success', 'Promotion successfully created!');
     }
 

@@ -18,13 +18,11 @@ Route::controller(PayPalController::class)->group(function () {
     Route::get('success-transaction', 'successTransaction')->name('paypal.successTransaction');
     Route::get('cancel-transaction', 'cancelTransaction')->name('paypal.cancelTransaction');
 });
-
 // Paystack
 Route::controller(PaystackController::class)->group(function () {
     Route::post('paystack/payment', 'redirectToGateway')->name('paystack.post');
     Route::get('/paystack/success', 'successPaystack')->name('paystack.success');
 });
-
 // SSLCOMMERZ
 Route::controller(SslCommerzPaymentController::class)->prefix('payment')->group(function () {
     Route::post('/pay-via-ajax', 'payViaAjax')->name('ssl.pay');
@@ -33,36 +31,29 @@ Route::controller(SslCommerzPaymentController::class)->prefix('payment')->group(
     Route::post('/cancel', 'cancel');
     Route::post('/ipn', 'ipn');
 });
-
 // Stripe
 Route::post('stripe', [StripeController::class, 'stripePost'])->name('stripe.post');
-
 // Razorpay
 Route::post('payment', [RazorpayController::class, 'payment'])->name('razorpay.post');
-
 // Flutterwave
 Route::controller(FlutterwaveController::class)->group(function () {
     Route::post('/flutterwave/pay', 'initialize')->name('flutterwave.pay');
     Route::get('/rave/callback', 'callback')->name('flutterwave.callback');
 });
-
 // Instamojo
 Route::controller(InstamojoController::class)->group(function () {
     Route::post('/instamojo/pay', 'pay')->name('instamojo.pay');
     Route::get('/instamojo/success', 'success')->name('instamojo.success');
 });
-
 // Midtrans
 Route::controller(MidtransController::class)->group(function () {
     Route::post('/midtrans/success', 'success')->name('midtrans.success');
 });
-
 // Mollie
 Route::controller(MollieController::class)->group(function () {
     Route::post('mollie-paymnet', 'preparePayment')->name('mollie.payment');
     Route::get('payment-success', 'paymentSuccess')->name('mollie.success');
 });
-
 // Manual Payment
 Route::controller(ManualPaymentController::class)->group(function () {
     Route::post('/manual/payment', 'paymentPlace')->name('manual.payment');
