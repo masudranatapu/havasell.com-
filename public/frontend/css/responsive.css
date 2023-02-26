@@ -52,9 +52,7 @@
 }
 
 @media screen and (max-width:991px) {
-    .footer_menu {
-        padding: 9px 0px !important;
-    }
+
 
     .home_header .nav-link {
         padding: 9px 9px !important;
@@ -67,6 +65,13 @@
     .navbar-nav .dropdown-menu {
         position: absolute;
     }
+
+    .navbar-nav li {
+        display: inline-block;
+        vertical-align: middle;
+        margin-top: 10px;
+    }
+
 }
 
 @media screen and (max-width:575px) {
@@ -79,5 +84,22 @@
         padding-left: 60px;
         padding-top: 0;
         clear: both;
+    }
+
+    .custom-list-style a i {
+        font-size: 21px;
+        line-height: 39px;
+    }
+
+    .custom-list-style a {
+        font-size: 0;
+        width: 45px;
+        height: 40px;
+        padding: 0;
+        text-align: center;
+    }
+
+    .navbar-toggler {
+        margin-top: -5px;
     }
 }
