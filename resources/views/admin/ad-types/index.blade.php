@@ -19,7 +19,7 @@ $user = auth()->user();
                             <div>
                                 <a href="{{ route('adtypes.create') }}"
                                          class="btn bg-primary float-right d-flex align-items-center justify-content-center"><i
-                                class="fas fa-plus"></i>&nbsp; {{ __('Ad Type') }}</a>
+                                class="fas fa-plus"></i>&nbsp; Add Ad Type</a>
                                 
                             </div>
                         </div>

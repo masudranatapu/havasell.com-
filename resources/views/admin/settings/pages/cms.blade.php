@@ -162,10 +162,10 @@
                             <x-backend.setting.cms.membership :cms="$cms" />
                         </div>
                         {{-- Pricing Plan --}}
-                        <div class="tab-pane fade {{ $cms_tab == 'price_plan' ? 'show active' : '' }}"
+                        {{-- <div class="tab-pane fade {{ $cms_tab == 'price_plan' ? 'show active' : '' }}"
                             id="cms-price-plan" role="tabpanel" aria-labelledby="price-plan-tab">
                             <x-backend.setting.cms.pricing-plan :cms="$cms" />
-                        </div>
+                        </div> --}}
                         {{-- Blog --}}
                         <div class="tab-pane fade {{ $cms_tab == 'blog' ? 'show active' : '' }}" id="cms-blog"
                             role="tabpanel" aria-labelledby="blog-tab">
