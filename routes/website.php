@@ -8,8 +8,8 @@ use App\Http\Controllers\Frontend\LocalizationController;
 
 Route::group(['as' => 'frontend.'], function () {
     Route::get('/', [FrontendController::class, 'index'])->name('index');
-    // Route::get('shop/', [FrontendController::class, 'shop'])->name('shop');
-    Route::get('shop/{country?}/{category?}/{subcategory?}', [FrontendController::class, 'search'])->name('search');
+    // Route::get('ads/', [FrontendController::class, 'shop'])->name('shop');
+    Route::get('ads/{category?}/{subcategory?}', [FrontendController::class, 'search'])->name('search');
     Route::get('details/{slug}', [FrontendController::class, 'details'])->name('details');
     Route::get('wishlist', [FrontendController::class, 'wishlistCreate'])->name('wishlist.create');
     Route::get('about', [FrontendController::class, 'about'])->name('about');
@@ -23,6 +23,7 @@ Route::group(['as' => 'frontend.'], function () {
     Route::post('lange', [LocalizationController::class, 'setLang'])->name('localization');
     Route::get('/country', [LocalizationController::class, 'country'])->name('country');
     Route::post('country', [FrontendController::class, 'setCountry'])->name('setCountry');
+    Route::post('ad/promotion', [FrontendController::class, 'adPromotion'])->name('ad.promotion');
     Route::get('payment/post/{id}/{promotion}', [FrontendController::class, 'postPayment'])->name('payment.post');
     Route::get('payment/invoice/{id}',[FrontendController::class,'paymentInvoice'])->name('payment.invoice');
 

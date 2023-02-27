@@ -69,7 +69,7 @@
 
                         ">
                             <div class="mb-3">
-                                <label for="title" class="form-label text-success">posting title</label>
+                                <label for="title" class="form-label text-success">posting title <span class="text-danger">*</span></label>
                                 <input type="text" name="title" id="title" value="{{ old('title') }}"
                                     class="form-control" required>
                             </div>
@@ -86,7 +86,7 @@
                                             class="text-dark">€</small>
                                     </label>
                                     <input type="number" name="price" id="price" value="{{ old('price') }}"
-                                        class="form-control" required>
+                                        class="form-control">
                                 </div>
                             </div>
                         @endif
@@ -104,25 +104,21 @@
                                     col-md-4 @endif
                             ">
                             <div class="mb-3">
-                                <label for="city" class="form-label">city ​​or neighborhood</label>
-                                <select name="city" id="city" class="form-control select2">
-                                    @foreach ($country->cities as $value)
-                                        <option value="{{ $value->slug }}">{{ $value->name }}</option>
-                                    @endforeach
-                                </select>
+                                <label for="city" class="form-label">Location ​​or neighborhood</label>
+                                <input type="text" name="city" id="city" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="mb-3">
                                 <label for="postcode" class="form-label">Postal code</label>
                                 <input type="number" name="postcode" id="postcode" value="{{ old('postcode') }}"
-                                    class="form-control" required>
+                                    class="form-control">
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="mb-3">
                                 <span class="text-dark">Only one description per posting.</span><br />
-                                <label for="description" class="form-label text-success">description</label>
+                                <label for="description" class="form-label text-success">description <span class="text-danger">*</span></label>
                                 <textarea name="description" id="description" cols="30" rows="5" class="form-control" style="height: 150px;"
                                     required>{{ old('description') }}</textarea>
                             </div>
@@ -242,5 +238,11 @@
 
             }
         });
+        $('.promotion').change(function () {
+            const price = $("option:selected", this).data('price');
+            $('.finprice_201').text('$' +price.toFixed(2));
+        });
+
+
     </script>
 @endpush

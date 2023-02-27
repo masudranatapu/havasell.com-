@@ -64,7 +64,7 @@
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label for="education" class="form-label text-success">education</label>
-                        <select name="education" id="education" class="form-control" required>
+                        <select name="education" id="education" class="form-control" >
                             <option class="d-none">-</option>
                             <option value="less than high school" {{ $ad->education == "less than high school"? "selected" : ""}}>less than high school</option>
                             <option value="high school/GED" {{ $ad->education == "high school/GED"? "selected" : ""}}>high school/GED</option>
@@ -107,7 +107,7 @@
         <div class="mb-3">
             <label for="license_info" class="form-label">licensure information</label>
             <input type="text" name="license_info" id="license_info" value="{{ $ad->license_info}}" class="form-control" disabled
-                required>
+                >
         </div>
     </div>
 
@@ -119,10 +119,10 @@
             <div class="row">
             <div class="col-md-4">
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
+                    <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
                     <input type="text" name="email" id="email"
                         value="{{ Auth::user()->email ?? old('email') }}" class="form-control"
-                        placeholder="Your email address" required>
+                        placeholder="Your email address" required >
                 </div>
                 <div class="mb-3">
                     <span class="text-dark" style="font-weight:600;">email privacy
@@ -208,7 +208,7 @@
         <div class="form-check">
             <input class="form-check-input" type="checkbox" id="term_condition" name="other_contact"
             {{ $ad->other_contact? "checked"  : "" }}
-            value="1" required>
+            value="1" >
             <label class="form-check-label" for="term_condition" style="font-size: 14px;">
                 ok for others to contact you about other services, products or commercial interests
             </label>

@@ -8,7 +8,7 @@
                 <div class="mb-3">
                     <label for="employment_type" class="form-label text-success">kind of
                         employment</label>
-                    <select name="employment_type" id="employment_type" class="form-control" required>
+                    <select name="employment_type" id="employment_type" class="form-control" >
                         <option value="" class="d-none">-</option>
                         <option value="full time">full time</option>
                         <option value="part time">part time</option>
@@ -62,21 +62,21 @@
     <div class="mb-3">
         <label for="job_title" class="form-label text-success">job title</label>
         <input type="text" name="job_title" value="{{ $ad->job_title ?? old('job_title')}}" id="job_title"
-            class="form-control" required>
+            class="form-control" >
     </div>
 </div>
 <div class="col-md-4">
     <div class="mb-3">
         <label for="salary" class="form-label text-success">salary</label>
         <input type="number" name="price" id="salary" value="{{ old('price') }}" class="form-control"
-            placeholder="Salary" required>
+            placeholder="Salary" >
     </div>
 </div>
 <div class="col-md-4">
     <div class="mb-3">
         <label for="company_name" class="form-label">company name</label>
         <input type="text" name="company_name" id="company_name" value="{{ old('company_name') }}" class="form-control"
-            required>
+            >
     </div>
 </div>
 <div class="col-12 mb-4">
@@ -88,9 +88,9 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
+                    <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
                     <input type="text" name="email" id="email" value="{{ Auth::user()->email ?? old('email') }}"
-                        class="form-control" placeholder="Your email address" required>
+                        class="form-control" placeholder="Your email address" required >
                 </div>
                 <div class="mb-3">
                     <span class="text-dark" style="font-weight:600;">email privacy
@@ -166,7 +166,7 @@
 </div>
 <div class="col-12">
     <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="job_for_disabilities" required>
+        <input class="form-check-input" type="checkbox" value="" id="job_for_disabilities" >
         <label class="form-check-label" for="job_for_disabilities" style="font-size: 14px;">
             job open to people with disabilities
         </label>
@@ -187,9 +187,9 @@
             <div class="osp-pb-desc">Make your listing unique on home and search page!</div>
         </div>
         <div class="osp-select">
-            <select id="price" name="promotion" class="form-control">
+            <select id="price" name="promotion" class="form-control promotion">
                 @foreach ($promotions as $promotion)
-                    <option value="{{ $promotion->id }}">{{ $promotion->title.' '.'for'.' '.'$'.number_format($promotion->price, 2) }}</option>
+                    <option value="{{ $promotion->id }}" data-price="{{$promotion->price}}">{{ $promotion->title.' '.'for'.' '.'$'.number_format($promotion->price, 2) }}</option>
                 @endforeach
             </select>
         </div>

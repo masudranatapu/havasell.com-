@@ -11,9 +11,12 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title" style="line-height: 36px;">{{ __('customer_list') }}</h3>
+<<<<<<< HEAD
                         {{-- <a href="{{ route('module.customer.create') }}"
                             class="btn bg-primary float-right d-flex align-items-center justify-content-center"><i
                                 class="fas fa-plus"></i>&nbsp; {{ __('add_customer') }}</a> --}}
+=======
+>>>>>>> develop
                     </div>
                     <div class="card-body table-responsive p-0">
                         <form action="{{ route('module.customer.index') }}" method="GET">

@@ -61,26 +61,8 @@ class AdPostController extends Controller
 
         $request->validate([
             'title' => 'required|max:255',
-            'city' => 'required|max:255',
-            'postcode' => 'required|integer',
             'description' => 'required',
-            'email' => 'required|email',
-            'phone' => 'required_if:show_phone,1',
-            'images' => 'required',
-            'images.*' => 'mimes:jpg,png,bmp,gif',
-            'price' => 'required_if:ad_type,for-sale-by-owner,for-sale-by-dealer',
-            'manufacturer' => 'required_if:ad_type,for-sale-by-owner,for-sale-by-dealer',
-            'model_name' => 'required_if:ad_type,for-sale-by-owner,for-sale-by-dealer',
-            'dimension' => 'required_if:ad_type,for-sale-by-owner,for-sale-by-dealer,wanted-by-owner,wanted-by-dealer',
-            'condition' => 'required_if:ad_type,for-sale-by-owner,for-sale-by-dealer,wanted-by-owner,wanted-by-dealer',
-            'availability' => 'required_if:ad_type,job-wanted',
-            'education' => 'required_if:ad_type,job-wanted',
-            'venue' => 'required_if:ad_type,event-class',
-            'event_start_date' => 'required_if:ad_type,event-class',
-            'event_duration' => 'required_if:ad_type,event-class',
-            'services' => 'required_if:ad_type,event-class',
-        ],[
-            'phone.required_if' => 'The phone number field is required if you want to show your phone.'
+            'email' => 'required|email'
         ]);
 
         if ($request->event_start_date) {

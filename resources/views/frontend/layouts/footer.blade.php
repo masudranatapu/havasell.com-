@@ -24,11 +24,11 @@
                 <div class="social_links">
                     <ul>
                         <li>
-                            <a href="#" target="_blank"><i class="la la-facebook"></i></a>
-                            <a href="#" target="_blank"><i class="la la-twitter"></i></a>
-                            <a href="#" target="_blank"><i class="la la-linkedin"></i></a>
-                            <a href="#" target="_blank"><i class="la la-whatsapp"></i></a>
-                            <a href="#" target="_blank"><i class="la la-pinterest"></i></a>
+                            <a href="{{ $setting->facebook }}" target="_blank"><i class="la la-facebook"></i></a>
+                            <a href="{{ $setting->twitter }}" target="_blank"><i class="la la-twitter"></i></a>
+                            <a href="{{ $setting->linkdin }}" target="_blank"><i class="la la-linkedin"></i></a>
+                            <a href="{{ $setting->whatsapp }}" target="_blank"><i class="la la-whatsapp"></i></a>
+                            <a href="{{ $setting->instagram }}" target="_blank"><i class="la la-instagram"></i></a>
                         </li>
                     </ul>
                 </div>

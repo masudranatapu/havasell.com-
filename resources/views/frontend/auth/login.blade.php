@@ -29,7 +29,7 @@
                 <form action="{{ route('user.signin') }}" method="post" class="login_form border p-3 rounded">
                     @csrf
                     <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
+                        <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
                         <input type="email" name="email" id="email" class="form-control" required
                             value="{{ old('email') }}" placeholder="Email Address">
                     </div>
@@ -55,7 +55,7 @@
                 <form action="{{ route('user.signup') }}" method="post" class="login_form border p-3 rounded">
                     @csrf
                     <div class="mb-3">
-                        <label class="form-label">Email</label>
+                        <label class="form-label">Email <span class="text-danger">*</span></label>
                         <input type="email" name="email" class="form-control" required placeholder="Email Address">
                     </div>
                     <div class="mb-3 text-center">

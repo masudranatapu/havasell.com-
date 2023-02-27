@@ -68,12 +68,12 @@ class FrontendController extends Controller
         $country = getCountryCode();
         $categories = Category::orderBy('id','asc')->get();
         $subcategories = [];
-        if($request->country) {
-            $country = $request->country;
-            $query->whereHas('countries', function ($q) use ($country) {
-                $q->where('iso', $country);
-            });
-        }
+//        if($request->country) {
+//            $country = $request->country;
+//            $query->whereHas('countries', function ($q) use ($country) {
+//                $q->where('iso', $country);
+//            });
+//        }
         // if($request->ad_type) {
         //     $ad_type = $request->ad_type;
         //     $query->whereHas('ad_type', function ($q) use ($ad_type) {
@@ -92,13 +92,6 @@ class FrontendController extends Controller
             });
 
         }
-
-
-
-
-
-
-
         if ($request->subcategory) {
             $subcategory =$request->subcategory;
             $query->whereHas('subcategory', function ($q) use ($subcategory) {
@@ -311,4 +304,8 @@ class FrontendController extends Controller
         return view('frontend.post.payment-invoice',compact('transaction', 'transaction', 'promotion', 'ad', 'user'));
     }
 
+    public function adPromotion(Request $request)
+    {
+        return redirect()->route('frontend.payment.post', [$request->product_id, $request->promotion_id]);
+    }
 }
