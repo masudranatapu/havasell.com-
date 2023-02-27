@@ -185,7 +185,7 @@
                                 <tr>
                                     <td>
                                         <a href="{{ route('module.customer.show', $transaction->customer->username) }}">
-                                            {{ $transaction->customer->name }}
+                                            {{ $transaction->customer->username ?? '' }}
                                         </a>
                                     </td>
                                     <td class="text-muted">
@@ -193,7 +193,7 @@
                                     </td>
                                     <td class="text-muted">
                                         <span class="badge badge-primary">
-                                            {{ $transaction->plan->label }}
+                                            {{ $transaction->promotion->title ?? '' }}
                                         </span>
                                     </td>
                                     <td class="text-muted">

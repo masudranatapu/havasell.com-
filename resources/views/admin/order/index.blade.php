@@ -134,7 +134,7 @@
                                                     {{ ucfirst(Str::replace('_', ' ', $order->payment_type)) }}
                                                 </span>
                                             @else
-                                                <span class="badge badge-primary">{{ $order->plan->label }}</span>
+                                                <span class="badge badge-primary">{{ $order->promotion->title ?? '' }}</span>
                                             @endif
                                         </td>
                                         <td>
@@ -148,8 +148,8 @@
                                             @endif
                                         </td>
                                         <td class="text-capitalize"">
-                                            <a href="">
-                                                {{ $order->customer ? $order->customer->name : '-' }}
+                                            <a href="{{ route('module.customer.show', $order->customer->username) }}">
+                                                {{ $order->customer ? $order->customer->username : '-' }}
                                             </a>
                                         </td>
                                         <td>

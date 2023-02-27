@@ -11,6 +11,7 @@ use Illuminate\Support\Str;
 use Modules\Ad\Entities\Ad;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Promotion;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\RedirectResponse;
@@ -34,7 +35,8 @@ class AdPostController extends Controller
                 $subCategory = SubCategory::where('slug', $subcategory)->first();
                 $category = Category::where('id', $subCategory->category_id)->first();
                 $country = Country::with('cities')->where('iso' , strtoupper(getCountryCode()))->first();
-                return view('frontend.post.step_four', compact('ad_type', 'category', 'subCategory', 'country'));
+                $promotions = Promotion::latest()->get();
+                return view('frontend.post.step_four', compact('ad_type', 'category', 'subCategory', 'country', 'promotions'));
 
 
                 // if ($subcategory) {
@@ -202,6 +204,16 @@ class AdPostController extends Controller
                 }
             }
         }
+
+        if($request->featured == 1) {
+            $promotion = $request->promotion;
+
+            if (Auth::check()) {
+                return redirect()->route('frontend.payment.post', [$ad->id, $promotion]);
+            }
+
+        }
+
         if ($ad->status == 'active') {
             flashSuccess('Post created successfully');
             return redirect()->route('frontend.index')->with('message', 'Post created successfully');

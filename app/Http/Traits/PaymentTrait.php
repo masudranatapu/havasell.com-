@@ -2,28 +2,43 @@
 
 namespace App\Http\Traits;
 
+use App\Models\Promotion;
 use App\Models\Setting;
 use App\Models\UserPlan;
 use App\Models\Transaction;
 use App\Notifications\MembershipUpgradeNotification;
+use Carbon\Carbon;
+use Modules\Ad\Entities\Ad;
 
 trait PaymentTrait
 {
     public function orderPlacing($redirect = true)
     {
         // fetch session data
-        $plan = session('plan');
+        $ad = Ad::find(session('ad_id'));
+        $promotion = Promotion::find(session('promotion_id'));
+
+        if($promotion->id == 1) {
+            $total_duration = 7;
+        }elseif($promotion->id == 2) {
+            $total_duration = 30;
+        }else {
+            $total_duration = 90;
+        }
+        dd($total_duration);
+        // $plan = session('plan');
         $order_amount = session('order_payment');
         $transaction_id = session('transaction_id') ?? uniqid('tr_');
 
         // Plan benefit attach to user
-        $this->userPlanInfoUpdate($plan);
+        // $this->userPlanInfoUpdate($plan);
 
         // Transaction create
-        Transaction::create([
+        $tr = Transaction::create([
             'order_id' => rand(1000, 999999999),
             'transaction_id' =>  $transaction_id,
-            'plan_id' => $plan->id,
+            'promotion_id' => $promotion->id,
+            'ad_id' => $ad->id,
             'user_id' => auth('user')->id(),
             'payment_provider' => $order_amount['payment_provider'],
             'amount' => $order_amount['amount'],
@@ -33,27 +48,37 @@ trait PaymentTrait
         ]);
 
         // Store plan benefit in session and forget session
-        storePlanInformation();
+        // storePlanInformation();
+
+        $ad->status = 'active';
+        $ad->featured = 1;
+        $ad->feature_duration = Carbon::now()->addDay($total_duration);
+        $ad->save();
+
         $this->forgetSessions();
 
         // create notification and send mail to customer
-        if (checkMailConfig()) {
-            $user = auth('user')->user();
-            if (checkSetup('mail')) {
-                $user->notify(new MembershipUpgradeNotification($user, $plan->label));
-            }
-        }
+        // if (checkMailConfig()) {
+        //     $user = auth('user')->user();
+        //     if (checkSetup('mail')) {
+        //         $user->notify(new MembershipUpgradeNotification($user, $plan->label));
+        //     }
+        // }
 
         // redirect to customer billing
+
         if ($redirect) {
-            session()->flash('success', 'Plan purchased successfully');
-            return redirect()->route('frontend.plans-billing')->send();
+            session()->flash('message', 'Ad featured successfully');
+            return redirect()->route('frontend.payment.invoice', $tr->id)->send();
         }
+
     }
 
     private function forgetSessions()
     {
-        session()->forget('plan');
+        session()->forget('ad_id');
+        // session()->forget('plan');
+        session()->forget('promotion_id');
         session()->forget('order_payment');
         session()->forget('transaction_id');
         session()->forget('stripe_amount');
