@@ -23,6 +23,7 @@ Route::group(['as' => 'frontend.'], function () {
     Route::post('lange', [LocalizationController::class, 'setLang'])->name('localization');
     Route::get('/country', [LocalizationController::class, 'country'])->name('country');
     Route::post('country', [FrontendController::class, 'setCountry'])->name('setCountry');
+    Route::post('ad/promotion', [FrontendController::class, 'adPromotion'])->name('ad.promotion');
     Route::get('payment/post/{id}/{promotion}', [FrontendController::class, 'postPayment'])->name('payment.post');
     Route::get('payment/invoice/{id}',[FrontendController::class,'paymentInvoice'])->name('payment.invoice');
 

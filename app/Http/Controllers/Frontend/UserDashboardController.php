@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers\Frontend;
-use File;
 use Carbon\Carbon;
 use App\Models\User;
 use App\Models\AdType;
@@ -12,7 +11,9 @@ use Modules\Ad\Entities\Ad;
 use Illuminate\Http\Request;
 use Modules\Ad\Entities\AdGallery;
 use App\Http\Controllers\Controller;
+use App\Models\Promotion;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Mail;
 use Modules\Wishlist\Entities\Wishlist;
 
@@ -23,7 +24,8 @@ class UserDashboardController extends Controller
     {
         $user = Auth::user();
         $ads = Ad::active()->where('user_id', $user->id)->paginate(15);
-        return view('frontend.user.profile', compact('user', 'ads'));
+        $promotions  = Promotion::where('status', 1)->get();
+        return view('frontend.user.profile', compact('user', 'ads', 'promotions'));
     }
 
 

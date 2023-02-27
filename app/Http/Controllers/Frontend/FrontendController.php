@@ -311,4 +311,8 @@ class FrontendController extends Controller
         return view('frontend.post.payment-invoice',compact('transaction', 'transaction', 'promotion', 'ad', 'user'));
     }
 
+    public function adPromotion(Request $request)
+    {
+        return redirect()->route('frontend.payment.post', [$request->product_id, $request->promotion_id]);
+    }
 }
