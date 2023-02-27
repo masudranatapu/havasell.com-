@@ -12,14 +12,14 @@
                         <h3 class="widget-user-username">{{ $customer->name }}</h3>
                         <h5 class="widget-user-desc">{{ $customer->email }}</h5>
                     </div>
-                    <div class="widget-user-image">
+                    {{-- <div class="widget-user-image">
                         @if ($customer->image)
                             <img class="img-circle elevation-2" src="{{ asset($customer->image) }}" alt="Customer Image">
                         @else
                             <img class="img-circle elevation-2" src="{{ asset('backend/image/thumbnail.jpg') }}"
                                 alt="Customer Image">
                         @endif
-                    </div>
+                    </div> --}}
                     <div class="card-footer">
                         <div class="row">
                             <div class="col-sm-6 border-right">

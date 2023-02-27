@@ -1,7 +1,7 @@
 <table class="table table-hover text-nowrap table-bordered">
     <thead>
         <tr class="text-center">
-            <th width="5%">{{ __('thumbnail') }}</th>
+            {{-- <th width="5%">{{ __('thumbnail') }}</th> --}}
             <th width="30%">{{ __('name') }}</th>
             <th>{{ __('price') }}</th>
             <th>{{ __('Ad Type') }}</th>
@@ -21,9 +21,9 @@
     <tbody>
         @forelse ($ads as $key =>$ad)
             <tr>
-                <td class="text-center">
+                {{-- <td class="text-center">
                     <img src="{{ $ad->image_url }}" class="rounded" height="50px" width="50px" alt="image">
-                </td>
+                </td> --}}
                 <td class="text-center">
                     {{ $ad->title }}
                     @if ($ad->featured)

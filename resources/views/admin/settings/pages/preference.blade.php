@@ -98,7 +98,7 @@
     <div class="row">
         <div class="col-lg-6 col-12">
             <!-- Application Mode -->
-            <div class="card">
+            {{-- <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">
                         {{ __('application_mode') }}
@@ -150,12 +150,12 @@
                         </div>
                     </form>
                 </div>
-            </div>
+            </div> --}}
         </div>
 
         <div class="col-lg-6 col-12">
             <!-- MAp -->
-            <div class="card">
+            {{-- <div class="card">
                 <form id="" class="form-horizontal" action="{{ route('module.map.update') }}" method="POST">
                     @method('PUT')
                     @csrf
@@ -195,7 +195,7 @@
                                                 {{ __('google_map') }}
                                             </label>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                     {{-- <select name="map_type"
                                         class="form-control @error('watermark_type') is-invalid @enderror"
                                         id="">
@@ -213,7 +213,7 @@
                                     @enderror --}}
                                 </div>
                                 <!-- map-box key  -->
-                                <div id="mapbox_key"
+                                {{-- <div id="mapbox_key"
                                     class="form-group {{ setting('default_map') == 'map-box' ? '' : 'd-none' }} ">
                                     <div class="pt-2">
                                         <x-forms.label name="map_box_key" class="" />
@@ -250,7 +250,7 @@
                         </div>
                     </div>
                 </form>
-            </div>
+            </div> --}}
         </div>
     </div>
 @endsection
