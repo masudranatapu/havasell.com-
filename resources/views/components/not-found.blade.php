@@ -13,7 +13,7 @@
             {{ __('there_is_no') }} {{ strtolower($plural) }} {{ __('found_in_the_page') }}
         </p>
         @if ($route)
-            <div class="empty-action">
+            {{-- <div class="empty-action">
                 <a href="{{ route($route) }}" class="d-flex justify-content-center align-items-center text-center">
                     <button type="button"
                         class="btn btn-primary d-flex justify-content-center align-items-center text-center">
@@ -27,7 +27,7 @@
                         <span class="ml-2">{{ __('add_your_first') }} {{ strtolower($singuler) }}</span>
                     </button>
                 </a>
-            </div>
+            </div> --}}
         @endif
     </div>
 @else

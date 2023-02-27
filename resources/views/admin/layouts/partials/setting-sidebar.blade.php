@@ -31,9 +31,9 @@
                     <x-admin.sidebar-list :linkActive="Route::is('settings.seo.*') ? true : false" route="settings.seo.index" icon="fas fa-award">
                         {{ __('seo') }} {{ __('settings') }}
                     </x-admin.sidebar-list>
-                    <x-admin.sidebar-list :linkActive="Route::is('settings.custom') ? true : false" route="settings.custom" icon="fas fa-tools">
+                    {{-- <x-admin.sidebar-list :linkActive="Route::is('settings.custom') ? true : false" route="settings.custom" icon="fas fa-tools">
                         {{ __('custom_css_and_JS') }}
-                    </x-admin.sidebar-list>
+                    </x-admin.sidebar-list> --}}
                     <x-admin.sidebar-list :linkActive="Route::is('settings.cms') ? true : false" route="settings.cms" icon="fas fa-paragraph">
                         {{ __('cms') }}
                     </x-admin.sidebar-list>
@@ -59,7 +59,10 @@
                     <x-admin.sidebar-list :linkActive="Route::is('module.currency.*') ? true : false" route="module.currency.index" icon="fas fa-dollar-sign">
                         {{ __('currency') }}
                     </x-admin.sidebar-list>
-                    <x-sidebar-dropdown :linkActive="Route::is('settings.payment') || Route::is('settings.payment.*') ? true : false" :subLinkActive="Route::is('settings.payment') || Route::is('settings.payment.*') ? true : false" icon="fas fa-credit-card">
+                     <x-sidebar-list :linkActive="Route::is('settings.payment') ? true : false" route="settings.payment" icon="fas fa-credit-card">
+                        {{ __('payment_gateway') }}
+                    </x-sidebar-list>
+                    {{-- <x-sidebar-dropdown :linkActive="Route::is('settings.payment') || Route::is('settings.payment.*') ? true : false" :subLinkActive="Route::is('settings.payment') || Route::is('settings.payment.*') ? true : false" icon="fas fa-credit-card">
                         @slot('title')
                             {{ __('payment_gateway') }}
                         @endslot
@@ -76,7 +79,7 @@
                                 {{ __('offline_payment') }}
                             </x-sidebar-list>
                         </ul>
-                    </x-sidebar-dropdown>
+                    </x-sidebar-dropdown> --}}
                     {{-- <x-admin.sidebar-list :linkActive="Route::is('settings.module') ? true : false" route="settings.module" icon="fas fa-cog">
                         {{ __('module') }}
                     </x-admin.sidebar-list>

@@ -36,14 +36,14 @@
                             </a>
                         </li>
                     @endif
-                    @if (Module::collections()->has('Plan') && userCan('plan.view') && $priceplan_enable)
+                    {{-- @if (Module::collections()->has('Plan') && userCan('plan.view') && $priceplan_enable)
                         <x-sidebar-list :linkActive="Route::is('module.plan.index') || Route::is('module.plan.create') ? true : false" route="module.plan.index" icon="fas fa-credit-card">
                             {{ __('pricing_plan') }}
                         </x-sidebar-list>
-                    @endif
-                    <x-sidebar-list :linkActive="Route::is('report.index') ? true : false" route="report.index" icon="fas fa-file">
+                    @endif --}}
+                    {{-- <x-sidebar-list :linkActive="Route::is('report.index') ? true : false" route="report.index" icon="fas fa-file">
                         {{ __('seller_report') }}
-                    </x-sidebar-list>
+                    </x-sidebar-list> --}}
 
                     <li class="nav-header">{{ __('ads') }}</li>
                     @if (Module::collections()->has('Ad') && userCan('ad.view'))
@@ -127,7 +127,7 @@
                         </x-admin.sidebar-list>
                     @endif
                     {{-- Newsletter Subscription --}}
-                    @if (Module::collections()->has('Newsletter') && $newsletter_enable)
+                    {{-- @if (Module::collections()->has('Newsletter') && $newsletter_enable)
                         @if (userCan('newsletter.view') || userCan('newsletter.mailsend'))
                             <x-sidebar-dropdown :linkActive="Route::is('module.newsletter.*') ? true : false" :subLinkActive="Route::is('module.newsletter.*') ? true : false" icon="fas fa-envelope">
                                 @slot('title')
@@ -153,7 +153,7 @@
 
                             </x-sidebar-dropdown>
                         @endif
-                    @endif
+                    @endif --}}
 
                     <!-- Blog and Tag -->
                     {{-- @if (Module::collections()->has('Blog') && userCan('post.view') && $blog_enable)

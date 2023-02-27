@@ -5,7 +5,7 @@
         <div class="card-header">{{ __('about') }}</div>
         <div class="card-body">
             <div class="row">
-                <div class="col-md-6">
+                {{-- <div class="col-md-6">
                     <div class="form-group">
                         <x-forms.label name="about_video_thumb" />
                         <div class="">
@@ -14,8 +14,8 @@
                                 data-allowed-file-extensions="jpg png jpeg" accept="image/png, image/jpg, image/jpeg">
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6">
+                </div> --}}
+                <div class="col-md-12">
                     <div class="form-group">
                         <x-forms.label name="about_background" />
                         <div class="">
@@ -25,7 +25,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="form-group">
                         <x-forms.label name="about_body" />
                         <div class="">

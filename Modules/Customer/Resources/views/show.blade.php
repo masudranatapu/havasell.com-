@@ -22,13 +22,13 @@
                     </div>
                     <div class="card-footer">
                         <div class="row">
-                            <div class="col-sm-3 border-right">
+                            <div class="col-sm-6 border-right">
                                 <div class="description-block">
                                     <h5 class="description-header">{{ __('username') }}</h5>
                                     <span class="description-text">{{ $customer->username }}</span>
                                 </div>
                             </div>
-                            <div class="col-sm-3 border-right">
+                            {{-- <div class="col-sm-3 border-right">
                                 <div class="description-block">
                                     <h5 class="description-header">{{ __('phone') }}</h5>
                                     <span class="description-text">{{ $customer->phone }}</span>
@@ -39,8 +39,8 @@
                                     <h5 class="description-header">{{ __('website') }}</h5>
                                     <span class="description-text">{{ $customer->web ? $customer->web : '-' }}</span>
                                 </div>
-                            </div>
-                            <div class="col-sm-3">
+                            </div> --}}
+                            <div class="col-sm-6">
                                 <div class="description-block">
                                     <h5 class="description-header">{{ __('registered_at') }}</h5>
                                     <span
@@ -57,7 +57,7 @@
                 {{-- category wise ads --}}
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title" style="line-height: 36px;">{{ __('customer') }} {{ __('ads') }}
+                        <h3 class="card-title" style="line-height: 36px;">{{ __('customer') }} {{ __('Details') }}
                         </h3>
                         <a href="{{ route('module.customer.index') }}"
                             class="btn bg-primary float-right d-flex align-items-center justify-content-center"><i
@@ -71,7 +71,7 @@
                 {{-- purchase plan --}}
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title" style="line-height: 36px;">{{ __('purchase_plan') }}</h3>
+                        <h3 class="card-title" style="line-height: 36px;">{{ __('Customer Transaction') }}</h3>
                     </div>
                     <div class="card-body table-responsive p-0">
                         <table class="table">
@@ -79,7 +79,7 @@
                                 <tr>
                                     <th>#</th>
                                     <th>{{ __('amount') }}</th>
-                                    <th>{{ __('plan_name') }}</th>
+                                    <th>{{ __('Post Title') }}</th>
                                     <th>{{ __('payment_provider') }}</th>
                                     <th>{{ __('created_time') }}</th>
                                 </tr>
@@ -112,7 +112,7 @@
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td colspan="3" class="text-center">
+                                        <td colspan="5" class="text-center">
                                             <span class="">{{ __('no_transactions_found') }}...</span>
                                         </td>
                                     </tr>
