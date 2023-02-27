@@ -77,9 +77,9 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
+                        <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
                         <input type="text" name="email" id="email" value="{{ Auth::user()->email ?? old('email') }}" class="form-control"
-                            placeholder="Your email address" required>
+                            placeholder="Your email address" required >
                     </div>
                     <div class="mb-3">
                         <span class="text-dark" style="font-weight:600;">replies use CL mail relay <a href="#" class="text-success">[?]</a></span><br>
@@ -151,7 +151,7 @@
 
     <div class="col-12">
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="term_condition" name="other_contact" value="1" required>
+            <input class="form-check-input" type="checkbox" id="term_condition" name="other_contact" value="1" >
             <label class="form-check-label" for="term_condition" style="font-size: 14px;">
                 ok for others to contact you about other services, products or commercial interests
             </label>

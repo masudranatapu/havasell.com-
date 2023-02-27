@@ -48,7 +48,7 @@
                         <p>Enter your account email address to reset your password.</p>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Email</label>
+                        <label class="form-label">Email <span class="text-danger">*</span></label>
                         <input type="email" name="email" class="form-control" required placeholder="Email">
                     </div>
                     <div class="mb-3 text-center">

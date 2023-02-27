@@ -24,7 +24,7 @@
             <div class="row mb-3">
                 <div class="mb-3">
                     <label for="venue" class="form-label">venue</label>
-                    <input type="text" name="venue" id="venue" value="{{ old('venue') }}" class="form-control" required>
+                    <input type="text" name="venue" id="venue" value="{{ old('venue') }}" class="form-control" >
                 </div>
                 <div class="col-md-6">
                     <div class="row">
@@ -36,7 +36,7 @@
                         <div class="mb-3 col-md-6">
                             <label for="event_duration" class="form-label">event duration</label>
                             <select type="text" name="event_duration" id="event_duration" class="form-control select2"
-                                required>
+                                >
                                 @for ($i = 1; $i <= 14; $i++) <option value="{{ $i }}">{{ $i }} Days</option>
                                     @endfor
                             </select>
@@ -170,9 +170,9 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
+                        <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
                         <input type="text" name="email" id="email" value="{{ Auth::user()->email ?? old('email') }}"
-                            class="form-control" placeholder="Your email address" required>
+                            class="form-control" placeholder="Your email address" required >
                     </div>
                     <div class="mb-3">
                         <span class="text-dark" style="font-weight:600;">email privacy
@@ -244,7 +244,7 @@
 
     <div class="col-12">
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="term_condition" name="other_contact" value="1" required>
+            <input class="form-check-input" type="checkbox" id="term_condition" name="other_contact" value="1" >
             <label class="form-check-label" for="term_condition" style="font-size: 14px;">
                 ok for others to contact you about other services, products or commercial interests
             </label>

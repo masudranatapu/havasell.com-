@@ -69,7 +69,7 @@ $country = getCountryCode();
                                 @foreach ($item->subcategories as $scat)
                                 <li>
                                     <a
-                                        href="{{ route('frontend.search', ['country' => $country, 'category' => $item->slug, 'subcategory' => $scat->slug]) }}">
+                                        href="{{ route('frontend.search', ['category' => $item->slug, 'subcategory' => $scat->slug]) }}">
                                         {{ __($scat->name) }}
 
                                         <span class="float-end">({{ $scat->ads->count() }})</span>
@@ -146,7 +146,7 @@ $country = getCountryCode();
                                     @foreach ($item->subcategories as $scat)
                                     <li>
                                         <a
-                                            href="{{ route('frontend.search', ['country' => $country, 'category' => $item->slug, 'subcategory' => $scat->slug]) }}">{{
+                                            href="{{ route('frontend.search', ['category' => $item->slug, 'subcategory' => $scat->slug]) }}">{{
                                             __($scat->name) }}</a>
                                     </li>
                                     @endforeach
@@ -174,7 +174,7 @@ $country = getCountryCode();
                                     @foreach ($item->subcategories as $scat)
                                     <li>
                                         <a
-                                            href="{{ route('frontend.search', ['country' => $country, 'category' => $item->slug, 'subcategory' => $scat->slug]) }}">{{
+                                            href="{{ route('frontend.search', ['category' => $item->slug, 'subcategory' => $scat->slug]) }}">{{
                                             __($scat->name) }}</a>
                                     </li>
                                     @endforeach
@@ -210,7 +210,7 @@ $country = getCountryCode();
                         // $('#eventForm').submit();
                         var base_url = $('#base_url').val();
                         var country = $('#country').val();
-                        var full_url = base_url + '/shop/' + country + '/events/?date=' + date
+                        var full_url = base_url + '/ads/' + country + '/events/?date=' + date
                         window.location.replace(full_url);
                     }
                 }
