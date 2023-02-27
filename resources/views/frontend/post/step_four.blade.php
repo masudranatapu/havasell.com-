@@ -104,7 +104,7 @@
                                     col-md-4 @endif
                             ">
                             <div class="mb-3">
-                                <label for="city" class="form-label">city ​​or neighborhood</label>
+                                <label for="city" class="form-label">Location ​​or neighborhood</label>
                                 <input type="text" name="city" id="city" class="form-control">
                             </div>
                         </div>
