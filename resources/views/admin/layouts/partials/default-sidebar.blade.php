@@ -55,9 +55,9 @@
                             {{ __('Ad Types') }}
                         </x-sidebar-list>
 
-                        <x-sidebar-list :linkActive="Route::is('city.*') ? true : false" route="city.index" icon="fa fa-plus-square">
+                        {{-- <x-sidebar-list :linkActive="Route::is('city.*') ? true : false" route="city.index" icon="fa fa-plus-square">
                             {{ __('City') }}
-                        </x-sidebar-list>
+                        </x-sidebar-list> --}}
 
 
                     @if (Module::collections()->has('Category') && (userCan('category.view') || userCan('subcategory.view')))

@@ -27,7 +27,7 @@
                         </div>
                     </div>
                     <div class="mb-1">
-                        <label for="language" class="form-label"><small class="text-success">language of posting</small></label>
+                        <label for="language" class="form-label"><small class="text-success">language of posting <span class="text-danger">*</span></small></label>
                         <select name="language" id="language" class="form-control">
                                 <option value="" selected disabled>-</option>
                                 <option value="english">english</option>

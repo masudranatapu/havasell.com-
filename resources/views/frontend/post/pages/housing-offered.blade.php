@@ -30,7 +30,7 @@
                         </select>
                     </div>
                     <div class="select_dropdown">
-                        <label for="laundry" class="text-success">laundry</label>
+                        <label for="laundry" class="text-success">laundry <span class="text-danger">*</span></label>
                         <select name="laundry" id="laundry" class="form-control">
                             <option value="" class="d-none">-</option>
                             <option value="w/d in unit">w/d in unit</option>
@@ -41,7 +41,7 @@
                         </select>
                     </div>
                     <div class="select_dropdown">
-                        <label for="parking" class="text-success">parking</label>
+                        <label for="parking" class="text-success">parking <span class="text-danger">*</span></label>
                         <select name="parking" id="parking" class="form-control">
                             <option value="" class="d-none">-</option>
                             <option value="carport">carport</option>
@@ -54,7 +54,7 @@
                         </select>
                     </div>
                     <div class="select_dropdown">
-                        <label for="bedrooms">bedrooms</label>
+                        <label for="bedrooms">bedrooms <span class="text-danger">*</span></label>
                         <select name="bedrooms" id="bedrooms" class="form-control">
                             <option value="" class="d-none">-</option>
                             <option value="0">0</option>
@@ -69,7 +69,7 @@
                         </select>
                     </div>
                     <div class="select_dropdown">
-                        <label for="bathrooms">bathrooms</label>
+                        <label for="bathrooms">bathrooms <span class="text-danger">*</span></label>
                         <select name="bathrooms" id="bathrooms" class="form-control">
                             <option value="" class="d-none">-</option>
                             <option value="shared">shared</option>

@@ -69,7 +69,7 @@
 
                         ">
                         <div class="mb-3">
-                            <label for="title" class="form-label text-success">posting title</label>
+                            <label for="title" class="form-label text-success">posting title <span class="text-danger">*</span></label>
                             <input type="text" name="title" id="title" value="{{ $ad->title ?? old('title') }}"
                                 class="form-control" required>
                         </div>
@@ -82,7 +82,7 @@
                     $ad->ad_type->slug == 'event-class')
                     <div class="col-md-2">
                         <div class="mb-3">
-                            <label for="price" class="form-label text-success">Price <small class="text-dark">€</small>
+                            <label for="price" class="form-label text-success">Price <small class="text-dark">$</small>
                             </label>
                             <input type="number" name="price" id="price" value="{{ $ad->price ?? old('price') }}"
                                 class="form-control" required>
@@ -120,7 +120,7 @@
                     </div>
                     <div class="col-12">
                         <div class="mb-3">
-                            <span class="text-dark">Only one description per posting.</span><br />
+                            <span class="text-dark">Only one description per posting.<span class="text-danger">*</span></span><br />
                             <label for="description" class="form-label text-success">description</label>
                             <textarea name="description" id="description" cols="30" rows="5" class="form-control"
                                 style="height: 150px;" required>{{ $ad->description ?? old('description') }}</textarea>
@@ -128,18 +128,26 @@
                     </div>
                     <div class="col-md-12 mt-3">
                         <div class="row">
-                            <div class="col-md-10">
+                            <div class="
+                                @if($ad->thumbnail)
+                                    col-md-10
+                                @else
+                                    col-md-12
+                                @endif
+                            ">
                                 <div class="mb-3">
                                     <label for="formFile" class="form-label">Upload Thumb</label>
                                     <input class="form-control" type="file" name="thumbnail" id="formFile">
                                 </div>
                             </div>
-                            <div class="col-md-2">
-                                <div class="">
-                                    <span class="text-dark">Thumbnail</span><br />
-                                    <img class="img-style" src="{{ asset($ad->thumbnail) }}" alt="Paris">
+                            @if ($ad->thumbnail)
+                                 <div class="col-md-2">
+                                    <div class="">
+                                        <span class="text-dark">Thumbnail</span><br />
+                                        <img class="img-style" src="{{ asset($ad->thumbnail) }}" alt="Paris">
+                                    </div>
                                 </div>
-                            </div>
+                            @endif
                         </div>
                     </div>
                     <div class="input-field mb-3">
