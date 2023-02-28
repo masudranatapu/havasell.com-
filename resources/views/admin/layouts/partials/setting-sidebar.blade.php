@@ -56,9 +56,9 @@
                     <x-admin.sidebar-list :linkActive="Route::is('settings.email') ? true : false" route="settings.email" icon="fas fa-envelope">
                         {{ __('SMTP') }}
                     </x-admin.sidebar-list>
-                    <x-admin.sidebar-list :linkActive="Route::is('module.currency.*') ? true : false" route="module.currency.index" icon="fas fa-dollar-sign">
+                    {{-- <x-admin.sidebar-list :linkActive="Route::is('module.currency.*') ? true : false" route="module.currency.index" icon="fas fa-dollar-sign">
                         {{ __('currency') }}
-                    </x-admin.sidebar-list>
+                    </x-admin.sidebar-list> --}}
                      <x-sidebar-list :linkActive="Route::is('settings.payment') ? true : false" route="settings.payment" icon="fas fa-credit-card">
                         {{ __('payment_gateway') }}
                     </x-sidebar-list>

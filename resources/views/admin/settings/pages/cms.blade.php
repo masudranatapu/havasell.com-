@@ -34,7 +34,7 @@
                                 aria-selected="false">{{ __('home') }}</a>
                         </li> --}}
                         <li class="nav-item border rounded mb-1" role="presentation">
-                            <a class="nav-link {{ $cms_tab == 'about' ? 'active' : '' }}" id="about-tab" data-toggle="pill"
+                            <a class="nav-link {{ $cms_tab == 'about' ? 'active' : 'active' }}" id="about-tab" data-toggle="pill"
                                 href="#cms-about" role="tab" aria-controls="about"
                                 aria-selected="false">{{ __('about') }}</a>
                         </li>
@@ -113,13 +113,13 @@
                                 data-toggle="pill" href="#cms-errorpages" role="tab" aria-controls="errorpages"
                                 aria-selected="false">{{ __('error_pages') }}</a>
                         </li> --}}
-                        <li class="nav-item border rounded mb-1" role="presentation">
+                        {{-- <li class="nav-item border rounded mb-1" role="presentation">
                             <a class="nav-link {{ $cms_tab == 'footer_text' ? 'active' : '' }}" id="footer_text-tab"
                                 data-toggle="pill" href="#cms-footer_text" role="tab" aria-controls="footer_text"
                                 aria-selected="false">
                                 {{ __('footer_text') }}
                             </a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </div>
                 <div class="col-12 col-sm-12 col-md-10">
@@ -131,7 +131,7 @@
                         </div> --}}
 
                         {{-- About Settings --}}
-                        <div class="tab-pane fade {{ $cms_tab == 'about' ? 'show active' : '' }}" id="cms-about"
+                        <div class="tab-pane fade {{ $cms_tab == 'about' ? 'show active' : 'show active' }}" id="cms-about"
                             role="tabpanel" aria-labelledby="about-tab">
                             <x-backend.setting.cms.about-setting :aboutcontent="$cms->about_body" :aboutVideoThumb="$cms->about_video_thumb" :aboutBackground="$cms->about_background" />
                         </div>

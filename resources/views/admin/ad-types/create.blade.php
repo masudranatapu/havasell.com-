@@ -54,34 +54,6 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <x-forms.label name="Adtype Amount" required="true" class="col-sm-3 col-form-label" />
-                                    <div class="col-sm-9">
-                                        <input value="{{ old('amount') }}" name="amount" type="text"
-                                            class="form-control @error('amount') is-invalid @enderror"
-                                            placeholder="{{ __('Amount') }}">
-                                        @error('amount')
-                                            <span class="invalid-feedback"
-                                                role="alert"><strong>{{ $message }}</strong></span>
-                                        @enderror
-                                    </div>
-                                </div>
-                               <div class="form-group row mb-15">
-                                    <x-forms.label name="Paid Type" required="true" class="col-sm-3" />
-                                    <div class="col-sm-9">
-                                        <select name="is_paid"
-                                            class="select2bs4 @error('is_paid') is-invalid @enderror"
-                                            style="width: 100%;">
-                                            <option value="" disabled >{{ __('Is Paid') }}</option>
-                                           <option value="1">Yes</option>
-                                           <option value="0">No</option>
-                                        </select>
-                                        @error('is_paid')
-                                            <span class="invalid-feedback"
-                                                role="alert"><strong>{{ $message }}</strong></span>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="form-group row">
                                     <div class="offset-sm-3 col-sm-4">
                                         <button type="submit" class="btn btn-success">
                                             <i class="fas fa-plus"></i>&nbsp; {{ __('create') }}
