@@ -136,7 +136,7 @@
                                 @endif
                                 <div class="product_img">
                                     <a href="{{ route('frontend.details', $value->slug) }}">
-                                        <img src="@if($value->thumbnail) {{ asset($value->thumbnail) }} @else {{ asset('images/demoimage.jpg') }} @endif" class="w-100" alt="image">
+                                        <img src="@if($value->thumbnail){{ asset($value->thumbnail) }} @else {{asset('frontend/images/no-img.png')}}  @endif" class="w-100" alt="image">
                                     </a>
                                 </div>
                                 <div class="product_content">
