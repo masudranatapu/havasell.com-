@@ -52,7 +52,7 @@ class RegisterController extends Controller
         $user = User::where('email', $request->email)->get();
 
         if ($user->count() > 0) {
-            return redirect()->back()->with('info', 'Your email has already an account. Plase login to your account');
+            return redirect()->back()->with('info', 'Your email has already an account. Please login to your account');
         } else {
             $random_token = Str::random(40);
             $email = explode('@', $request->email);
@@ -78,7 +78,7 @@ class RegisterController extends Controller
             ];
 
             Mail::to($request->email)->send(new RegisterMail($details));
-            return redirect()->back()->with('message', 'An verify link has been sent to your mail address. Plase verify you account');
+            return redirect()->back()->with('message', 'An verify link has been sent to your mail address. Please verify your account');
         }
     }
 
@@ -91,7 +91,7 @@ class RegisterController extends Controller
             }
             return view('frontend.auth.verify', compact('user'));
         } else {
-            return redirect()->route('signin')->with('error', 'Someting went worng with your verify token. Please try again.');
+            return redirect()->route('signin')->with('error', 'Something went worng with your verify token. Please try again.');
         }
     }
 
