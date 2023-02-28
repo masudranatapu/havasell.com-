@@ -75,7 +75,7 @@
                             placeholder="Your email address" required >
                     </div>
                     <div class="mb-3">
-                        <span class="text-dark" style="font-weight:600;">replies use CL mail relay</span><br>
+                        <span class="text-dark" style="font-weight:600;">replies use havasell mail relay</span><br>
                         <a href="#" class="text-success">[?]</a>
                     </div>
                 </div>
