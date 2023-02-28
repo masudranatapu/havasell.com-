@@ -98,7 +98,7 @@ $country = getCountryCode();
                     <div class="mobile_heade_left">
                         <div class="site_logo">
                             <a class="header_logo" name="logoLink" href="{{ route('frontend.index') }}">H</a>
-                            <a href="index.html">Havasell</a>
+                            <a href="{{url('/')}}">Havasell</a>
                         </div>
                     </div>
                 </div>
