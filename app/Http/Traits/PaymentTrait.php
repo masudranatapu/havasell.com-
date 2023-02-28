@@ -25,7 +25,7 @@ trait PaymentTrait
         }else {
             $total_duration = 90;
         }
-        dd($total_duration);
+
         // $plan = session('plan');
         $order_amount = session('order_payment');
         $transaction_id = session('transaction_id') ?? uniqid('tr_');
