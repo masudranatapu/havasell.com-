@@ -121,6 +121,7 @@
         @csrf
         <input type="hidden" name="ad_id" value="{{ $ad->id  }}">
         <input type="hidden" name="price" value="{{ $ad->ad_type->amount }}">
+        <input type="hidden" name="promotions_id" value="{{ $promotions->id }}">
         <script id="stripe_script" src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                 data-key="{{ config('zakirsoft.stripe_key') }}" data-ad_id="{{ $ad->id }}" data-amount="{{ $ad->ad_type->amount * 100 }}"
                 data-name="{{ config('app.name') }}" data-description="Money pay with stripe"
