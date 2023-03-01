@@ -370,7 +370,7 @@
                             @csrf
                             <input type="hidden" value="stripe" name="type">
                             <div class="form-group row">
-                                <x-forms.label name="{{ __('publisher_key') }}" class="col-sm-3" />
+                                <x-forms.label name="{{ __('secret_key') }}" class="col-sm-3" />
                                 <div class="col-sm-9">
                                     <input
                                         onkeyup="ButtonDisabled('button3', 'stripe_secret' , '{{ env('STRIPE_SECRET') }}')"
@@ -383,7 +383,8 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <x-forms.label name="{{ __('secret_key') }}" class="col-sm-3" />
+                                
+                                <x-forms.label name="{{ __('publisher_key') }}" class="col-sm-3" />
                                 <div class="col-sm-9">
                                     <input onkeyup="ButtonDisabled('button3', 'stripe_key' , '{{ env('STRIPE_KEY') }}')"
                                         value="{{ env('STRIPE_KEY') }}" name="stripe_key" type="text"
