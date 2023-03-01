@@ -98,7 +98,7 @@ $country = getCountryCode();
                     <div class="mobile_heade_left">
                         <div class="site_logo">
                             <a class="header_logo" name="logoLink" href="{{ route('frontend.index') }}">H</a>
-                            <a href="{{url('/')}}">Havasell</a>
+                            <a href="{{url('/')}}">{{ config('app.name') }}</a>
                         </div>
                     </div>
                 </div>
@@ -123,7 +123,7 @@ $country = getCountryCode();
             <form action="{{ route('frontend.search') }}" method="get" class="mb-3 mt-3 p-2">
                 <div class="input-group">
                     <input type="text" name="search" id="search" class="form-control" placeholder="Search..." required>
-                    <button type="submit" class="text-input-group"><i class="la la-search"></i></button>
+                    <button type="submit" class="input-group-text"><i class="la la-search"></i></button>
                 </div>
             </form>
 

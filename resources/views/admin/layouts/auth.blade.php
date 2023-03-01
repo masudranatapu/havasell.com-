@@ -25,41 +25,40 @@
             padding: 12px 20px;
             height: unset !important;
         }
-
-        .quote {
-            max-width: 380px;
-            margin: 0 auto;
+        .custom-style {
+            margin-top: 11%;
+            background-color: white;
         }
 
-        .background-view {
-            background-image: url('https://source.unsplash.com/random/1920x1280/?park,travel,sunset'), url('/backend/image/river.jpeg');
-            background-size: cover;
-        }
+      
     </style>
 </head>
 
-<body>
+<body style="background-color: #ebedf4;">
     <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-lg-4 col-md-5">
-                <div class="d-flex flex-column justify-content-between align-items-center py-5 px-4 min-vh-100">
+        <div class="row   d-flex justify-content-center">
+            <div class="card p-5 custom-style">
+                    <div class="col-lg-4 col-md-5">
+                <div class="d-flex flex-column ">
                     <a href="{{ route('admin.login') }}" class="d-block">
-                        <div class="system-logo d-flex justify-content-center">
+                        <div class="system-logo d-flex justify-content-center mb-5">
                             <img src="{{ $setting->logo_image_url }}" alt="logo" class="img-fluid">
                         </div>
                     </a>
                     <div class="login-card-body p-0">
                         @yield('content')
                     </div>
-                    <div class="text-center text-secondary quote">
+                    {{-- <div class="text-center text-secondary quote">
                         {{ inspireMe() }}
-                    </div>
+                    </div> --}}
                 </div>
             </div>
-            <div class="col-lg-8 col-md-7 col d-lg-block d-none">
+            </div>
+            
+            {{-- <div class="col-lg-8 col-md-7 col d-lg-block d-none">
                 <div class="h-100 min-vh-100 background-view">
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 

@@ -12,6 +12,10 @@
             border: 1px solid #cdc9c9 !important;
             background: #d8d8d8 !important;
         }
+        .custom-select-style{
+            border: 1px solid #fff;
+            background: #E8E8E8;
+        }
     </style>
 @endpush
 
@@ -137,18 +141,22 @@
                                 <div class="modal-body">
                                     <div class="row">
                                         <div class="col-md-12 mt-3">
-                                            <label for="">Product Name</label>
-                                            <input type="text" id="productName" readonly class="form-control">
+                                           <div class="form-group">
+                                                 <label for="">Product Name</label>
+                                                 <input type="text" id="productName" readonly class="form-control">
+                                           </div>
                                         </div>
                                         <div class="col-md-12 mt-3">
-                                            <label>Promotion</label>
-                                            <select name="promotion_id" class="form-control" required="">
-                                                @foreach ($promotions as $promotion)
-                                                    <option value="{{ $promotion->id }}">
-                                                        {{ $promotion->title . ' ' . 'for' . ' ' . '$' . number_format($promotion->price, 2) }}
-                                                    </option>
-                                                @endforeach
-                                            </select>
+                                            <div class="form-group">
+                                                <label>Promotion</label>
+                                                    <select name="promotion_id" class="form-control custom-select-style" required="">
+                                                        @foreach ($promotions as $promotion)
+                                                            <option value="{{ $promotion->id }}">
+                                                                {{ $promotion->title . ' ' . 'for' . ' ' . '$' . number_format($promotion->price, 2) }}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

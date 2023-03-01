@@ -11,17 +11,16 @@ class MembershipUpgradeNotification extends Notification implements ShouldQueue
 {
     use Queueable;
 
-    public $user, $plan_type;
+    public $details;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($user, $plan_type)
+    public function __construct($details)
     {
-        $this->user = $user;
-        $this->plan_type = $plan_type;
+        $this->details = $details;
     }
 
     /**
@@ -44,11 +43,11 @@ class MembershipUpgradeNotification extends Notification implements ShouldQueue
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->greeting("Hello " . $this->user->name . " !")
-            ->subject('Plan Upgrade')
-            ->line("Upgrade to " . $this->plan_type . " plan")
-            ->action('View Ad', url('dashboard/plans-billing'))
-            ->line('Thank you for using our ' . config('app.name') . '!');
+            ->greeting($this->details['greeting'])
+            ->subject($this->details['subject'])
+            ->line($this->details['body'])
+            ->action($this->details['ad_text'], $this->details['ad_url'])
+            ->line($this->details['thanks']);
     }
 
     /**

@@ -2,13 +2,15 @@
 
 namespace App\Http\Traits;
 
-use App\Models\Promotion;
+use Carbon\Carbon;
 use App\Models\Setting;
 use App\Models\UserPlan;
+use App\Models\Promotion;
 use App\Models\Transaction;
-use App\Notifications\MembershipUpgradeNotification;
-use Carbon\Carbon;
 use Modules\Ad\Entities\Ad;
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\UserPostAdNotification;
+use App\Notifications\MembershipUpgradeNotification;
 
 trait PaymentTrait
 {
@@ -18,11 +20,11 @@ trait PaymentTrait
         $ad = Ad::find(session('ad_id'));
         $promotion = Promotion::find(session('promotion_id'));
 
-        if($promotion->id == 1) {
+        if ($promotion->id == 1) {
             $total_duration = 7;
-        }elseif($promotion->id == 2) {
+        } elseif ($promotion->id == 2) {
             $total_duration = 30;
-        }else {
+        } else {
             $total_duration = 90;
         }
 
@@ -58,12 +60,21 @@ trait PaymentTrait
         $this->forgetSessions();
 
         // create notification and send mail to customer
-        // if (checkMailConfig()) {
-        //     $user = auth('user')->user();
-        //     if (checkSetup('mail')) {
-        //         $user->notify(new MembershipUpgradeNotification($user, $plan->label));
-        //     }
-        // }
+        if (checkMailConfig()) {
+            $user = auth('user')->user();
+            if (checkSetup('mail')) {
+                $details = [
+                    'greeting' => 'Hello ' . $user->username,
+                    'subject' => 'Payment Notification',
+                    'body'    => 'We would like to inform you that your payment of paid for has been successfully processed. Thank you for your business!',
+                    'ad_text' => 'Go to Veiw Details',
+                    'ad_url' => route('frontend.details', $ad->slug),
+                    'thanks' => 'Thaks for Using the application..'
+                ];
+
+                Notification::route('mail', $user->email)->notify(new MembershipUpgradeNotification($details));
+            }
+        }
 
         // redirect to customer billing
 
@@ -71,7 +82,6 @@ trait PaymentTrait
             session()->flash('message', 'Ad featured successfully');
             return redirect()->route('frontend.payment.invoice', $tr->id)->send();
         }
-
     }
 
     private function forgetSessions()
