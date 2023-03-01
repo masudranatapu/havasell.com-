@@ -1,4 +1,4 @@
-@extends('frontend.layouts.app', ['nav' => 'no'])
+@extends('frontend.layouts.app', ['nav' => 'yes'])
 
 @section('meta')
 <meta property="title" content="{{ $meta_title }}" />
