@@ -66,10 +66,14 @@ trait PaymentTrait
                 $details = [
                     'greeting' => 'Hello ' . $user->username,
                     'subject' => 'Payment Notification',
-                    'body'    => 'We would like to inform you that your payment of paid for has been successfully processed. Thank you for your business!',
-                    'ad_text' => 'Go to Veiw Details',
+                    'body'    => 'We would like to infrom you that your payment has been paid',
+                    'transactionDetails' => 'Transaction Details:',
+                    'transaction_id' => 'Transaction ID ' . $tr->transaction_id,
+                    'transaction_date' => 'Transaction Date ' . date('d M Y', strtotime($tr->created_at)),
+                    'payment_method' => 'Payment Method ' . $tr->payment_provider,
+                    'ad_text' => 'Go to view Ads',
                     'ad_url' => route('frontend.details', $ad->slug),
-                    'thanks' => 'Thaks for Using the application..'
+                    'thanks' => 'Thanking with Us'
                 ];
 
                 Notification::route('mail', $user->email)->notify(new MembershipUpgradeNotification($details));

@@ -46,8 +46,15 @@ class MembershipUpgradeNotification extends Notification implements ShouldQueue
             ->greeting($this->details['greeting'])
             ->subject($this->details['subject'])
             ->line($this->details['body'])
+            ->line($this->details['transactionDetails'])
+            ->line($this->details['transaction_id'])
+            ->line($this->details['transaction_date'])
+            ->line($this->details['payment_method'])
             ->action($this->details['ad_text'], $this->details['ad_url'])
             ->line($this->details['thanks']);
+          
+           
+            
     }
 
     /**
