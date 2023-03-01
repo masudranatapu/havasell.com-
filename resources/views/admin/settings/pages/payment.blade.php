@@ -370,18 +370,6 @@
                             @csrf
                             <input type="hidden" value="stripe" name="type">
                             <div class="form-group row">
-                                <x-forms.label name="{{ __('secret_key') }}" class="col-sm-3" />
-                                <div class="col-sm-9">
-                                    <input onkeyup="ButtonDisabled('button3', 'stripe_key' , '{{ env('STRIPE_KEY') }}')"
-                                        value="{{ env('STRIPE_KEY') }}" name="stripe_key" type="text"
-                                        class="form-control @error('stripe_key') is-invalid @enderror"
-                                        autocomplete="off">
-                                    @error('stripe_key')
-                                        <span class="invalid-feedback" role="alert"><span>{{ $message }}</span></span>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="form-group row">
                                 <x-forms.label name="{{ __('publisher_key') }}" class="col-sm-3" />
                                 <div class="col-sm-9">
                                     <input
@@ -390,6 +378,18 @@
                                         class="form-control @error('stripe_secret') is-invalid @enderror"
                                         autocomplete="off">
                                     @error('stripe_secret')
+                                        <span class="invalid-feedback" role="alert"><span>{{ $message }}</span></span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <x-forms.label name="{{ __('secret_key') }}" class="col-sm-3" />
+                                <div class="col-sm-9">
+                                    <input onkeyup="ButtonDisabled('button3', 'stripe_key' , '{{ env('STRIPE_KEY') }}')"
+                                        value="{{ env('STRIPE_KEY') }}" name="stripe_key" type="text"
+                                        class="form-control @error('stripe_key') is-invalid @enderror"
+                                        autocomplete="off">
+                                    @error('stripe_key')
                                         <span class="invalid-feedback" role="alert"><span>{{ $message }}</span></span>
                                     @enderror
                                 </div>
