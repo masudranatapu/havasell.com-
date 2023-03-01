@@ -87,7 +87,6 @@ $country = getCountryCode();
         </div>
     </div>
 </div>
-@endsection
 
 <!-- ------------------ Mobile View Desing Start ------------------ -->
 <div class="mobile-view d-block d-lg-none">
@@ -193,6 +192,10 @@ $country = getCountryCode();
     @include('frontend.layouts.footer')
 </div>
 <!-- ------------------ Mobile View Desing End ------------------ -->
+
+@endsection
+
+
 
 
 @push('script')

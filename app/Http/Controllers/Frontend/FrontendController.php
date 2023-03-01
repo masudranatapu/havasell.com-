@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use Modules\Language\Entities\Language;
 use App\Models\Faq;
 use App\Models\Seo;
 use App\Models\AdType;
@@ -49,8 +50,9 @@ class FrontendController extends Controller
         $meta_description = $seo->contents->description;
         $meta_keywords = $seo->contents->keywords;
         $meta_image = $seo->contents->image;
+        $languages = Language::orderBy('name', 'asc')->get();
 
-        return view('frontend.index', compact('ads', 'ad_types', 'countries', 'cities', 'meta_title', 'meta_description', 'meta_image', 'meta_keywords', 'categories'));
+        return view('frontend.index', compact('languages','ads', 'ad_types', 'countries', 'cities', 'meta_title', 'meta_description', 'meta_image', 'meta_keywords', 'categories'));
     }
 
     public function setCountry(Request $request)
