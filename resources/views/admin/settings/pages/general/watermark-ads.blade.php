@@ -2,7 +2,7 @@
 
 @section('general-setting')
 <div class="card">
-    <form id="watermarkForm" class="form-horizontal" action="{{ route('settings.general.watermark.update') }}"
+    {{-- <form id="watermarkForm" class="form-horizontal" action="{{ route('settings.general.watermark.update') }}"
         method="POST" enctype="multipart/form-data">
         @method('PUT')
         @csrf
@@ -81,7 +81,7 @@
             </button>
         </div>
         @endif
-    </form>
+    </form> --}}
 </div>
 @endsection
 

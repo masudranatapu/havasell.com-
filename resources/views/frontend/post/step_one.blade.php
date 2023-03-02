@@ -9,9 +9,7 @@
 @endpush
 
 @section('breadcrumb')
-<ul>
-    {{-- <li>{{__('ffuts')}}</li> --}}
-</ul>
+
 @endsection
 
 @section('content')

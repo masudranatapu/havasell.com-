@@ -1,6 +1,5 @@
 @extends('admin.layouts.auth')
 @section('content')
-    <p class="login-box-msg">{{ __('sign_in_to_start_your_session') }}</p>
 
     <form method="POST" action="{{ route('admin.login') }}">
         @csrf

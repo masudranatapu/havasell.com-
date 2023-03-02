@@ -7,7 +7,7 @@
             <div class="col-md-6">
                 <div class="mb-3">
                     <label for="employment_type" class="form-label text-success">kind of
-                        employment</label>
+                        employment <span class="text-danger">*</span></label>
                     <select name="employment_type" id="employment_type" class="form-control" >
                         <option value="" class="d-none">-</option>
                         <option value="full time">full time</option>
@@ -60,7 +60,7 @@
 </div>
 <div class="col-md-4">
     <div class="mb-3">
-        <label for="job_title" class="form-label text-success">job title</label>
+        <label for="job_title" class="form-label text-success">job title <span class="text-danger">*</span></label>
         <input type="text" name="job_title" value="{{ $ad->job_title ?? old('job_title')}}" id="job_title"
             class="form-control" >
     </div>
@@ -97,9 +97,9 @@
                         options</span>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="email_privacy" id="privacy_1"
-                            value="CL mail relay">
+                            value="havasell mail relay">
                         <label class="form-check-label" for="privacy_1">
-                            CL mail relay (recommended)
+                            havasell mail relay (recommended)
                         </label>
                     </div>
                     <div class="form-check">

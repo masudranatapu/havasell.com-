@@ -110,7 +110,7 @@
             </div>
 
             {{-- SSL Commerz Setting --}}
-            <div class="card">
+            {{-- <div class="card">
                 <div class="card-header">
                     <div class="d-flex justify-content-between">
                         <h3 class="card-title" style="line-height: 36px;">{{ __('ssl_commerz_settings') }}</h3>
@@ -171,10 +171,10 @@
                     </div>
                 @endif
 
-            </div>
+            </div> --}}
 
             {{-- Flutterwave Setting --}}
-            <div class="card">
+            {{-- <div class="card">
                 <div class="card-header">
                     <div class="d-flex justify-content-between">
                         <h3 class="card-title" style="line-height: 36px;">{{ __('flutterwave_settings') }}</h3>
@@ -244,10 +244,10 @@
                     </div>
                 @endif
 
-            </div>
+            </div> --}}
 
             {{-- Instamojo Setting --}}
-            <div class="card">
+            {{-- <div class="card">
                 <div class="card-header">
                     <div class="d-flex justify-content-between">
                         <h3 class="card-title" style="line-height: 36px;">{{ __('instamojo_setting') }}</h3>
@@ -302,10 +302,10 @@
                         </form>
                     </div>
                 @endif
-            </div>
+            </div> --}}
 
             {{-- Mollie Setting --}}
-            <div class="card">
+            {{-- <div class="card">
                 <div class="card-header">
                     <div class="d-flex justify-content-between">
                         <h3 class="card-title" style="line-height: 36px;">{{ __('mollie_setting') }}</h3>
@@ -347,7 +347,7 @@
                         </form>
                     </div>
                 @endif
-            </div>
+            </div> --}}
         </div>
 
         <div class="col-sm-6">
@@ -372,24 +372,25 @@
                             <div class="form-group row">
                                 <x-forms.label name="{{ __('secret_key') }}" class="col-sm-3" />
                                 <div class="col-sm-9">
-                                    <input onkeyup="ButtonDisabled('button3', 'stripe_key' , '{{ env('STRIPE_KEY') }}')"
-                                        value="{{ env('STRIPE_KEY') }}" name="stripe_key" type="text"
-                                        class="form-control @error('stripe_key') is-invalid @enderror"
-                                        autocomplete="off">
-                                    @error('stripe_key')
-                                        <span class="invalid-feedback" role="alert"><span>{{ $message }}</span></span>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <x-forms.label name="{{ __('publisher_key') }}" class="col-sm-3" />
-                                <div class="col-sm-9">
                                     <input
                                         onkeyup="ButtonDisabled('button3', 'stripe_secret' , '{{ env('STRIPE_SECRET') }}')"
                                         value="{{ env('STRIPE_SECRET') }}" name="stripe_secret" type="text"
                                         class="form-control @error('stripe_secret') is-invalid @enderror"
                                         autocomplete="off">
                                     @error('stripe_secret')
+                                        <span class="invalid-feedback" role="alert"><span>{{ $message }}</span></span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                
+                                <x-forms.label name="{{ __('publisher_key') }}" class="col-sm-3" />
+                                <div class="col-sm-9">
+                                    <input onkeyup="ButtonDisabled('button3', 'stripe_key' , '{{ env('STRIPE_KEY') }}')"
+                                        value="{{ env('STRIPE_KEY') }}" name="stripe_key" type="text"
+                                        class="form-control @error('stripe_key') is-invalid @enderror"
+                                        autocomplete="off">
+                                    @error('stripe_key')
                                         <span class="invalid-feedback" role="alert"><span>{{ $message }}</span></span>
                                     @enderror
                                 </div>
@@ -409,7 +410,7 @@
             </div>
 
             {{-- Razorpay Setting --}}
-            <div class="card">
+            {{-- <div class="card">
                 <div class="card-header">
                     <div class="d-flex justify-content-between">
                         <h3 class="card-title" style="line-height: 36px;">{{ __('razorpay_settings') }}</h3>
@@ -464,10 +465,10 @@
                         </form>
                     </div>
                 @endif
-            </div>
+            </div> --}}
 
             {{-- Paystack Setting --}}
-            <div class="card">
+            {{-- <div class="card">
                 <div class="card-header">
                     <div class="d-flex justify-content-between">
                         <h3 class="card-title" style="line-height: 36px;">{{ __('paystack_settings') }}</h3>
@@ -540,10 +541,10 @@
                         </form>
                     </div>
                 @endif
-            </div>
+            </div> --}}
 
             {{-- Midtrans Setting --}}
-            <div class="card">
+            {{-- <div class="card">
                 <div class="card-header">
                     <div class="d-flex justify-content-between">
                         <h3 class="card-title" style="line-height: 36px;">{{ __('midtrans_setting') }}</h3>
@@ -619,7 +620,7 @@
                     </div>
                 @endif
 
-            </div>
+            </div> --}}
         </div>
     </div>
 @endsection

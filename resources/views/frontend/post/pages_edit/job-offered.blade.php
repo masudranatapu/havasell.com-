@@ -7,7 +7,7 @@
             <div class="col-md-6">
                 <div class="mb-3">
                     <label for="employment_type" class="form-label text-success">kind of
-                        employment</label>
+                        employment <span class="text-danger">*</span></label>
                     <select name="employment_type" id="employment_type" class="form-control" >
                         <option value="" class="d-none">-</option>
                         <option value="full time" {{ $ad->employment_type == 'full time' ? 'selected' : '' }}>full time
@@ -71,7 +71,7 @@
 </div>
 <div class="col-md-4">
     <div class="mb-3">
-        <label for="job_title" class="form-label text-success">job title</label>
+        <label for="job_title" class="form-label text-success">job title <span class="text-danger">*</span></label>
         <input type="text" name="job_title" value="{{ $ad->job_title ?? old('job_title') }}" id="job_title"
             class="form-control" >
     </div>
@@ -109,14 +109,14 @@
                         options</span>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="email_privacy" id="privacy_1"
-                            value="CL mail relay" {{ $ad->email_privacy ? 'checked' : '' }}>
+                            value="havasell mail relay" {{ $ad->email_privacy == "havasell mail relay"? 'checked' : '' }}>
                         <label class="form-check-label" for="privacy_1">
-                            CL mail relay (recommended)
+                            havasell mail relay (recommended)
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="email_privacy"
-                            {{ $ad->email_privacy ? 'checked' : '' }} id="privacy_2"
+                            {{ $ad->email_privacy == "show my real email address"? 'checked' : '' }} id="privacy_2"
                             value="show my real email address">
                         <label class="form-check-label" for="privacy_2">
                             show my real email address
@@ -124,7 +124,7 @@
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio"
-                            name="email_privacy"{{ $ad->email_privacy ? 'checked' : '' }} id="privacy_3"
+                            name="email_privacy"{{ $ad->email_privacy == "no replies to this email"? 'checked' : '' }} id="privacy_3"
                             value="no replies to this email">
                         <label class="form-check-label" for="privacy_3">
                             no replies to this email
@@ -135,14 +135,14 @@
             <div class="col-md-8 inline_checkbox disabled_checked">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox"
-                        name="show_phone"{{ $ad->show_phone ? 'checked' : '' }} value="1" id="show_phone">
+                        name="show_phone"{{ $ad->show_phone == "1"? 'checked' : '' }} value="1" id="show_phone">
                     <label class="form-check-label" for="show_phone">
                         show my phone number
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox"
-                        name="phone_call"{{ $ad->phone_call ? 'checked' : '' }} id="calls_ok" disabled
+                        name="phone_call"{{ $ad->phone_call == "1"? 'checked' : '' }} id="calls_ok" disabled
                         value="1">
                     <label class="form-check-label" for="calls_ok">
                         phone calls OK
@@ -150,7 +150,7 @@
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox"
-                        name="phone_text"{{ $ad->phone_text ? 'checked' : '' }} id="textorsms" disabled
+                        name="phone_text"{{ $ad->phone_text == "1"? 'checked' : '' }} id="textorsms" disabled
                         value="1">
                     <label class="form-check-label" for="textorsms">
                         text/sms OK

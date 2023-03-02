@@ -35,7 +35,7 @@
                         </div>
                     </div>
                     <div class="mb-1">
-                        <label for="phone" class="form-label"><small class="text-success">language of posting</small></label>
+                        <label for="phone" class="form-label"><small class="text-success">language of posting <span class="text-danger">*</span></small></label>
                         <select name="language" id="language" class="form-control">
                                 <option value="english">english</option>
                                 <option value="dansk">dansk</option>
@@ -82,7 +82,7 @@
                             placeholder="Your email address" required >
                     </div>
                     <div class="mb-3">
-                        <span class="text-dark" style="font-weight:600;">replies use CL mail relay</span><br>
+                        <span class="text-dark" style="font-weight:600;">replies use havasell mail relay</span><br>
                         <a href="#" class="text-success">[?]</a>
                     </div>
                 </div>

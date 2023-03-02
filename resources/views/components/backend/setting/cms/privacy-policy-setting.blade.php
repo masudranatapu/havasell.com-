@@ -8,15 +8,15 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-md-6 mt-5">
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <x-forms.label name="privacy_background" />
                         <input type="file" class="form-control dropify" data-default-file="{{ $privacyBackground }}"
                             name="privacy_background" autocomplete="image" data-allowed-file-extensions="jpg png jpeg"
                             accept="image/png, image/jpg, image/jpeg">
-                    </div>
+                    </div> --}}
                 </div>
-                <div class="col-md-6 -mt--5">
-                    <div class="form-group">
+                <div class="col-md-12 -mt--5">
+                    {{-- <div class="form-group">
                         <x-forms.label name="" :required="false" />
                         <input type="hidden" class="d-none" value="{{ request('lang_query') }}" name="language_code"
                             readonly>
@@ -33,7 +33,7 @@
                                 </a>
                             @endforeach
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="form-group">
                         <x-forms.label name="privacy_body" />
                         <textarea id="privacy_ck" class="form-control" name="privacy_body" placeholder="{{ __('write_the_answer') }}">

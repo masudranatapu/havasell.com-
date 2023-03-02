@@ -50,8 +50,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <label for="email" class="form-label">Email <span class="text-danger">*</span> <span
-                                            class="text-danger">*</span></label>
+                                    <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
                                     <input type="email" name="email" id="email" value="{{ old('email') }}"
                                         class="form-control" placeholder="Enter your email" required>
                                     @error('email')

@@ -40,8 +40,8 @@
                         <x-sidebar-list :linkActive="Route::is('module.plan.index') || Route::is('module.plan.create') ? true : false" route="module.plan.index" icon="fas fa-credit-card">
                             {{ __('pricing_plan') }}
                         </x-sidebar-list>
-                    @endif
-                    <x-sidebar-list :linkActive="Route::is('report.index') ? true : false" route="report.index" icon="fas fa-file">
+                    @endif --}}
+                    {{-- <x-sidebar-list :linkActive="Route::is('report.index') ? true : false" route="report.index" icon="fas fa-file">
                         {{ __('seller_report') }}
                     </x-sidebar-list> --}}
 
@@ -55,9 +55,9 @@
                             {{ __('Ad Types') }}
                         </x-sidebar-list>
 
-                        <x-sidebar-list :linkActive="Route::is('city.*') ? true : false" route="city.index" icon="fa fa-plus-square">
+                        {{-- <x-sidebar-list :linkActive="Route::is('city.*') ? true : false" route="city.index" icon="fa fa-plus-square">
                             {{ __('City') }}
-                        </x-sidebar-list>
+                        </x-sidebar-list> --}}
 
 
                     @if (Module::collections()->has('Category') && (userCan('category.view') || userCan('subcategory.view')))

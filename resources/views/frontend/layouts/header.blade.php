@@ -49,14 +49,21 @@
                     <div class="btn-group language_dropdown">
                         <form action="{{ route('frontend.localization') }}" method="post">
                             @csrf
-                            <select name="language" id="language" class="form-control form-select"
-                                onchange="this.form.submit()">
-                                <option value="en" @if (Session::get('locale')=='en' ) selected @endif>
-                                    English
-                                </option>
-                                <option value="hi" @if (Session::get('locale')=='hi' ) selected @endif>Hindi
-                                </option>
-                            </select>
+                            <div class="form-group">
+                                <select name="language" id="language" class="form-control form-select"
+                                    onchange="this.form.submit()">
+
+                                    {{-- <option value="en" @if (Session::get('locale')=='en' ) selected @endif>
+                                        English
+                                    </option>
+                                    <option value="hi" @if (Session::get('locale')=='hi' ) selected @endif>Hindi
+                                    </option> --}}
+                                    @foreach($languages as $key => $value)
+                                    <option value="{{ $value->code }}" @if (Session::get('locale')== $value->code) selected @endif>{{ $value->name }}</option>
+                                    @endforeach
+
+                                </select>
+                            </div>
                         </form>
                     </div>
                 </ul>

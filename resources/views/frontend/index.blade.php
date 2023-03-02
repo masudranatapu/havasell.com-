@@ -100,7 +100,7 @@
             <form action="{{ route('frontend.search') }}" method="get" class="mb-3 mt-3 p-2">
                 <div class="input-group">
                     <input type="text" name="search" id="search" class="form-control" placeholder="Search..." required>
-                    <button type="submit" class="text-input-group"><i class="la la-search"></i></button>
+                    <button type="submit" class="input-group-text"><i class="la la-search"></i></button>
                 </div>
             </form>
 
@@ -170,6 +170,10 @@
 </div>
 <!-- ------------------ Mobile View Desing End ------------------ -->
 @endsection
+
+
+@endsection
+
 
 
 

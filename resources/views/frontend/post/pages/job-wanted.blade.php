@@ -2,7 +2,7 @@
     <div class="col-12 mb-4">
         <div class="form_wrapper availability_check">
             <div class="title mb-3">
-                <h6 class="text-success">availability (you must select at least one)</h6>
+                <h6 class="text-success">availability (you must select at least one) <span class="text-danger">*</span></h6>
             </div>
             <div class="form-check me-3">
                 <input class="form-check-input" type="checkbox" name="availability[]" id="availabillity_1"
@@ -57,7 +57,7 @@
             <div class="row align-items-center">
                 <div class="col-md-6">
                     <div class="mb-3">
-                        <label for="education" class="form-label text-success">education</label>
+                        <label for="education" class="form-label text-success">education <span class="text-danger">*</span></label>
                         <select name="education" id="education" class="form-control" >
                             <option class="d-none">-</option>
                             <option value="less than high school">less than high school</option>
@@ -73,6 +73,7 @@
                 <div class="col-md-6">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" name="direct_contact" id="direct_contact"
+                        
                             value="direct contact by recruiters is ok">
                         <label class="form-check-label" for="direct_contact">
                             direct contact by recruiters is ok
@@ -119,9 +120,9 @@
                             options</span>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="email_privacy" id="privacy_1"
-                                value="CL mail relay">
+                                value="havasell mail relay">
                             <label class="form-check-label" for="privacy_1">
-                                CL mail relay (recommended)
+                                Havasell mail relay (recommended)
                             </label>
                         </div>
                         <div class="form-check">

@@ -28,13 +28,13 @@
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-2">
                     <ul class="nav nav-pills flex-column" id="cms-pills-tab" role="tablist">
-                        <li class="nav-item border rounded mb-1" role="presentation">
+                        {{-- <li class="nav-item border rounded mb-1" role="presentation">
                             <a class="nav-link {{ $cms_tab == 'home' ? 'active' : '' }}" id="home-tab" data-toggle="pill"
                                 href="#cms-home" role="tab" aria-controls="home"
                                 aria-selected="false">{{ __('home') }}</a>
-                        </li>
+                        </li> --}}
                         <li class="nav-item border rounded mb-1" role="presentation">
-                            <a class="nav-link {{ $cms_tab == 'about' ? 'active' : '' }}" id="about-tab" data-toggle="pill"
+                            <a class="nav-link {{ $cms_tab == 'about' ? 'active' : 'active' }}" id="about-tab" data-toggle="pill"
                                 href="#cms-about" role="tab" aria-controls="about"
                                 aria-selected="false">{{ __('about') }}</a>
                         </li>
@@ -50,88 +50,88 @@
                                 aria-selected="false">{{ __('privacy_policy') }}
                             </a>
                         </li>
-                        <li class="nav-item border rounded mb-1" role="presentation">
+                        {{-- <li class="nav-item border rounded mb-1" role="presentation">
                             <a class="nav-link {{ $cms_tab == 'posting_rules' ? 'active' : '' }}" id="posting-tab"
                                 data-toggle="pill" href="#cms-posting" role="tab" aria-controls="posting"
                                 aria-selected="false">{{ __('posting_rules') }}
                             </a>
-                        </li>
-                        <li class="nav-item border rounded mb-1" role="presentation">
+                        </li> --}}
+                        {{-- <li class="nav-item border rounded mb-1" role="presentation">
                             <a class="nav-link {{ $cms_tab == 'membership' ? 'active' : '' }}" id="membership-tab"
                                 data-toggle="pill" href="#cms-membership" role="tab" aria-controls="membership"
                                 aria-selected="false">{{ __('membership') }}</a>
-                        </li>
-                        <li class="nav-item border rounded mb-1" role="presentation">
+                        </li> --}}
+                        {{-- <li class="nav-item border rounded mb-1" role="presentation">
                             <a class="nav-link {{ $cms_tab == 'price_plan' ? 'active' : '' }}" id="price-plan-tab"
                                 data-toggle="pill" href="#cms-price-plan" role="tab" aria-controls="price-plan"
                                 aria-selected="false">{{ __('price_plan') }}</a>
-                        </li>
+                        </li> --}}
 
-                        <li class="nav-item border rounded mb-1" role="presentation">
+                        {{-- <li class="nav-item border rounded mb-1" role="presentation">
                             <a class="nav-link {{ $cms_tab == 'blog' ? 'active' : '' }}" id="blog-tab" data-toggle="pill"
                                 href="#cms-blog" role="tab" aria-controls="blog"
                                 aria-selected="false">{{ __('blog') }}</a>
-                        </li>
-                        <li class="nav-item border rounded mb-1" role="presentation">
+                        </li> --}}
+                        {{-- <li class="nav-item border rounded mb-1" role="presentation">
                             <a class="nav-link {{ $cms_tab == 'ads' ? 'active' : '' }}" id="ads-tab" data-toggle="pill"
                                 href="#cms-ads" role="tab" aria-controls="ads"
                                 aria-selected="false">{{ __('ads') }}</a>
-                        </li>
-                        <li class="nav-item border rounded mb-1" role="presentation">
+                        </li> --}}
+                        {{-- <li class="nav-item border rounded mb-1" role="presentation">
                             <a class="nav-link {{ $cms_tab == 'contact' ? 'active' : '' }} " id="contact-tab"
                                 data-toggle="pill" href="#cms-contact" role="tab" aria-controls="contact"
                                 aria-selected="false">{{ __('contact') }}</a>
-                        </li>
-                        <li class="nav-item border rounded mb-1" role="presentation">
+                        </li> --}}
+                        {{-- <li class="nav-item border rounded mb-1" role="presentation">
                             <a class="nav-link {{ $cms_tab == 'faq' ? 'active' : '' }}" id="faq-tab" data-toggle="pill"
                                 href="#cms-faq" role="tab" aria-controls="faq"
                                 aria-selected="false">{{ __('faqs') }}</a>
-                        </li>
+                        </li> --}}
 
-                        <li class="nav-item border rounded mb-1" role="presentation">
+                        {{-- <li class="nav-item border rounded mb-1" role="presentation">
                             <a class="nav-link {{ $cms_tab == 'dashboard' ? 'active' : '' }}" id="dashboard-tab"
                                 data-toggle="pill" href="#cms-dashboards" role="tab" aria-controls="dashboard"
                                 aria-selected="false">{{ __('dashboards') }}</a>
-                        </li>
-                        <li class="nav-item border rounded mb-1" role="presentation">
+                        </li> --}}
+                        {{-- <li class="nav-item border rounded mb-1" role="presentation">
                             <a class="nav-link {{ $cms_tab == 'auth' ? 'active' : '' }}" id="auth-tab"
                                 data-toggle="pill" href="#cms-auth" role="tab" aria-controls="auth"
                                 aria-selected="false">{{ __('login_or_register') }}</a>
-                        </li>
-                        <li class="nav-item border rounded mb-1" role="presentation">
+                        </li> --}}
+                        {{-- <li class="nav-item border rounded mb-1" role="presentation">
                             <a class="nav-link {{ $cms_tab == 'c_soon' ? 'active' : '' }}" id="c_soon-tab"
                                 data-toggle="pill" href="#cms-c_soon" role="tab" aria-controls="c_soon"
                                 aria-selected="false">{{ __('coming_soon') }}</a>
-                        </li>
-                        <li class="nav-item border rounded mb-1" role="presentation">
+                        </li> --}}
+                        {{-- <li class="nav-item border rounded mb-1" role="presentation">
                             <a class="nav-link {{ $cms_tab == 'maintenance' ? 'active' : '' }}" id="maintenance-tab"
                                 data-toggle="pill" href="#cms-maintenance" role="tab" aria-controls="maintenance"
                                 aria-selected="false">{{ __('maintenance') }}</a>
-                        </li>
-                        <li class="nav-item border rounded mb-1" role="presentation">
+                        </li> --}}
+                        {{-- <li class="nav-item border rounded mb-1" role="presentation">
                             <a class="nav-link {{ $cms_tab == 'errorpages' ? 'active' : '' }}" id="errorpages-tab"
                                 data-toggle="pill" href="#cms-errorpages" role="tab" aria-controls="errorpages"
                                 aria-selected="false">{{ __('error_pages') }}</a>
-                        </li>
-                        <li class="nav-item border rounded mb-1" role="presentation">
+                        </li> --}}
+                        {{-- <li class="nav-item border rounded mb-1" role="presentation">
                             <a class="nav-link {{ $cms_tab == 'footer_text' ? 'active' : '' }}" id="footer_text-tab"
                                 data-toggle="pill" href="#cms-footer_text" role="tab" aria-controls="footer_text"
                                 aria-selected="false">
                                 {{ __('footer_text') }}
                             </a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </div>
                 <div class="col-12 col-sm-12 col-md-10">
                     <div class="tab-content" id="cms-pills-tabContent">
                         {{-- Home Settings --}}
-                        <div class="tab-pane fade  {{ $cms_tab == 'home' ? 'show active' : '' }}" id="cms-home"
+                        {{-- <div class="tab-pane fade  {{ $cms_tab == 'home' ? 'show active' : '' }}" id="cms-home"
                             role="tabpanel" aria-labelledby="home-tab">
                             <x-backend.setting.cms.home-setting :cms="$cms" />
-                        </div>
+                        </div> --}}
 
                         {{-- About Settings --}}
-                        <div class="tab-pane fade {{ $cms_tab == 'about' ? 'show active' : '' }}" id="cms-about"
+                        <div class="tab-pane fade {{ $cms_tab == 'about' ? 'show active' : 'show active' }}" id="cms-about"
                             role="tabpanel" aria-labelledby="about-tab">
                             <x-backend.setting.cms.about-setting :aboutcontent="$cms->about_body" :aboutVideoThumb="$cms->about_video_thumb" :aboutBackground="$cms->about_background" />
                         </div>
@@ -151,66 +151,66 @@
                         </div>
 
                         {{-- Posting Rules Settings --}}
-                        <div class="tab-pane fade {{ $cms_tab == 'posting_rules' ? 'show active' : '' }}"
+                        {{-- <div class="tab-pane fade {{ $cms_tab == 'posting_rules' ? 'show active' : '' }}"
                             id="cms-posting" role="tabpanel" aria-labelledby="posting-tab">
                             <x-backend.setting.cms.posting-rules-setting :rules="$cms->posting_rules_body" :postingRulesBackground="$cms->posting_rules_background" />
-                        </div>
+                        </div> --}}
 
                         {{-- Membership --}}
-                        <div class="tab-pane fade {{ $cms_tab == 'membership' ? 'show active' : '' }}"
+                        {{-- <div class="tab-pane fade {{ $cms_tab == 'membership' ? 'show active' : '' }}"
                             id="cms-membership" role="tabpanel" aria-labelledby="membership-tab">
                             <x-backend.setting.cms.membership :cms="$cms" />
-                        </div>
+                        </div> --}}
                         {{-- Pricing Plan --}}
                         {{-- <div class="tab-pane fade {{ $cms_tab == 'price_plan' ? 'show active' : '' }}"
                             id="cms-price-plan" role="tabpanel" aria-labelledby="price-plan-tab">
                             <x-backend.setting.cms.pricing-plan :cms="$cms" />
                         </div> --}}
                         {{-- Blog --}}
-                        <div class="tab-pane fade {{ $cms_tab == 'blog' ? 'show active' : '' }}" id="cms-blog"
+                        {{-- <div class="tab-pane fade {{ $cms_tab == 'blog' ? 'show active' : '' }}" id="cms-blog"
                             role="tabpanel" aria-labelledby="blog-tab">
                             <x-backend.setting.cms.blog :cms="$cms" />
-                        </div>
+                        </div> --}}
                         {{-- Ads --}}
-                        <div class="tab-pane fade {{ $cms_tab == 'ads' ? 'show active' : '' }}" id="cms-ads"
+                        {{-- <div class="tab-pane fade {{ $cms_tab == 'ads' ? 'show active' : '' }}" id="cms-ads"
                             role="tabpanel" aria-labelledby="ads-tab">
                             <x-backend.setting.cms.ads :cms="$cms" />
-                        </div>
+                        </div> --}}
                         {{-- Contact --}}
-                        <div class="tab-pane fade {{ $cms_tab == 'contact' ? 'show active' : '' }}" id="cms-contact"
+                        {{-- <div class="tab-pane fade {{ $cms_tab == 'contact' ? 'show active' : '' }}" id="cms-contact"
                             role="tabpanel" aria-labelledby="contact-tab">
                             <x-backend.setting.cms.contact :cms="$cms" />
-                        </div>
+                        </div> --}}
                         {{-- Faq --}}
-                        <div class="tab-pane fade {{ $cms_tab == 'faq' ? 'show active' : '' }}" id="cms-faq"
+                        {{-- <div class="tab-pane fade {{ $cms_tab == 'faq' ? 'show active' : '' }}" id="cms-faq"
                             role="tabpanel" aria-labelledby="faqs-tab">
                             <x-backend.setting.cms.faqs :cms="$cms" />
-                        </div>
+                        </div> --}}
                         {{-- Dashboard --}}
-                        <div class="tab-pane fade {{ $cms_tab == 'dashboard' ? 'show active' : '' }}" id="cms-dashboards"
+                        {{-- <div class="tab-pane fade {{ $cms_tab == 'dashboard' ? 'show active' : '' }}" id="cms-dashboards"
                             role="tabpanel" aria-labelledby="dashboards-tab">
                             <x-backend.setting.cms.dashboards :cms="$cms" />
-                        </div>
+                        </div> --}}
                         {{-- Login / Register --}}
-                        <div class="tab-pane fade {{ $cms_tab == 'auth' ? 'show active' : '' }}" id="cms-auth"
+                        {{-- <div class="tab-pane fade {{ $cms_tab == 'auth' ? 'show active' : '' }}" id="cms-auth"
                             role="tabpanel" aria-labelledby="auth-tab">
                             <x-backend.setting.cms.auth :cms="$cms" />
-                        </div>
+                        </div> --}}
                         {{-- Coming soon --}}
-                        <div class="tab-pane fade {{ $cms_tab == 'c_soon' ? 'show active' : '' }}" id="cms-c_soon"
+                        {{-- <div class="tab-pane fade {{ $cms_tab == 'c_soon' ? 'show active' : '' }}" id="cms-c_soon"
                             role="tabpanel" aria-labelledby="c_soon-tab">
                             <x-backend.setting.cms.csoon :cms="$cms" />
-                        </div>
+                        </div> --}}
                         {{-- maintenance --}}
-                        <div class="tab-pane fade {{ $cms_tab == 'maintenance' ? 'show active' : '' }}"
+                        {{-- <div class="tab-pane fade {{ $cms_tab == 'maintenance' ? 'show active' : '' }}"
                             id="cms-maintenance" role="tabpanel" aria-labelledby="maintenance-tab">
                             <x-backend.setting.cms.maintanace :cms="$cms" />
-                        </div>
+                        </div> --}}
                         {{-- error page --}}
-                        <div class="tab-pane fade {{ $cms_tab == 'errorpages' ? 'show active' : '' }}"
+                        {{-- <div class="tab-pane fade {{ $cms_tab == 'errorpages' ? 'show active' : '' }}"
                             id="cms-errorpages" role="tabpanel" aria-labelledby="errorpages-tab">
                             <x-backend.setting.cms.errorpages :cms="$cms" />
-                        </div>
+                        </div> --}}
                         <!-- Footer Text-->
                         <div class="tab-pane fade {{ $cms_tab == 'footer_text' ? 'show active' : '' }}"
                             id="cms-footer_text" role="tabpanel" aria-labelledby="footer_text-tab">

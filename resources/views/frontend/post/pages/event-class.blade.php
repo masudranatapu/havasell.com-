@@ -179,9 +179,9 @@
                             options</span>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="email_privacy" id="privacy_1"
-                                value="CL mail relay" checked>
+                                value="havasell mail relay" checked>
                             <label class="form-check-label" for="privacy_1">
-                                CL mail relay (recommended)
+                                havasell mail relay (recommended)
                             </label>
                         </div>
                         <div class="form-check">

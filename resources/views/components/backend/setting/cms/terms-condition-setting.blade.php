@@ -6,17 +6,17 @@
             {{ __('terms_conditions') }}
         </div>
         <div class="card-body">
-            <div class="row">
-                <div class="col-md-6">
+            <div class="row mt-5">
+                {{-- <div class="col-md-6">
                     <div class="form-group mt-5">
                         <x-forms.label name="terms_background" />
                         <input type="file" class="form-control dropify" data-default-file="{{ $termsBackground }}"
                             name="terms_background" autocomplete="image" data-allowed-file-extensions="jpg png jpeg"
                             accept="image/png, image/jpg, image/jpeg">
                     </div>
-                </div>
-                <div class="col-md-6 -mt--5">
-                    <div class="form-group">
+                </div> --}}
+                <div class="col-md-12 -mt--5">
+                    {{-- <div class="form-group">
                         <x-forms.label name="" :required="false" />
                         <input type="hidden" class="d-none" value="{{ request('lang_query') }}" name="language_code"
                             readonly>
@@ -33,7 +33,7 @@
                                 </a>
                             @endforeach
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="form-group">
                         <x-forms.label name="terms_body" />
                         <textarea id="terms_ck" class="form-control" name="terms_body" placeholder="{{ __('write_the_answer') }}">
