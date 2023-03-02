@@ -8,7 +8,7 @@
                 <div class="mb-3">
                     <label for="employment_type" class="form-label text-success">kind of
                         employment <span class="text-danger">*</span></label>
-                    <select name="employment_type" id="employment_type" class="form-control" >
+                    <select name="employment_type" id="employment_type" class="form-control">
                         <option value="" class="d-none">-</option>
                         <option value="full time" {{ $ad->employment_type == 'full time' ? 'selected' : '' }}>full time
                         </option>
@@ -51,7 +51,7 @@
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="services[]" value="" id="service_4"
-                    {{ isset($ad->services) && in_array('availability of relocation assistance',$ad->services)? "checked" : "" }}
+                        {{ isset($ad->services) && in_array('availability of relocation assistance', $ad->services) ? 'checked' : '' }}
                         value="availability of relocation assistance">
                     <label class="form-check-label" for="service_4">
                         availability of relocation assistance
@@ -59,7 +59,7 @@
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="services[]" value="" id="service_5"
-                         {{ isset($ad->services) && in_array('possibility of teleworking',$ad->services)? "checked" : "" }}
+                        {{ isset($ad->services) && in_array('possibility of teleworking', $ad->services) ? 'checked' : '' }}
                         value="possibility of teleworking">
                     <label class="form-check-label" for="service_5">
                         possibility of teleworking
@@ -73,21 +73,21 @@
     <div class="mb-3">
         <label for="job_title" class="form-label text-success">job title <span class="text-danger">*</span></label>
         <input type="text" name="job_title" value="{{ $ad->job_title ?? old('job_title') }}" id="job_title"
-            class="form-control" >
+            class="form-control">
     </div>
 </div>
 <div class="col-md-4">
     <div class="mb-3">
         <label for="salary" class="form-label text-success">salary</label>
         <input type="number" name="price" value="{{ $ad->price }}" id="salary" class="form-control"
-            placeholder="Salary" >
+            placeholder="Salary">
     </div>
 </div>
 <div class="col-md-4">
     <div class="mb-3">
         <label for="company_name" class="form-label">company name</label>
-        <input type="text" name="company_name" value="{{ $ad->company_name }}" id="company_name" class="form-control"
-            >
+        <input type="text" name="company_name" value="{{ $ad->company_name }}" id="company_name"
+            class="form-control">
     </div>
 </div>
 <div class="col-12 mb-4">
@@ -102,21 +102,22 @@
                     <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
                     <input type="text" name="email" id="email"
                         value="{{ Auth::user()->email ?? old('email') }}" class="form-control"
-                        placeholder="Your email address" required >
+                        placeholder="Your email address" required>
                 </div>
                 <div class="mb-3">
                     <span class="text-dark" style="font-weight:600;">email privacy
                         options</span>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="email_privacy" id="privacy_1"
-                            value="havasell mail relay" {{ $ad->email_privacy == "havasell mail relay"? 'checked' : '' }}>
+                            value="havasell mail relay"
+                            {{ $ad->email_privacy == 'havasell mail relay' ? 'checked' : '' }}>
                         <label class="form-check-label" for="privacy_1">
                             havasell mail relay (recommended)
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="email_privacy"
-                            {{ $ad->email_privacy == "show my real email address"? 'checked' : '' }} id="privacy_2"
+                            {{ $ad->email_privacy == 'show my real email address' ? 'checked' : '' }} id="privacy_2"
                             value="show my real email address">
                         <label class="form-check-label" for="privacy_2">
                             show my real email address
@@ -124,8 +125,8 @@
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio"
-                            name="email_privacy"{{ $ad->email_privacy == "no replies to this email"? 'checked' : '' }} id="privacy_3"
-                            value="no replies to this email">
+                            name="email_privacy"{{ $ad->email_privacy == 'no replies to this email' ? 'checked' : '' }}
+                            id="privacy_3" value="no replies to this email">
                         <label class="form-check-label" for="privacy_3">
                             no replies to this email
                         </label>
@@ -135,14 +136,15 @@
             <div class="col-md-8 inline_checkbox disabled_checked">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox"
-                        name="show_phone"{{ $ad->show_phone == "1"? 'checked' : '' }} value="1" id="show_phone">
+                        name="show_phone"{{ $ad->show_phone == '1' ? 'checked' : '' }} value="1"
+                        id="show_phone">
                     <label class="form-check-label" for="show_phone">
                         show my phone number
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox"
-                        name="phone_call"{{ $ad->phone_call == "1"? 'checked' : '' }} id="calls_ok" disabled
+                        name="phone_call"{{ $ad->phone_call == '1' ? 'checked' : '' }} id="calls_ok" disabled
                         value="1">
                     <label class="form-check-label" for="calls_ok">
                         phone calls OK
@@ -150,7 +152,7 @@
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox"
-                        name="phone_text"{{ $ad->phone_text == "1"? 'checked' : '' }} id="textorsms" disabled
+                        name="phone_text"{{ $ad->phone_text == '1' ? 'checked' : '' }} id="textorsms" disabled
                         value="1">
                     <label class="form-check-label" for="textorsms">
                         text/sms OK
@@ -185,7 +187,7 @@
 </div>
 <div class="col-12">
     <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="job_for_disabilities" >
+        <input class="form-check-input" type="checkbox" value="" id="job_for_disabilities">
         <label class="form-check-label" for="job_for_disabilities" style="font-size: 14px;">
             job open to people with disabilities
         </label>

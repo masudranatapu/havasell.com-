@@ -196,7 +196,23 @@
                                                     </li>
                                                 @endif
                                             @endif
-                                            @if ($ad_details->ad_type->slug == 'housing-wanted')
+                                            @if ($ad_details->ad_type->slug == 'for-sale-by-owner')
+                                               @if ($ad_details->manufacturer)
+                                                    <li>make / manufacturer: <strong>{{ $ad_details->manufacturer }}</strong></li>
+                                                @endif
+                                                 @if ($ad_details->model_name)
+                                                    <li>model name / number: <strong>{{ $ad_details->model_name }}</strong></li>
+                                                @endif
+                                                @if ($ad_details->dimension)
+                                                    <li>size / dimensions: <strong>{{ $ad_details->dimension }}</strong></li>
+                                                @endif
+                                                @if ($ad_details->conditions)
+                                                    <li>condition: <strong>{{ $ad_details->conditions }}</strong></li>
+                                                @endif
+                                                @if ($ad_details->language)
+                                                    <li>language of posting: <strong>{{ $ad_details->language }}</strong></li>
+                                                @endif
+                                               
                                                 @isset($ad_details->services)
                                                     <li>
                                                         Services:
@@ -206,18 +222,104 @@
                                                         @endforeach
                                                     </li>
                                                 @endisset
-                                                @if ($ad_details->broker_fee)
-                                                    <li>Broker Fee: <strong>{{ $ad_details->broker_fee }}</strong></li>
+                                                    
+                                            @endif
+                                            @if ($ad_details->ad_type->slug == 'for-sale-by-dealer')
+                                               @if ($ad_details->manufacturer)
+                                                    <li>make / manufacturer: <strong>{{ $ad_details->manufacturer }}</strong></li>
                                                 @endif
-                                                @if ($ad_details->broker_fee_detailed)
-                                                    <li>Please: <strong>{{ $ad_details->broker_fee_detailed }}</strong>
+                                                 @if ($ad_details->model_name)
+                                                    <li>model name / number: <strong>{{ $ad_details->model_name }}</strong></li>
+                                                @endif
+                                                @if ($ad_details->dimension)
+                                                    <li>size / dimensions: <strong>{{ $ad_details->dimension }}</strong></li>
+                                                @endif
+                                                @if ($ad_details->conditions)
+                                                    <li>condition: <strong>{{ $ad_details->conditions }}</strong></li>
+                                                @endif
+                                                @if ($ad_details->language)
+                                                    <li>language of posting: <strong>{{ $ad_details->language }}</strong></li>
+                                                @endif
+                                                
+                                                @isset($ad_details->services)
+                                                    <li>
+                                                        Services:
+                                                        @foreach ($ad_details->services as $value)
+                                                            <span
+                                                                class="badge rounded-pill bg-success">{{ $value }}</span>
+                                                        @endforeach
                                                     </li>
+                                                @endisset
+                                                    
+                                            @endif
+                                            @if ($ad_details->ad_type->slug == 'wanted-by-owner')
+
+                                                @if ($ad_details->dimension)
+                                                    <li>size / dimensions: <strong>{{ $ad_details->dimension }}</strong></li>
                                                 @endif
-                                                @if ($ad_details->application_fee_detailed)
-                                                    <li>Application Fee:
-                                                        <strong>{{ $ad_details->application_fee_detailed }}</strong>
+                                                @if ($ad_details->conditions)
+                                                    <li>condition: <strong>{{ $ad_details->conditions }}</strong></li>
+                                                @endif
+                                                @if ($ad_details->language)
+                                                    <li>language of posting: <strong>{{ $ad_details->language }}</strong></li>
+                                                @endif
+                                               
+                                                @isset($ad_details->services)
+                                                    <li>
+                                                        Services:
+                                                        @foreach ($ad_details->services as $value)
+                                                            <span
+                                                                class="badge rounded-pill bg-success">{{ $value }}</span>
+                                                        @endforeach
                                                     </li>
+                                                @endisset
+                                                    
+                                            @endif
+                                            @if ($ad_details->ad_type->slug == 'wanted-by-dealer')
+
+                                                @if ($ad_details->dimension)
+                                                    <li>size / dimensions: <strong>{{ $ad_details->dimension }}</strong></li>
                                                 @endif
+                                                @if ($ad_details->conditions)
+                                                    <li>condition: <strong>{{ $ad_details->conditions }}</strong></li>
+                                                @endif
+                                                @if ($ad_details->language)
+                                                    <li>language of posting: <strong>{{ $ad_details->language }}</strong></li>
+                                                @endif
+                                               
+                                                @isset($ad_details->services)
+                                                    <li>
+                                                        Services:
+                                                        @foreach ($ad_details->services as $value)
+                                                            <span
+                                                                class="badge rounded-pill bg-success">{{ $value }}</span>
+                                                        @endforeach
+                                                    </li>
+                                                @endisset
+                                                    
+                                            @endif
+                                            @if ($ad_details->ad_type->slug == 'service-offered')
+
+                                                @if ($ad_details->dimension)
+                                                    <li>size / dimensions: <strong>{{ $ad_details->dimension }}</strong></li>
+                                                @endif
+                                                @if ($ad_details->conditions)
+                                                    <li>condition: <strong>{{ $ad_details->conditions }}</strong></li>
+                                                @endif
+                                                @if ($ad_details->language)
+                                                    <li>language of posting: <strong>{{ $ad_details->language }}</strong></li>
+                                                @endif
+                                               
+                                                @isset($ad_details->services)
+                                                    <li>
+                                                        Services:
+                                                        @foreach ($ad_details->services as $value)
+                                                            <span
+                                                                class="badge rounded-pill bg-success">{{ $value }}</span>
+                                                        @endforeach
+                                                    </li>
+                                                @endisset
+                                                    
                                             @endif
                                             @if ($ad_details->ad_type->slug == 'event-class')
                                                 @isset($ad_details->services)

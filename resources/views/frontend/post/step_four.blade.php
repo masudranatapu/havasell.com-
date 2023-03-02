@@ -83,7 +83,7 @@
                             <div class="col-md-2">
                                 <div class="mb-3">
                                     <label for="price" class="form-label text-success">Price <small
-                                            class="text-dark">€</small>
+                                            class="text-dark">$</small>
                                     </label>
                                     <input type="number" name="price" id="price" value="{{ old('price') }}"
                                         class="form-control">
