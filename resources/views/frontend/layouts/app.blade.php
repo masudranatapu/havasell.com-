@@ -19,36 +19,8 @@
 <body>
 
 {{-- header --}}
-<div class="d-none d-lg-block">
+<div class="{{ Request::routeIs('frontend.index') ? 'd-none d-lg-block' : '' }}">
     @include('frontend.layouts.header')
-</div>
-<div class="d-block d-lg-none">
-    <div class="mobile_header">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-5">
-                    <div class="mobile_heade_left">
-                        <div class="site_logo">
-                            <a class="header_logo" name="logoLink" href="{{ route('frontend.index') }}">H</a>
-                            <a href="index.html">Havasell</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-7">
-                    <div class="mobile_heade_right float-end">
-                        <ul id="wishlist_count">
-                            <li><a href="{{ route('frontend.post.create') }}">Post</a></li>
-                            @if (auth('user')->check())
-                                <li><a href="{{ route('user.profile') }}">Account</a></li>
-                            @else
-                                <li><a href="{{ route('signin') }}">Account</a></li>
-                            @endif
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
 {{-- main content --}}
