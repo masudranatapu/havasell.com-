@@ -173,25 +173,3 @@
     </div>
 </div>
 
-<div class="col-lg-7 mt-3">
-    <div class="featured_item">
-        <label class="osp-chk" for="featured_id">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="featured" value="1" {{ old('featured') ? 'checked': '' }} id="featured_id">
-            </div>
-        </label>
-        <div class="osp-text">
-            <div class="osp-pb-name">Mark as Featured
-                <strong class="finprice_201">$7.00</strong>
-            </div>
-            <div class="osp-pb-desc">Make your listing unique on home and search page!</div>
-        </div>
-        <div class="osp-select">
-            <select id="price" name="promotion" class="form-control promotion">
-                @foreach ($promotions as $promotion)
-                    <option value="{{ $promotion->id }}" data-price="{{$promotion->price}}">{{ $promotion->title.' '.'for'.' '.'$'.number_format($promotion->price, 2) }}</option>
-                @endforeach
-            </select>
-        </div>
-    </div>
-</div>
