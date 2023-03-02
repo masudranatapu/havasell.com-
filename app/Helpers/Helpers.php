@@ -226,20 +226,15 @@ function langDirection()
 function getCountryCode()
 {
 
-    if (session()->get('local_country')) {
-        return session()->get('local_country');
-    } else {
+    $local_country = 'us';
+    $country = Country::where('is_default', 1)->first();
 
-        $local_country = 'bd';
-        $country = Country::where('is_default', 1)->first();
-
-        if ($country) {
-            $local_country = strtolower($country->iso);
-        }
-        session()->put('local_country', $local_country);
-
-        return session()->get('local_country');
+    if ($country) {
+        $local_country = strtolower($country->iso);
     }
+    session()->put('local_country', $local_country);
+
+    return session()->get('local_country');
 }
 
 
@@ -247,7 +242,7 @@ function getCountryId()
 {
 
     $code = session()->get('local_country');
-    $country = DB::table('country')->where('iso',$code)->first();
+    $country = DB::table('country')->where('iso', $code)->first();
     return $country->id;
 }
 
