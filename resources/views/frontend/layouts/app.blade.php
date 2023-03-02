@@ -13,87 +13,91 @@
     @include('frontend.layouts.header_script')
     {{-- custom style --}}
     @stack('style')
-    <input type="hidden" id="base_url" value="{{ URL('/') }}"/>
+    <input type="hidden" id="base_url" value="{{ URL('/') }}" />
 </head>
 
 <body>
 
-{{-- header --}}
-<div class="{{ Request::routeIs('frontend.index') ? 'd-none d-lg-block' : '' }}">
-    @include('frontend.layouts.header')
-</div>
+    {{-- header --}}
+    <div class="{{ Request::routeIs('frontend.index') ? 'd-none d-lg-block' : '' }}">
+        <div class="container">
+            @include('frontend.layouts.header')
+        </div>
+    </div>
 
-{{-- main content --}}
-@yield('content')
+    <div class="container">
+    {{-- main content --}}
+    @yield('content')
 
-{{-- footer --}}
-@include('frontend.layouts.footer')
-@include('frontend.layouts.footer_script')
+    {{-- footer --}}
+        @include('frontend.layouts.footer')
+        @include('frontend.layouts.footer_script')
+    </div>
 
-{{-- script --}}
-<script>
-    function AddWishlist2(item, user) {
+    {{-- script --}}
+    <script>
+        function AddWishlist2(item, user) {
 
-        if (user) {
-            $.ajax({
-                type: "get",
-                url: "{{ route('frontend.wishlist.create') }}",
-                data: {
-                    id: item,
-                    user: user,
-                },
-                success: function (data) {
-                    if (data.status == 'failed') {
-                        toastr.error('Favorite removed successfully')
+            if (user) {
+                $.ajax({
+                    type: "get",
+                    url: "{{ route('frontend.wishlist.create') }}",
+                    data: {
+                        id: item,
+                        user: user,
+                    },
+                    success: function(data) {
+                        if (data.status == 'failed') {
+                            toastr.error('Favorite removed successfully')
+                            $("#wishlist_count").load(location.href + " #wishlist_count>*", "");
+                        } else {
+                            toastr.success('Favorite added successfully')
+
+                        }
                         $("#wishlist_count").load(location.href + " #wishlist_count>*", "");
-                    } else {
-                        toastr.success('Favorite added successfully')
-
                     }
-                    $("#wishlist_count").load(location.href + " #wishlist_count>*", "");
-                }
-            });
-        } else {
-            // $(id).prop('checked', false)
-            toastr.error('Please login first');
+                });
+            } else {
+                // $(id).prop('checked', false)
+                toastr.error('Please login first');
+            }
         }
-    }
-</script>
-<script>
-    $(document).ready(function () {
-        $(".select2").select2();
-    });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $(".select2").select2();
+        });
 
-    function serachSubmit() {
+        function serachSubmit() {
 
-        var city = $('#city').val();
-        var category = $('#category').val();
-        var subcategory = $('#subcategory').val();
+            var city = $('#city').val();
+            var category = $('#category').val();
+            var subcategory = $('#subcategory').val();
 
-        var base_url = $('#base_url').val();
-        var country = $('#country').val();
-        var full_url = base_url + '/ads'
-        if (category != '') {
-            full_url += '/' + category;
+            var base_url = $('#base_url').val();
+            var country = $('#country').val();
+            var full_url = base_url + '/ads'
+            if (category != '') {
+                full_url += '/' + category;
+            }
+            if (subcategory != '') {
+                full_url += '/' + subcategory;
+            }
+
+            if (city != '') {
+                full_url += '?city=' + city;
+            }
+
+            window.location.replace(full_url);
+
+
+            // $('#searchForm').submit();
+
         }
-        if (subcategory != '') {
-            full_url += '/' + subcategory;
-        }
+    </script>
 
-        if (city != '') {
-            full_url += '?city=' + city;
-        }
-
-        window.location.replace(full_url);
-
-
-        // $('#searchForm').submit();
-
-    }
-</script>
-
-{{-- custom script --}}
-@stack('script')
+    {{-- custom script --}}
+    @stack('script')
 </body>
 
 </html>
