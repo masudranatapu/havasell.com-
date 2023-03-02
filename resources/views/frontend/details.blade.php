@@ -60,7 +60,7 @@
                             <!-- gallery -->
                             <div class="product-item__gallery mb-4">
                                 <div class="swiper mySwiper2">
-                                     <div class="swiper-wrapper single_item" id="lightgallery">
+                                    <div class="swiper-wrapper single_item" id="lightgallery">
                                         @foreach ($ad_galleies as $key => $value)
                                             <a href="{{ asset($value->image) }}" class="swiper-slide">
                                                 <img src="{{ asset($value->image) }} " alt="{{ $value->name }}" />
@@ -90,29 +90,30 @@
                                                 <li class="badge bg-success text-white mb-2"><strong>Featured</strong>
                                                 </li>
                                             @endif
-                                            <li>
-                                                @if ($ad_details->ad_type->slug == 'job-offered')
-                                                    @if ($ad_details->employment_type)
-                                            <li>Kind of Employment: <strong>{{ $ad_details->employment_type }}</strong>
+                                            @if ($ad_details->ad_type->slug == 'job-offered')
+                                                @if ($ad_details->employment_type)
+                                                    <li>Kind of Employment:
+                                                        <strong>{{ $ad_details->employment_type }}</strong>
+                                                    </li>
                                                 @endif
-                                            </li>
-                                            @isset($ad_details->services)
-                                                <li>
-                                                    Services:
-                                                    @foreach ($ad_details->services as $value)
-                                                        <span class="badge rounded-pill bg-success">{{ $value }}</span>
-                                                    @endforeach
-                                                </li>
-                                            @endisset
-                                            @if ($ad_details->job_title)
-                                                <li>Job Title: <strong>{{ $ad_details->job_title }}</strong></li>
-                                            @endif
-                                            @if ($ad_details->price)
-                                                <li>Salary: <strong>${{ $ad_details->price }}</strong></li>
-                                            @endif
-                                            @if ($ad_details->price)
-                                                <li>Company Name: <strong>{{ $ad_details->company_name }}</strong></li>
-                                            @endif
+                                                @isset($ad_details->services)
+                                                    <li>
+                                                        Services:
+                                                        @foreach ($ad_details->services as $value)
+                                                            <span
+                                                                class="badge rounded-pill bg-success">{{ $value }}</span>
+                                                        @endforeach
+                                                    </li>
+                                                @endisset
+                                                @if ($ad_details->job_title)
+                                                    <li>Job Title: <strong>{{ $ad_details->job_title }}</strong></li>
+                                                @endif
+                                                @if ($ad_details->price)
+                                                    <li>Salary: <strong>${{ $ad_details->price }}</strong></li>
+                                                @endif
+                                                @if ($ad_details->company_name)
+                                                    <li>Company Name: <strong>{{ $ad_details->company_name }}</strong></li>
+                                                @endif
                                             @endif
                                             @if ($ad_details->ad_type->slug == 'job-wanted')
                                                 @isset($ad_details->availability)
@@ -185,17 +186,36 @@
                                                 @if ($ad_details->broker_fee)
                                                     <li>Broker Fee: <strong>{{ $ad_details->broker_fee }}</strong></li>
                                                 @endif
-                                                @if ($ad_details->fee_detailed)
-                                                    <li>Please: <strong>{{ $ad_details->fee_detailed }}</strong></li>
-                                                @endif
-                                                @if ($ad_details->application_fee)
-                                                    <li>Application Fee:
-                                                        <strong>{{ $ad_details->application_fee }}</strong>
+                                                @if ($ad_details->broker_fee_detailed)
+                                                    <li>Please: <strong>{{ $ad_details->broker_fee_detailed }}</strong>
                                                     </li>
                                                 @endif
-                                                @if ($ad_details->fee_detailed)
-                                                    <li>detailed fee description please:
-                                                        <strong>{{ $ad_details->fee_detailed }}</strong>
+                                                @if ($ad_details->application_fee_detailed)
+                                                    <li>Application Fee:
+                                                        <strong>{{ $ad_details->application_fee_detailed }}</strong>
+                                                    </li>
+                                                @endif
+                                            @endif
+                                            @if ($ad_details->ad_type->slug == 'housing-wanted')
+                                                @isset($ad_details->services)
+                                                    <li>
+                                                        Services:
+                                                        @foreach ($ad_details->services as $value)
+                                                            <span
+                                                                class="badge rounded-pill bg-success">{{ $value }}</span>
+                                                        @endforeach
+                                                    </li>
+                                                @endisset
+                                                @if ($ad_details->broker_fee)
+                                                    <li>Broker Fee: <strong>{{ $ad_details->broker_fee }}</strong></li>
+                                                @endif
+                                                @if ($ad_details->broker_fee_detailed)
+                                                    <li>Please: <strong>{{ $ad_details->broker_fee_detailed }}</strong>
+                                                    </li>
+                                                @endif
+                                                @if ($ad_details->application_fee_detailed)
+                                                    <li>Application Fee:
+                                                        <strong>{{ $ad_details->application_fee_detailed }}</strong>
                                                     </li>
                                                 @endif
                                             @endif
@@ -212,9 +232,6 @@
                                                 @if ($ad_details->venue)
                                                     <li>Venue: <strong>{{ $ad_details->venue }}</strong></li>
                                                 @endif
-                                                @if ($ad_details->price)
-                                                    <li>Price: <strong>{{ $ad_details->price }}</strong></li>
-                                                @endif
                                                 @if ($ad_details->event_start_date)
                                                     <li>Start Date:
                                                         <strong>{{ date('d M, Y', strtotime($ad_details->event_start_date)) }}</strong>
@@ -229,6 +246,9 @@
                                                     <li>Event Duration: <strong>{{ $ad_details->event_duration }}</strong>
                                                     </li>
                                                 @endif
+                                            @endif
+                                            @if ($ad_details->price)
+                                                <li>Price: <strong>{{ $ad_details->price }}</strong></li>
                                             @endif
                                         </ul>
                                     </div>
@@ -278,8 +298,8 @@
 @endsection
 
 @push('script')
- <script src="{{ asset('frontend/js/lg-thumbnail.umd.js') }}"></script>
- <script src="{{ asset('frontend/js/lightgallery.min.js') }}"></script>
+    <script src="{{ asset('frontend/js/lg-thumbnail.umd.js') }}"></script>
+    <script src="{{ asset('frontend/js/lightgallery.min.js') }}"></script>
     <script>
         $(document).ready(function() {
             lightGallery(document.getElementById('lightgallery'), {

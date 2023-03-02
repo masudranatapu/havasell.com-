@@ -103,12 +103,7 @@
                             ">
                         <div class="mb-3">
                             <label for="city" class="form-label">city ​​or neighborhood</label>
-                            <select name="city" id="city" class="form-control select2">
-                                @foreach($country->cities as $value)
-                                <option value="{{ $value->slug }}" {{ $ad->city == $value->slug? "selected" : "" }}>{{
-                                    $value->name}}</option>
-                                @endforeach
-                            </select>
+                            <input type="text" name="city" value="{{ $ad->city }}"d="city" class="form-control">
                         </div>
                     </div>
                     <div class="col-md-2">

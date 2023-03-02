@@ -70,26 +70,19 @@ class UserDashboardController extends Controller
     {
         $request->validate([
             'title' => 'required|max:255',
-            'city' => 'required|max:255',
-            'postcode' => 'required|integer',
             'description' => 'required',
+            'job_title' => 'required_if:ad_type,job-offered',
+            'laundry' => 'required_if:ad_type,housing-offered',
+            'parking' => 'required_if:ad_type,housing-offered',
+            'bedrooms' => 'required_if:ad_type,housing-offered',
+            'bathrooms' => 'required_if:ad_type,housing-offered',
+            'language' => 'required_if:ad_type,for-sale-by-owner',
             'email' => 'required|email',
-            'phone' => 'required_if:show_phone,1',
-            'images' => 'nullable',
-            'images.*' => 'mimes:jpg,png,bmp,gif',
-            'price' => 'required_if:ad_type,for-sale-by-owner,for-sale-by-dealer',
-            'manufacturer' => 'required_if:ad_type,for-sale-by-owner,for-sale-by-dealer',
-            'model_name' => 'required_if:ad_type,for-sale-by-owner,for-sale-by-dealer',
-            'dimension' => 'required_if:ad_type,for-sale-by-owner,for-sale-by-dealer,wanted-by-owner,wanted-by-dealer',
-            'condition' => 'required_if:ad_type,for-sale-by-owner,for-sale-by-dealer,wanted-by-owner,wanted-by-dealer',
             'availability' => 'required_if:ad_type,job-wanted',
             'education' => 'required_if:ad_type,job-wanted',
-            'venue' => 'required_if:ad_type,event-class',
-            'event_start_date' => 'required_if:ad_type,event-class',
-            'event_duration' => 'required_if:ad_type,event-class',
             'services' => 'required_if:ad_type,event-class',
-        ], [
-            'phone.required_if' => 'The phone number field is required if you want to show your phone.'
+            'employment_type' => 'required_if:ad_type,job-offered',
+            'availability' => 'required_if:ad_type,job-wanted',
         ]);
 
         if ($request->event_start_date) {
@@ -231,7 +224,7 @@ class UserDashboardController extends Controller
         }
         if ($ad->status == 'active') {
             flashSuccess('Post Updated successfully');
-            return redirect()->route('frontend.index')->with('message', 'Post Updated successfully');
+            return redirect()->route('user.profile')->with('message', 'Post Updated successfully');
         }
     }
     public function deletePost($id)

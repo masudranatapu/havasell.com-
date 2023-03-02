@@ -62,7 +62,18 @@ class AdPostController extends Controller
         $request->validate([
             'title' => 'required|max:255',
             'description' => 'required',
-            'email' => 'required|email'
+            'job_title' => 'required_if:ad_type,job-offered',
+            'laundry' => 'required_if:ad_type,housing-offered',
+            'parking' => 'required_if:ad_type,housing-offered',
+            'bedrooms' => 'required_if:ad_type,housing-offered',
+            'bathrooms' => 'required_if:ad_type,housing-offered',
+            'language' => 'required_if:ad_type,for-sale-by-owner',
+            'email' => 'required|email',
+            'availability' => 'required_if:ad_type,job-wanted',
+            'education' => 'required_if:ad_type,job-wanted',
+            'services' => 'required_if:ad_type,event-class',
+            'employment_type' => 'required_if:ad_type,job-offered',
+            'availability' => 'required_if:ad_type,job-wanted',
         ]);
 
         if ($request->event_start_date) {
@@ -198,7 +209,7 @@ class AdPostController extends Controller
 
         if ($ad->status == 'active') {
             flashSuccess('Post created successfully');
-            return redirect()->route('frontend.index')->with('message', 'Post created successfully');
+            return redirect()->route('user.profile')->with('message', 'Post created successfully');
         } else {
             flashSuccess('Your Post is in drafted. Please verify email to publish this post.');
             return redirect()->route('signin')->with('message', 'Your Post is in drafted. Please verify email to publish this post.');;
