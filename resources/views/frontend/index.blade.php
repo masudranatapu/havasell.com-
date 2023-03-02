@@ -99,7 +99,7 @@
                         <div class="mobile_heade_left">
                             <div class="site_logo">
                                 <a class="header_logo" name="logoLink" href="{{ route('frontend.index') }}">H</a>
-                                <a href="index.html">Havasell</a>
+                                <a href="{{ route('frontend.index') }}">{{ config('app.name') }}</a>
                             </div>
                         </div>
                     </div>

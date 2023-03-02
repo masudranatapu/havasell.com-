@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg p-0">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ route('frontend.index') }}">
-                <img src="{{ asset('frontend/images/logo.png') }}" width="124" alt="logo">
+                <img src="{{ asset( $setting->logo_image ?? 'frontend/images/logo.png') }}" width="124" alt="logo">
             </a>
             <ul class="navbar-nav d-block d-lg-none">
                 <li class="nav-item">
