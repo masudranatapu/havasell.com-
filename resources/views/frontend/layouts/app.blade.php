@@ -14,6 +14,12 @@
     {{-- custom style --}}
     @stack('style')
     <input type="hidden" id="base_url" value="{{ URL('/') }}" />
+    <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-6SYK9J23PG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
+        gtag('config', 'G-6SYK9J23PG');
+    </script>
 </head>
 
 <body>

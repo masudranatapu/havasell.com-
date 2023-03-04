@@ -214,7 +214,7 @@
     <script src="{{ asset('image_uploader/dist/image-uploader.min.js') }}"></script>
     <script>
         $('.input-images-2').imageUploader({
-            maxSize: 2 * 1024 * 1024,
+            maxSize: 6 * 1024 * 1024,
             maxFiles: 10,
             multiple: true,
         });

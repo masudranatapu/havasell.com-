@@ -223,6 +223,7 @@
         ];
         $('.input-images-2').imageUploader({
             preloaded: preloaded,
+            maxSize: 6 * 1024 * 1024,
             imagesInputName: 'images',
             preloadedInputName: 'old',
             maxFiles: 10
